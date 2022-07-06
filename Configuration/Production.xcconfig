@@ -1,0 +1,4 @@
+BACKEND_URL  = https:\/\/mobven.com\/
+BUNDLE_ID    = com.mobven.ios.enterprise.LookOffices
+APP_NAME     = LookOffices
+SHOW_VERSION = NO

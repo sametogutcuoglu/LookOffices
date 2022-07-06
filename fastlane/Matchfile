@@ -1,0 +1,10 @@
+git_url("https://github.com/sametogutcuoglu/LookOffices.git")
+
+storage_mode("git")
+
+type("enterprise")
+
+app_identifier(["com.mobven.ios.enterprise.LookOffices",
+				"com.mobven.ios.enterprise.LookOffices.dev"])
+username("samet.ogutcuoglu@mobven.com")
+team_id("TBXF7RJBHZ")

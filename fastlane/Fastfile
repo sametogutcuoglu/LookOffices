@@ -1,0 +1,47 @@
+PROJECT_NAME                 = "LookOffices"
+PROJECT_BUNDLE               = "com.mobven.ios.enterprise.LookOffices"
+DEVELOPMENT_PROJECT_BUNDLE   = "com.mobven.ios.enterprise.LookOffices.dev"
+PROJECT_SCHNEME              = "LookOffices"
+
+lane :build_test do |values|
+
+    build("DevelopmentRelease",'enterprise',"#{DEVELOPMENT_PROJECT_BUNDLE}","match InHouse #{DEVELOPMENT_PROJECT_BUNDLE}")
+
+    end
+
+    lane :build_production do |values| 
+
+        build("ProductionRelease",'enterprise',"#{PROJECT_BUNDLE}","match InHouse #{PROJECT_BUNDLE}")
+
+        end
+
+        def build (configuration,export_method,project_bundle,certificateName)
+            gym( scheme: "#{PROJECT_SCHNEME}",
+            configuration: configuration,
+            export_method: export_method,
+            clean: true,
+            export_options: {
+                export_method: export_method,
+                export_xcargs: "-allowProvisioningUpdates",
+                provisioningProfiles: {
+                    project_bundle => certificateName
+                } 
+            }
+            )
+        end
+
+        lane :increment do 
+        increment_build_number(
+            xcodeproj: "./#{PROJECT_NAME}/#{PROJECT_NAME}.xcodeproj"
+        )
+        increment_version_number(
+            xcodeproj: "./#{PROJECT_NAME}/#{PROJECT_NAME}.xcodeproj"
+        )
+        end
+
+        lane :set_version do |options|
+        increment_version_number(
+            xcodeproj: "./#{PROJECT_NAME}/#{PROJECT_NAME}.xcodeproj",
+            version_number: options[:version]
+        )
+        end
