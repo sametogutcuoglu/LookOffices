@@ -44,12 +44,39 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="h5x-WF-fF1">
+                                        <rect key="frame" x="153" y="347" width="231.5" height="28"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have account ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJr-ZO-B9C">
+                                                <rect key="frame" x="0.0" y="0.0" width="136" height="28"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1j-pT-PRS">
+                                                <rect key="frame" x="141" y="0.0" width="90.5" height="28"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Create Now">
+                                                            <attributes>
+                                                                <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="AwZ-LX-odq" secondAttribute="trailing" constant="10" id="5NJ-yM-xmj"/>
                                     <constraint firstItem="AwZ-LX-odq" firstAttribute="top" secondItem="ONP-Gc-rP4" secondAttribute="top" constant="10" id="MBM-8w-IBl"/>
+                                    <constraint firstItem="h5x-WF-fF1" firstAttribute="centerX" secondItem="ONP-Gc-rP4" secondAttribute="centerX" id="nHW-h3-a0K"/>
                                     <constraint firstItem="AwZ-LX-odq" firstAttribute="leading" secondItem="ONP-Gc-rP4" secondAttribute="leading" constant="10" id="zuc-AE-M9V"/>
                                 </constraints>
                             </view>
@@ -59,6 +86,7 @@
                         <constraints>
                             <constraint firstItem="Gva-6c-I1c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="05P-UL-q0G"/>
                             <constraint firstItem="ONP-Gc-rP4" firstAttribute="height" secondItem="Gva-6c-I1c" secondAttribute="height" id="11M-wj-6Hg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="h5x-WF-fF1" secondAttribute="bottom" constant="25" id="DSK-1j-lk9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ONP-Gc-rP4" secondAttribute="trailing" id="DSV-L2-SK0"/>
                             <constraint firstItem="ONP-Gc-rP4" firstAttribute="top" secondItem="Gva-6c-I1c" secondAttribute="bottom" id="H1C-lk-Wim"/>
                             <constraint firstItem="Gva-6c-I1c" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2" id="TDm-E6-0x4"/>
