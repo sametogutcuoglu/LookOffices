@@ -16,20 +16,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gva-6c-I1c">
-                                <rect key="frame" x="63" y="111" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gva-6c-I1c">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                                 <color key="backgroundColor" red="0.68235294117647061" green="0.82352941176470584" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ONP-Gc-rP4">
-                                <rect key="frame" x="63" y="436" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ONP-Gc-rP4">
+                                <rect key="frame" x="0.0" y="448" width="414" height="448"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Gva-6c-I1c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="05P-UL-q0G"/>
+                            <constraint firstItem="ONP-Gc-rP4" firstAttribute="height" secondItem="Gva-6c-I1c" secondAttribute="height" id="11M-wj-6Hg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ONP-Gc-rP4" secondAttribute="trailing" id="DSV-L2-SK0"/>
+                            <constraint firstItem="ONP-Gc-rP4" firstAttribute="top" secondItem="Gva-6c-I1c" secondAttribute="bottom" id="H1C-lk-Wim"/>
+                            <constraint firstItem="Gva-6c-I1c" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2" id="TDm-E6-0x4"/>
+                            <constraint firstItem="ONP-Gc-rP4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="go2-wJ-Wua"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gva-6c-I1c" secondAttribute="trailing" id="hAv-SV-mrS"/>
+                            <constraint firstItem="Gva-6c-I1c" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="sUg-AB-pcg"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
