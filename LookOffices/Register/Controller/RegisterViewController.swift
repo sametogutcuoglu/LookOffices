@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  RegisterViewController.swift
 //  LookOffices
 //
 //  Created by samet ogutcuoglu on 26.07.2022.
@@ -8,20 +8,16 @@
 import Foundation
 import UIKit
 
-class LoginViewController : UIViewController {
+class RegisterViewController : UIViewController {
     
-    
-    @IBOutlet weak var creatButton : UIButton!
     let triangle = CAShapeLayer()
     let loginTextLayer = CATextLayer()
-
-    @IBOutlet weak var loginButton: UIButton!
     
-override func viewDidLoad() {
-    super.viewDidLoad()
-    creatUITriangleAndLoginText()
     
-}
+    override func viewDidLoad() {
+        creatUITriangleAndLoginText()
+    }
+    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         
@@ -63,7 +59,7 @@ func creatUITriangleAndLoginText() {
         return path
     }
     
-  
+   
 
     loginTextLayer.frame = CGRect(x: (view.frame.width - 100) / 2, y: view.frame.midY - view.frame.height / 9, width: 100, height: 40)
     loginTextLayer.fontSize = 35
@@ -76,10 +72,7 @@ func creatUITriangleAndLoginText() {
     loginTextLayer.foregroundColor = UIColor.loginTextBackgroundColor.cgColor
 
     view.layer.addSublayer(loginTextLayer)
+    
+    
 }
-    @IBAction func ClickCreateNowButton(_ sender: Any) {
-        
-        performSegue(withIdentifier: "toRegisterView", sender: nil)
-        
-    }
 }
