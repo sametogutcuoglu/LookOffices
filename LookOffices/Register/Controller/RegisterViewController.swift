@@ -10,6 +10,8 @@ import UIKit
 
 class RegisterViewController : UIViewController {
     
+  
+    
     let triangle = CAShapeLayer()
     let loginTextLayer = CATextLayer()
     
@@ -75,4 +77,10 @@ func creatUITriangleAndLoginText() {
     
     
 }
+    @IBAction func ClickSingUpButton(_ sender: Any) {
+        
+        // TODO: Account created,Control E-mail and Password  min 8 character ,add scroll view
+        
+        
+    }
 }

@@ -79,7 +79,7 @@ func creatUITriangleAndLoginText() {
 }
     @IBAction func ClickCreateNowButton(_ sender: Any) {
         
-        performSegue(withIdentifier: "toRegisterView", sender: nil)
+        //performSegue(withIdentifier: "toRegisterView", sender: nil)
         
     }
 }

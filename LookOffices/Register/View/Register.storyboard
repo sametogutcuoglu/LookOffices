@@ -96,6 +96,9 @@
                                                         <integer key="value" value="4"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="ClickSingUpButton:" destination="4q1-eJ-ZcD" eventType="touchUpInside" id="eDZ-uc-12P"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
