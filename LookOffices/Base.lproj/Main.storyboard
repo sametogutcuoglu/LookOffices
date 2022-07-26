@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LookOffices" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,16 +19,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gva-6c-I1c">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Look Offices" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MtC-Pv-bGy">
-                                        <rect key="frame" x="222" y="94" width="142" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Look Offices" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MtC-Pv-bGy">
+                                        <rect key="frame" x="177.5" y="80" width="141.5" height="29"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Find Your Office" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBe-wv-7gB">
-                                        <rect key="frame" x="209" y="137" width="117" height="20"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homekit" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zZf-1b-cvf">
@@ -39,14 +33,20 @@
                                             <constraint firstAttribute="width" constant="85" id="LVk-dc-YE6"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Your Office" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBe-wv-7gB">
+                                        <rect key="frame" x="177.5" y="114" width="141.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.68235294117647061" green="0.82352941176470584" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="MtC-Pv-bGy" firstAttribute="top" secondItem="Gva-6c-I1c" secondAttribute="top" constant="80" id="2HY-a4-6Ds"/>
                                     <constraint firstItem="eBe-wv-7gB" firstAttribute="trailing" secondItem="MtC-Pv-bGy" secondAttribute="trailing" id="Ebz-eQ-xws"/>
                                     <constraint firstItem="eBe-wv-7gB" firstAttribute="leading" secondItem="MtC-Pv-bGy" secondAttribute="leading" id="HEB-aj-hI9"/>
-                                    <constraint firstItem="MtC-Pv-bGy" firstAttribute="leading" secondItem="zZf-1b-cvf" secondAttribute="trailing" constant="16" id="MZ3-lh-Vn7"/>
                                     <constraint firstItem="MtC-Pv-bGy" firstAttribute="centerX" secondItem="Gva-6c-I1c" secondAttribute="centerX" multiplier="1.2" id="XLr-Hv-0uA"/>
+                                    <constraint firstItem="MtC-Pv-bGy" firstAttribute="leading" secondItem="zZf-1b-cvf" secondAttribute="trailing" constant="16" id="eYW-8x-fmu"/>
                                     <constraint firstItem="zZf-1b-cvf" firstAttribute="top" secondItem="MtC-Pv-bGy" secondAttribute="top" id="ekv-6B-HAS"/>
                                     <constraint firstItem="eBe-wv-7gB" firstAttribute="top" secondItem="MtC-Pv-bGy" secondAttribute="bottom" constant="5" id="ndx-mx-Zga"/>
                                 </constraints>
@@ -75,8 +75,8 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="h5x-WF-fF1">
-                                        <rect key="frame" x="153" y="347" width="231.5" height="28"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="h5x-WF-fF1">
+                                        <rect key="frame" x="91.5" y="361" width="231.5" height="28"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have account ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJr-ZO-B9C">
                                                 <rect key="frame" x="0.0" y="0.0" width="136" height="28"/>
