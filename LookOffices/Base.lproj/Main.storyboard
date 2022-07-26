@@ -18,7 +18,38 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gva-6c-I1c">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Look Offices" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MtC-Pv-bGy">
+                                        <rect key="frame" x="222" y="94" width="142" height="29"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Find Your Office" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBe-wv-7gB">
+                                        <rect key="frame" x="209" y="137" width="117" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homekit" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zZf-1b-cvf">
+                                        <rect key="frame" x="76.5" y="79" width="85" height="85"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="85" id="2D3-Lg-hNy"/>
+                                            <constraint firstAttribute="width" constant="85" id="LVk-dc-YE6"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.68235294117647061" green="0.82352941176470584" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="MtC-Pv-bGy" firstAttribute="top" secondItem="Gva-6c-I1c" secondAttribute="top" constant="80" id="2HY-a4-6Ds"/>
+                                    <constraint firstItem="eBe-wv-7gB" firstAttribute="trailing" secondItem="MtC-Pv-bGy" secondAttribute="trailing" id="Ebz-eQ-xws"/>
+                                    <constraint firstItem="eBe-wv-7gB" firstAttribute="leading" secondItem="MtC-Pv-bGy" secondAttribute="leading" id="HEB-aj-hI9"/>
+                                    <constraint firstItem="MtC-Pv-bGy" firstAttribute="leading" secondItem="zZf-1b-cvf" secondAttribute="trailing" constant="16" id="MZ3-lh-Vn7"/>
+                                    <constraint firstItem="MtC-Pv-bGy" firstAttribute="centerX" secondItem="Gva-6c-I1c" secondAttribute="centerX" multiplier="1.2" id="XLr-Hv-0uA"/>
+                                    <constraint firstItem="zZf-1b-cvf" firstAttribute="top" secondItem="MtC-Pv-bGy" secondAttribute="top" id="ekv-6B-HAS"/>
+                                    <constraint firstItem="eBe-wv-7gB" firstAttribute="top" secondItem="MtC-Pv-bGy" secondAttribute="bottom" constant="5" id="ndx-mx-Zga"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ONP-Gc-rP4">
                                 <rect key="frame" x="0.0" y="448" width="414" height="448"/>
@@ -98,10 +129,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="76"/>
+            <point key="canvasLocation" x="18.840579710144929" y="75.669642857142847"/>
         </scene>
     </scenes>
     <resources>
+        <image name="homekit" catalog="system" width="128" height="106"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
