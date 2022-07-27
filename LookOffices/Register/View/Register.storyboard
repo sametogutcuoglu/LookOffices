@@ -40,16 +40,24 @@
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOE-1B-tYl">
+                                        <rect key="frame" x="0.0" y="235" width="414" height="213"/>
+                                        <color key="backgroundColor" name="LoginTopBackground"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" name="LoginTopBackground"/>
                                 <constraints>
                                     <constraint firstItem="uMZ-NS-vse" firstAttribute="top" secondItem="Fu4-oJ-eSm" secondAttribute="top" id="9Dx-2D-wwh"/>
                                     <constraint firstItem="n5s-0r-f0G" firstAttribute="top" secondItem="Fu4-oJ-eSm" secondAttribute="bottom" constant="5" id="Ad2-bO-KQI"/>
+                                    <constraint firstItem="TOE-1B-tYl" firstAttribute="top" secondItem="uMZ-NS-vse" secondAttribute="bottom" constant="70" id="GRt-Ko-Btf"/>
                                     <constraint firstItem="Fu4-oJ-eSm" firstAttribute="top" secondItem="OzI-Gf-ovU" secondAttribute="top" constant="80" id="OdU-pR-8cq"/>
                                     <constraint firstItem="n5s-0r-f0G" firstAttribute="leading" secondItem="Fu4-oJ-eSm" secondAttribute="leading" id="Qll-kz-5YW"/>
                                     <constraint firstItem="n5s-0r-f0G" firstAttribute="trailing" secondItem="Fu4-oJ-eSm" secondAttribute="trailing" id="WkW-GD-qDI"/>
                                     <constraint firstItem="Fu4-oJ-eSm" firstAttribute="centerX" secondItem="OzI-Gf-ovU" secondAttribute="centerX" multiplier="1.2" id="bws-Ll-6Iq"/>
+                                    <constraint firstAttribute="trailing" secondItem="TOE-1B-tYl" secondAttribute="trailing" id="pDj-ZG-pAT"/>
                                     <constraint firstItem="Fu4-oJ-eSm" firstAttribute="leading" secondItem="uMZ-NS-vse" secondAttribute="trailing" constant="16" id="vgO-OZ-BBV"/>
+                                    <constraint firstAttribute="bottom" secondItem="TOE-1B-tYl" secondAttribute="bottom" id="yEL-Q8-rrT"/>
+                                    <constraint firstItem="TOE-1B-tYl" firstAttribute="leading" secondItem="OzI-Gf-ovU" secondAttribute="leading" id="zVX-kT-oxr"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWW-cf-jsp">
@@ -97,7 +105,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="ClickSingUpButton:" destination="4q1-eJ-ZcD" eventType="touchUpInside" id="eDZ-uc-12P"/>
+                                                    <action selector="clickSingUpButton:" destination="4q1-eJ-ZcD" eventType="touchUpOutside" id="0BA-GP-GZy"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -125,6 +133,9 @@
                             <constraint firstItem="YWW-cf-jsp" firstAttribute="leading" secondItem="TfW-Lg-L6Q" secondAttribute="leading" id="nSO-2Y-Ewb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="TriangleView" destination="TOE-1B-tYl" id="rJA-yb-peI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CCc-yE-mcs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
