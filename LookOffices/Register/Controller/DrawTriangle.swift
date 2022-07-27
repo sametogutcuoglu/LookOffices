@@ -19,9 +19,9 @@ class Triangle {
     
     
     init(width : CGFloat , Height : CGFloat , Radius : CGFloat, ViewMidx : CGFloat , ViewMaxy : CGFloat) {
-        self.width = width
-        self.Height = Height
-        self.radius = Radius
+        self.width    = width
+        self.Height   = Height
+        self.radius   = Radius
         self.viewMidx = ViewMidx
         self.viewMaxY = ViewMaxy
     }
@@ -58,15 +58,5 @@ class Triangle {
 
             return path
         }
-        
-//        func createLoginLabel() {
-//
-//            logintext.frame = CGRect(x: (view.frame.width - 100) / 2, y: view.frame.midY - view.frame.height / 9, width: 100, height: 40)
-//            logintext.font = UIFont.boldSystemFont(ofSize: 40)
-//            logintext.backgroundColor = .loginBackgroundColor
-//            logintext.textAlignment = .left
-//            logintext.text = "Login"
-//            view.addSubview(logintext)
-//        }
     
 }

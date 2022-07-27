@@ -18,7 +18,7 @@ final class RegisterViewController : UIViewController {
     var viewWidth  : CGFloat?
     var viewMidX   : CGFloat?
     var viewMaxY   : CGFloat?
-    var tiranglecreate = CAShapeLayer()
+    var tirangle = CAShapeLayer()
     var count = 0
     
     override func viewDidLoad() {
@@ -30,9 +30,9 @@ final class RegisterViewController : UIViewController {
         
             let classtriangle = Triangle(width: viewWidth!, Height: viewHeight!, Radius: 40, ViewMidx: viewMidX!, ViewMaxy: viewMaxY!)
         
-            tiranglecreate = classtriangle.creatUITriangle()
+            tirangle = classtriangle.creatUITriangle()
         
-            TriangleView.layer.addSublayer(tiranglecreate)
+            TriangleView.layer.addSublayer(tirangle)
         
     }
     
@@ -72,7 +72,8 @@ final class RegisterViewController : UIViewController {
             guard traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) else {
                 return
             }
-            tiranglecreate.fillColor = UIColor.loginBackgroundColor.cgColor
+            
+            tirangle.fillColor = UIColor.loginBackgroundColor.cgColor
             
             
         }

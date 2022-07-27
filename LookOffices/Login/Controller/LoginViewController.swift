@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class LoginViewController : UIViewController {
+final class LoginViewController : UIViewController {
     
     @IBOutlet weak var triangleView: UIView!
     @IBOutlet weak var creatButton : UIButton!
@@ -17,7 +17,7 @@ class LoginViewController : UIViewController {
     var viewWidth  : CGFloat?
     var viewMidX   : CGFloat?
     var viewMaxY   : CGFloat?
-    var tiranglecreate = CAShapeLayer()
+    var triangle = CAShapeLayer()
     var count = 0
 
     @IBOutlet weak var loginButton: UIButton!
@@ -28,13 +28,13 @@ class LoginViewController : UIViewController {
     }
     
  
-    func DrawTriangle() {
+    private func DrawTriangle() {
         
         let classtriangle = Triangle(width: viewWidth!, Height: viewHeight!, Radius: 40, ViewMidx: viewMidX!, ViewMaxy: viewMaxY!)
     
-        tiranglecreate = classtriangle.creatUITriangle()
+        triangle = classtriangle.creatUITriangle()
     
-        triangleView.layer.addSublayer(tiranglecreate)
+        triangleView.layer.addSublayer(triangle)
     }
       
     
@@ -47,21 +47,12 @@ class LoginViewController : UIViewController {
         viewWidth  = triangleView.bounds.width
         viewMidX   = triangleView.bounds.midX
         viewMaxY   = triangleView.bounds.maxY
-        print(triangleView.bounds.height)
-        print(triangleView.frame.height)
-        print(triangleView.frame.size.height)
         count += 1
         
         if count == 2 {
        
             DrawTriangle()
         }
-    }
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        print(triangleView.bounds.height)
-        print(triangleView.frame.height)
-        print(triangleView.frame.size.height)
     }
     
     private func createLoginLabel() {
@@ -81,13 +72,13 @@ class LoginViewController : UIViewController {
             guard traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) else {
                 return
             }
-            tiranglecreate.fillColor = UIColor.loginBackgroundColor.cgColor
+            triangle.fillColor = UIColor.loginBackgroundColor.cgColor
             
         }
         
     }
 
-    @IBAction func ClickCreateNowButton(_ sender: Any) {
+    @IBAction func clickCreateNowButton(_ sender: Any) {
         
         //performSegue(withIdentifier: "toRegisterView", sender: nil)
         

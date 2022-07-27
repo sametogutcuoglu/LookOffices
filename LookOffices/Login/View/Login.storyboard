@@ -107,7 +107,7 @@
                                                     </attributedString>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="ClickCreateNowButton:" destination="8g7-ui-oKk" eventType="touchUpInside" id="fTi-Yv-Lfr"/>
+                                                    <action selector="clickCreateNowButton:" destination="8g7-ui-oKk" eventType="touchUpInside" id="7dJ-x9-Ewf"/>
                                                     <segue destination="Uwx-t9-jab" kind="show" identifier="toRegisterView" id="1OJ-rG-sUs"/>
                                                 </connections>
                                             </button>
@@ -141,8 +141,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="cwa-vh-wIn"/>
                     <connections>
-                        <outlet property="creatButton" destination="jsL-AE-jjn" id="bZZ-he-dBp"/>
-                        <outlet property="loginButton" destination="yaR-he-B8B" id="dHp-nL-lWQ"/>
+                        <outlet property="creatButton" destination="yaR-he-B8B" id="k2e-eb-mWC"/>
                         <outlet property="triangleView" destination="svM-qS-u91" id="w4B-as-5rw"/>
                     </connections>
                 </viewController>
