@@ -52,35 +52,35 @@
                                 <rect key="frame" x="0.0" y="448" width="414" height="448"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cmJ-rW-Zdb">
-                                        <rect key="frame" x="10" y="10" width="394" height="289"/>
+                                        <rect key="frame" x="15" y="10" width="384" height="289"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0h9-21-o8v">
-                                                <rect key="frame" x="0.0" y="0.0" width="394" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LrH-ZK-W0k">
-                                                <rect key="frame" x="0.0" y="49" width="394" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <rect key="frame" x="0.0" y="49" width="384" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fgj-lv-zHg">
-                                                <rect key="frame" x="0.0" y="98" width="394" height="34"/>
+                                                <rect key="frame" x="0.0" y="98" width="384" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="asdasd" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UvE-ac-GlU">
-                                                <rect key="frame" x="0.0" y="147" width="394" height="34"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UvE-ac-GlU">
+                                                <rect key="frame" x="0.0" y="147" width="384" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="wewqe" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sbi-7Z-Cf4">
-                                                <rect key="frame" x="0.0" y="196" width="394" height="34"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sbi-7Z-Cf4">
+                                                <rect key="frame" x="0.0" y="196" width="384" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2m-vA-reT">
-                                                <rect key="frame" x="0.0" y="245" width="394" height="44"/>
+                                                <rect key="frame" x="0.0" y="245" width="384" height="44"/>
                                                 <color key="backgroundColor" name="LoginButtonBackground"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -106,8 +106,8 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" name="LoginBackground"/>
                                 <constraints>
-                                    <constraint firstItem="cmJ-rW-Zdb" firstAttribute="leading" secondItem="YWW-cf-jsp" secondAttribute="leading" constant="10" id="08Y-T4-WYU"/>
-                                    <constraint firstAttribute="trailing" secondItem="cmJ-rW-Zdb" secondAttribute="trailing" constant="10" id="a64-8e-zew"/>
+                                    <constraint firstItem="cmJ-rW-Zdb" firstAttribute="leading" secondItem="YWW-cf-jsp" secondAttribute="leading" constant="15" id="08Y-T4-WYU"/>
+                                    <constraint firstAttribute="trailing" secondItem="cmJ-rW-Zdb" secondAttribute="trailing" constant="15" id="a64-8e-zew"/>
                                     <constraint firstItem="cmJ-rW-Zdb" firstAttribute="top" secondItem="YWW-cf-jsp" secondAttribute="top" constant="10" id="cDT-ob-3vp"/>
                                 </constraints>
                             </view>
