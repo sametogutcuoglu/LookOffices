@@ -84,3 +84,17 @@ final class LoginViewController : UIViewController {
         
     }
 }
+
+@IBDesignable extension UIButton {
+    
+    @IBInspectable var radius : CGFloat  {
+        get {
+            return self.layer.cornerRadius
+        }
+        set {
+            self.layer.cornerRadius = CGFloat(newValue)
+        }
+    }
+    
+    
+}
