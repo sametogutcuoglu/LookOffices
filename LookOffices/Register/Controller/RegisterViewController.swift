@@ -11,28 +11,30 @@ import UIKit
 final class RegisterViewController : UIViewController {
     
   
-    @IBOutlet weak var TriangleView: UIView!
+    @IBOutlet weak var triangleView: UIView!
     
-    let loginText = UILabel()
-    var viewHeight : CGFloat?
-    var viewWidth  : CGFloat?
-    var viewMidX   : CGFloat?
-    var viewMaxY   : CGFloat?
-    var tirangle = CAShapeLayer()
-    var count = 0
+    let loginText   = UILabel()
+    var viewHeight  : CGFloat?
+    var viewWidth   : CGFloat?
+    var viewMidX    : CGFloat?
+    var viewMaxY    : CGFloat?
+    var triangle    = CAShapeLayer()
+    var count       = 0
     
     override func viewDidLoad() {
+        
         createLoginLabel()
+    
     }
     
-    func DrawTriangle() {
+    private func DrawTriangle() {
         
         
-            let classtriangle = Triangle(width: viewWidth!, Height: viewHeight!, Radius: 40, ViewMidx: viewMidX!, ViewMaxy: viewMaxY!)
+        let classtriangle = Triangle(triangleWidth: viewWidth!, triangleHeight: viewHeight!, Radius: 40, ViewMidx: viewMidX!, ViewMaxy: viewMaxY!)
         
-            tirangle = classtriangle.creatUITriangle()
+            triangle = classtriangle.creatUITriangle()
         
-            TriangleView.layer.addSublayer(tirangle)
+            triangleView.layer.addSublayer(triangle)
         
     }
     
@@ -43,11 +45,14 @@ final class RegisterViewController : UIViewController {
     override func viewDidLayoutSubviews()
     {
         super.viewDidLayoutSubviews()
-         viewHeight = TriangleView.bounds.height
-         viewWidth  = TriangleView.bounds.width
-         viewMidX   = TriangleView.bounds.midX
-         viewMaxY   = TriangleView.bounds.maxY
+        
+         viewHeight = triangleView.bounds.height
+         viewWidth  = triangleView.bounds.width
+         viewMidX   = triangleView.bounds.midX
+         viewMaxY   = triangleView.bounds.maxY
+        
         count += 1
+        
         if count == 2 {
             DrawTriangle()
         }
@@ -69,12 +74,10 @@ final class RegisterViewController : UIViewController {
         super.traitCollectionDidChange(previousTraitCollection)
         
         if #available (iOS 13.0, *) {
-            guard traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) else {
-                return
-            }
+            guard traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)
+            else { return }
             
-            tirangle.fillColor = UIColor.loginBackgroundColor.cgColor
-            
+            triangle.fillColor = UIColor.loginBackgroundColor.cgColor
             
         }
         

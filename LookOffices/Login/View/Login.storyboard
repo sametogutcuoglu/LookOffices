@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homekit" translatesAutoresizingMaskIntoConstraints="NO" id="vwq-t9-EsB">
-                                        <rect key="frame" x="169" y="85.5" width="76" height="45.5"/>
+                                        <rect key="frame" x="169" y="105.5" width="76" height="45.5"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svM-qS-u91">
@@ -29,7 +29,7 @@
                                         <color key="backgroundColor" name="LoginTopBackground"/>
                                     </view>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Find Your Office" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deS-TD-Gjl">
-                                        <rect key="frame" x="152" y="136" width="110" height="18"/>
+                                        <rect key="frame" x="152" y="156" width="110" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
@@ -37,7 +37,7 @@
                                 </subviews>
                                 <color key="backgroundColor" name="LoginTopBackground"/>
                                 <constraints>
-                                    <constraint firstItem="svM-qS-u91" firstAttribute="top" secondItem="deS-TD-Gjl" secondAttribute="bottom" constant="70" id="0L3-s1-WBn"/>
+                                    <constraint firstItem="svM-qS-u91" firstAttribute="top" secondItem="deS-TD-Gjl" secondAttribute="bottom" constant="50" id="0L3-s1-WBn"/>
                                     <constraint firstItem="svM-qS-u91" firstAttribute="height" secondItem="1Uf-yR-73J" secondAttribute="height" multiplier="0.5" id="6J8-D6-ZMe"/>
                                     <constraint firstAttribute="trailing" secondItem="svM-qS-u91" secondAttribute="trailing" id="CXE-zk-38J"/>
                                     <constraint firstAttribute="trailing" secondItem="vwq-t9-EsB" secondAttribute="trailing" constant="169" id="GLV-1V-mYB"/>

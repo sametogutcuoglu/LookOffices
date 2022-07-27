@@ -12,27 +12,30 @@ final class LoginViewController : UIViewController {
     
     @IBOutlet weak var triangleView: UIView!
     @IBOutlet weak var creatButton : UIButton!
-    let loginText = UILabel()
-    var viewHeight : CGFloat?
-    var viewWidth  : CGFloat?
-    var viewMidX   : CGFloat?
-    var viewMaxY   : CGFloat?
-    var triangle = CAShapeLayer()
-    var count = 0
+    let loginText   = UILabel()
+    var viewHeight  : CGFloat?
+    var viewWidth   : CGFloat?
+    var viewMidX    : CGFloat?
+    var viewMaxY    : CGFloat?
+    var triangle    = CAShapeLayer()
+    var count       = 0
 
     @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         createLoginLabel()
+        
     }
+    
     
  
     private func DrawTriangle() {
         
-        let classtriangle = Triangle(width: viewWidth!, Height: viewHeight!, Radius: 40, ViewMidx: viewMidX!, ViewMaxy: viewMaxY!)
+        let classTriangle = Triangle(triangleWidth: viewWidth!, triangleHeight: viewHeight!, Radius: 40, ViewMidx: viewMidX!, ViewMaxy: viewMaxY!)
     
-        triangle = classtriangle.creatUITriangle()
+        triangle = classTriangle.creatUITriangle()
     
         triangleView.layer.addSublayer(triangle)
     }
@@ -47,6 +50,7 @@ final class LoginViewController : UIViewController {
         viewWidth  = triangleView.bounds.width
         viewMidX   = triangleView.bounds.midX
         viewMaxY   = triangleView.bounds.maxY
+        
         count += 1
         
         if count == 2 {
@@ -69,9 +73,9 @@ final class LoginViewController : UIViewController {
         super.traitCollectionDidChange(previousTraitCollection)
         
         if #available (iOS 13.0, *) {
-            guard traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) else {
-                return
-            }
+            guard traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)
+            else { return }
+            
             triangle.fillColor = UIColor.loginBackgroundColor.cgColor
             
         }

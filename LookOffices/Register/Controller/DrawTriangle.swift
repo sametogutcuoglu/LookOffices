@@ -10,17 +10,18 @@ import UIKit
 
 class Triangle {
     
-    let triangle = CAShapeLayer()
-    var width    : CGFloat
-    var Height   : CGFloat
-    var radius   : CGFloat
-    var viewMidx : CGFloat
-    var viewMaxY : CGFloat
+    let triangle        = CAShapeLayer()
+    var triangleWidth   : CGFloat
+    var triangleHeight  : CGFloat
+    var radius          : CGFloat
+    var viewMidx        : CGFloat
+    var viewMaxY        : CGFloat
     
     
-    init(width : CGFloat , Height : CGFloat , Radius : CGFloat, ViewMidx : CGFloat , ViewMaxy : CGFloat) {
-        self.width    = width
-        self.Height   = Height
+    init(triangleWidth : CGFloat , triangleHeight : CGFloat ,
+         Radius : CGFloat, ViewMidx : CGFloat , ViewMaxy : CGFloat) {
+        self.triangleWidth    = triangleWidth
+        self.triangleHeight   = triangleHeight
         self.radius   = Radius
         self.viewMidx = ViewMidx
         self.viewMaxY = ViewMaxy
@@ -33,7 +34,7 @@ class Triangle {
         
         triangle.fillColor = UIColor.loginBackgroundColor.cgColor
         
-        triangle.path = createRoundedTriangle(width: width, height: Height, radius: radius)
+        triangle.path = createRoundedTriangle(width: triangleWidth, height: triangleHeight, radius: radius)
         
         triangle.frame.origin.x = viewMidx
         
