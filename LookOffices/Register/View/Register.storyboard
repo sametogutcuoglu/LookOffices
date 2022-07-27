@@ -20,42 +20,30 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OzI-Gf-ovU">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Look Offices" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fu4-oJ-eSm">
-                                        <rect key="frame" x="177.5" y="80" width="141.5" height="29"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homekit" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uMZ-NS-vse">
-                                        <rect key="frame" x="76.5" y="79" width="85" height="85"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homekit" translatesAutoresizingMaskIntoConstraints="NO" id="uMZ-NS-vse">
+                                        <rect key="frame" x="169" y="85.5" width="76" height="45.5"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="85" id="3Ht-0C-yUW"/>
-                                            <constraint firstAttribute="height" constant="85" id="Bgt-tC-F2C"/>
-                                        </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Your Office" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5s-0r-f0G">
-                                        <rect key="frame" x="177.5" y="114" width="141.5" height="19.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" systemColor="secondaryLabelColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOE-1B-tYl">
                                         <rect key="frame" x="0.0" y="224" width="414" height="224"/>
                                         <color key="backgroundColor" name="LoginTopBackground"/>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Find Your Office" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5s-0r-f0G">
+                                        <rect key="frame" x="152" y="136" width="110" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" name="LoginTopBackground"/>
                                 <constraints>
-                                    <constraint firstItem="uMZ-NS-vse" firstAttribute="top" secondItem="Fu4-oJ-eSm" secondAttribute="top" id="9Dx-2D-wwh"/>
-                                    <constraint firstItem="n5s-0r-f0G" firstAttribute="top" secondItem="Fu4-oJ-eSm" secondAttribute="bottom" constant="5" id="Ad2-bO-KQI"/>
-                                    <constraint firstItem="Fu4-oJ-eSm" firstAttribute="top" secondItem="OzI-Gf-ovU" secondAttribute="top" constant="80" id="OdU-pR-8cq"/>
-                                    <constraint firstItem="n5s-0r-f0G" firstAttribute="leading" secondItem="Fu4-oJ-eSm" secondAttribute="leading" id="Qll-kz-5YW"/>
-                                    <constraint firstItem="n5s-0r-f0G" firstAttribute="trailing" secondItem="Fu4-oJ-eSm" secondAttribute="trailing" id="WkW-GD-qDI"/>
-                                    <constraint firstItem="Fu4-oJ-eSm" firstAttribute="centerX" secondItem="OzI-Gf-ovU" secondAttribute="centerX" multiplier="1.2" id="bws-Ll-6Iq"/>
+                                    <constraint firstAttribute="trailing" secondItem="uMZ-NS-vse" secondAttribute="trailing" constant="169" id="ZKv-KE-AVO"/>
+                                    <constraint firstItem="n5s-0r-f0G" firstAttribute="top" secondItem="uMZ-NS-vse" secondAttribute="bottom" constant="5" id="ZP9-YG-JfP"/>
+                                    <constraint firstItem="n5s-0r-f0G" firstAttribute="centerX" secondItem="OzI-Gf-ovU" secondAttribute="centerX" id="ctw-7h-3xV"/>
                                     <constraint firstItem="TOE-1B-tYl" firstAttribute="height" secondItem="OzI-Gf-ovU" secondAttribute="height" multiplier="0.5" id="dwC-nm-Bzs"/>
+                                    <constraint firstItem="uMZ-NS-vse" firstAttribute="leading" secondItem="OzI-Gf-ovU" secondAttribute="leading" constant="169" id="fQN-CB-HtK"/>
+                                    <constraint firstItem="TOE-1B-tYl" firstAttribute="top" secondItem="n5s-0r-f0G" secondAttribute="bottom" constant="70" id="mtj-ew-DGg"/>
                                     <constraint firstAttribute="trailing" secondItem="TOE-1B-tYl" secondAttribute="trailing" id="pDj-ZG-pAT"/>
-                                    <constraint firstItem="Fu4-oJ-eSm" firstAttribute="leading" secondItem="uMZ-NS-vse" secondAttribute="trailing" constant="16" id="vgO-OZ-BBV"/>
                                     <constraint firstAttribute="bottom" secondItem="TOE-1B-tYl" secondAttribute="bottom" id="yEL-Q8-rrT"/>
                                     <constraint firstItem="TOE-1B-tYl" firstAttribute="leading" secondItem="OzI-Gf-ovU" secondAttribute="leading" id="zVX-kT-oxr"/>
                                 </constraints>
@@ -63,8 +51,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWW-cf-jsp">
                                 <rect key="frame" x="0.0" y="448" width="414" height="448"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cmJ-rW-Zdb">
-                                        <rect key="frame" x="10" y="10" width="394" height="278"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cmJ-rW-Zdb">
+                                        <rect key="frame" x="10" y="10" width="394" height="279"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0h9-21-o8v">
                                                 <rect key="frame" x="0.0" y="0.0" width="394" height="34"/>
@@ -92,11 +80,11 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2m-vA-reT">
-                                                <rect key="frame" x="0.0" y="245" width="394" height="33"/>
+                                                <rect key="frame" x="0.0" y="245" width="394" height="34"/>
                                                 <color key="backgroundColor" name="LoginButtonBackground"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Sing Up">
+                                                <state key="normal" title="Sign Up">
                                                     <color key="titleColor" name="LoginBackground"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -143,7 +131,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="homekit" width="76" height="45.5"/>
         <namedColor name="LoginBackground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B26C33328914F05003AE9B0 /* DrawTriangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26C33228914F05003AE9B0 /* DrawTriangle.swift */; };
 		5B9CE2F7287347A60085859A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CE2F6287347A60085859A /* AppDelegate.swift */; };
 		5B9CE2F9287347A60085859A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CE2F8287347A60085859A /* SceneDelegate.swift */; };
 		5B9CE2FB287347A60085859A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CE2FA287347A60085859A /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B26C33228914F05003AE9B0 /* DrawTriangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawTriangle.swift; sourceTree = "<group>"; };
 		5B8D92112873687E002DF1D1 /* LookOffices.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LookOffices.entitlements; sourceTree = "<group>"; };
 		5B9CE2F3287347A60085859A /* LookOfficesDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LookOfficesDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9CE2F6287347A60085859A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				5BC0639328902313004FA4FA /* RegisterViewController.swift */,
+				5B26C33228914F05003AE9B0 /* DrawTriangle.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BE4E6302890003C009FF44B /* LoginViewController.swift in Sources */,
+				5B26C33328914F05003AE9B0 /* DrawTriangle.swift in Sources */,
 				5B9CE2FB287347A60085859A /* ViewController.swift in Sources */,
 				5B9CE2F7287347A60085859A /* AppDelegate.swift in Sources */,
 				5BC0639428902313004FA4FA /* RegisterViewController.swift in Sources */,

@@ -17,39 +17,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Uf-yR-73J">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Uf-yR-73J" userLabel="triangleView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Look Offices" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfL-yd-YHy">
-                                        <rect key="frame" x="177.5" y="80" width="141.5" height="29"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homekit" translatesAutoresizingMaskIntoConstraints="NO" id="vwq-t9-EsB">
-                                        <rect key="frame" x="76.5" y="80" width="85" height="85"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homekit" translatesAutoresizingMaskIntoConstraints="NO" id="vwq-t9-EsB">
+                                        <rect key="frame" x="169" y="85.5" width="76" height="45.5"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="85" id="C4G-eY-10E"/>
-                                            <constraint firstAttribute="height" constant="85" id="vv6-CE-v1l"/>
-                                        </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Your Office" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deS-TD-Gjl">
-                                        <rect key="frame" x="177.5" y="114" width="141.5" height="19.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svM-qS-u91">
+                                        <rect key="frame" x="0.0" y="224" width="414" height="224"/>
+                                        <color key="backgroundColor" name="LoginTopBackground"/>
+                                    </view>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Find Your Office" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deS-TD-Gjl">
+                                        <rect key="frame" x="152" y="136" width="110" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" name="LoginTopBackground"/>
                                 <constraints>
-                                    <constraint firstItem="rfL-yd-YHy" firstAttribute="centerX" secondItem="1Uf-yR-73J" secondAttribute="centerX" multiplier="1.2" id="2wO-60-ktG"/>
-                                    <constraint firstItem="deS-TD-Gjl" firstAttribute="leading" secondItem="rfL-yd-YHy" secondAttribute="leading" id="68N-0J-Y7F"/>
-                                    <constraint firstItem="vwq-t9-EsB" firstAttribute="top" secondItem="rfL-yd-YHy" secondAttribute="top" id="IUv-vR-CM7"/>
-                                    <constraint firstItem="rfL-yd-YHy" firstAttribute="leading" secondItem="vwq-t9-EsB" secondAttribute="trailing" constant="16" id="NI8-Pc-7AO"/>
-                                    <constraint firstItem="deS-TD-Gjl" firstAttribute="top" secondItem="rfL-yd-YHy" secondAttribute="bottom" constant="5" id="Zwa-0q-ddE"/>
-                                    <constraint firstItem="deS-TD-Gjl" firstAttribute="trailing" secondItem="rfL-yd-YHy" secondAttribute="trailing" id="vOn-PN-6dk"/>
-                                    <constraint firstItem="rfL-yd-YHy" firstAttribute="top" secondItem="1Uf-yR-73J" secondAttribute="top" constant="80" id="zEo-e3-MIu"/>
+                                    <constraint firstItem="svM-qS-u91" firstAttribute="top" secondItem="deS-TD-Gjl" secondAttribute="bottom" constant="70" id="0L3-s1-WBn"/>
+                                    <constraint firstItem="svM-qS-u91" firstAttribute="height" secondItem="1Uf-yR-73J" secondAttribute="height" multiplier="0.5" id="6J8-D6-ZMe"/>
+                                    <constraint firstAttribute="trailing" secondItem="svM-qS-u91" secondAttribute="trailing" id="CXE-zk-38J"/>
+                                    <constraint firstAttribute="trailing" secondItem="vwq-t9-EsB" secondAttribute="trailing" constant="169" id="GLV-1V-mYB"/>
+                                    <constraint firstItem="vwq-t9-EsB" firstAttribute="leading" secondItem="1Uf-yR-73J" secondAttribute="leading" constant="169" id="JLw-U7-a3M"/>
+                                    <constraint firstItem="svM-qS-u91" firstAttribute="leading" secondItem="1Uf-yR-73J" secondAttribute="leading" id="Kn2-4o-fSq"/>
+                                    <constraint firstItem="deS-TD-Gjl" firstAttribute="centerX" secondItem="1Uf-yR-73J" secondAttribute="centerX" id="UZv-gm-mHf"/>
+                                    <constraint firstItem="deS-TD-Gjl" firstAttribute="top" secondItem="vwq-t9-EsB" secondAttribute="bottom" constant="5" id="oNo-kR-p2v"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4x-iU-1fs">
@@ -138,6 +133,7 @@
                             <constraint firstItem="PeX-sS-ed8" firstAttribute="trailing" secondItem="1Uf-yR-73J" secondAttribute="trailing" id="jRn-6L-XUB"/>
                             <constraint firstItem="S4x-iU-1fs" firstAttribute="leading" secondItem="PeX-sS-ed8" secondAttribute="leading" id="lQ4-LX-Wt8"/>
                             <constraint firstItem="S4x-iU-1fs" firstAttribute="height" secondItem="1Uf-yR-73J" secondAttribute="height" id="nol-aT-i22"/>
+                            <constraint firstItem="S4x-iU-1fs" firstAttribute="top" secondItem="svM-qS-u91" secondAttribute="bottom" id="ogq-Qc-cIa"/>
                             <constraint firstItem="PeX-sS-ed8" firstAttribute="trailing" secondItem="S4x-iU-1fs" secondAttribute="trailing" id="so2-pj-xCE"/>
                             <constraint firstItem="1Uf-yR-73J" firstAttribute="top" secondItem="qmk-18-Vut" secondAttribute="top" id="xYh-1Z-Fat"/>
                             <constraint firstItem="1Uf-yR-73J" firstAttribute="height" secondItem="qmk-18-Vut" secondAttribute="height" multiplier="1:2" id="xYy-Ru-iQq"/>
@@ -147,6 +143,7 @@
                     <connections>
                         <outlet property="creatButton" destination="jsL-AE-jjn" id="bZZ-he-dBp"/>
                         <outlet property="loginButton" destination="yaR-he-B8B" id="dHp-nL-lWQ"/>
+                        <outlet property="triangleView" destination="svM-qS-u91" id="w4B-as-5rw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ty-dj-LIC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
