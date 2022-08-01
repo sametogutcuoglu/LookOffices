@@ -46,9 +46,9 @@ class Triangle {
 
         func createRoundedTriangle(width: CGFloat, height: CGFloat, radius: CGFloat) -> CGPath {
             // Draw the triangle path with its origin at the center.
-            let point1 = CGPoint(x: -width, y: height / 2) // sol kenar
+            let point1 = CGPoint(x: -width , y: height / 2) // sol kenar
             let point2 = CGPoint(x: 0, y: -height)  // orta nokta
-            let point3 = CGPoint(x: width, y: height / 2) // sağ kenar
+            let point3 = CGPoint(x: width , y: height / 2) // sağ kenar
 
             let path = CGMutablePath()
             path.move(to: CGPoint(x: 0, y: height / 2))

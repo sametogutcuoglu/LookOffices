@@ -27,19 +27,8 @@ final class LoginViewController : UIViewController {
         
         createLoginLabel()
         
-    }
-    
-    
- 
-    private func DrawTriangle() {
         
-        let classTriangle = Triangle(triangleWidth: viewWidth!, triangleHeight: viewHeight!, Radius: 40, ViewMidx: viewMidX!, ViewMaxy: viewMaxY!)
-    
-        triangle = classTriangle.creatUITriangle()
-    
-        triangleView.layer.addSublayer(triangle)
     }
-      
     
     
     override func viewDidLayoutSubviews()
@@ -59,6 +48,16 @@ final class LoginViewController : UIViewController {
         }
     }
     
+    private func DrawTriangle() {
+        
+        let classTriangle = Triangle(triangleWidth: viewWidth!, triangleHeight: viewHeight!,
+                                     Radius: 40, ViewMidx: viewMidX!, ViewMaxy: viewMaxY!)
+    
+        triangle = classTriangle.creatUITriangle()
+    
+        triangleView.layer.addSublayer(triangle)
+    }
+    
     private func createLoginLabel() {
         
         loginText.frame = CGRect(x: (view.frame.width - 100) / 2, y: view.frame.midY - view.frame.height / 9, width: 100, height: 40)
@@ -67,6 +66,7 @@ final class LoginViewController : UIViewController {
         loginText.textAlignment = .left
         loginText.text = "Login"
         view.addSubview(loginText)
+        
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

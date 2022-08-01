@@ -27,21 +27,6 @@ final class RegisterViewController : UIViewController {
     
     }
     
-    private func DrawTriangle() {
-        
-        
-        let classtriangle = Triangle(triangleWidth: viewWidth!, triangleHeight: viewHeight!, Radius: 40, ViewMidx: viewMidX!, ViewMaxy: viewMaxY!)
-        
-            triangle = classtriangle.creatUITriangle()
-        
-            triangleView.layer.addSublayer(triangle)
-        
-    }
-    
-        
-
- 
-    
     override func viewDidLayoutSubviews()
     {
         super.viewDidLayoutSubviews()
@@ -58,15 +43,27 @@ final class RegisterViewController : UIViewController {
         }
     }
     
+    private func DrawTriangle() {
+        
+        
+        let classTriangle = Triangle(triangleWidth: viewWidth!, triangleHeight: viewHeight!,
+                                     Radius: 40, ViewMidx: viewMidX!, ViewMaxy: viewMaxY!)
+        
+            triangle = classTriangle.creatUITriangle()
+        
+            triangleView.layer.addSublayer(triangle)
+        
+    }
+    
 
     
     private func createLoginLabel() {
         
-        loginText.frame = CGRect(x: (view.frame.width - 100) / 2, y: view.frame.midY - view.frame.height / 9, width: 100, height: 40)
+        loginText.frame = CGRect(x: (view.frame.width - 150) / 2, y: view.frame.midY - view.frame.height / 9, width: 150, height: 40)
         loginText.font = UIFont.boldSystemFont(ofSize: 40)
         loginText.backgroundColor = .loginBackgroundColor
         loginText.textAlignment = .left
-        loginText.text = "Login"
+        loginText.text = "Register"
         view.addSubview(loginText)
     }
     
@@ -82,6 +79,7 @@ final class RegisterViewController : UIViewController {
         }
         
     }
+    
     
 
     
