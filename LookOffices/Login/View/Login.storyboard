@@ -141,7 +141,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="cwa-vh-wIn"/>
                     <connections>
-                        <outlet property="creatButton" destination="yaR-he-B8B" id="k2e-eb-mWC"/>
                         <outlet property="triangleView" destination="svM-qS-u91" id="w4B-as-5rw"/>
                     </connections>
                 </viewController>

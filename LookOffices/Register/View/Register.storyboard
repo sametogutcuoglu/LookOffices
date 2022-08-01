@@ -94,7 +94,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="clickSingUpButton:" destination="4q1-eJ-ZcD" eventType="touchUpOutside" id="0BA-GP-GZy"/>
+                                                    <action selector="clickSingUpButton:" destination="4q1-eJ-ZcD" eventType="touchUpOutside" id="8uh-Oh-epg"/>
                                                 </connections>
                                             </button>
                                         </subviews>

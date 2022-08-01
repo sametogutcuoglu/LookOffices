@@ -8,31 +8,46 @@
 import Foundation
 import UIKit
 
-class Triangle {
+protocol Text {
+    func creatMiddleTextLabel(view:UIView, text : String ,
+                              width : CGFloat , height : CGFloat) -> UIView
+}
+
+class Triangle : Text{
     
+
     let triangle        = CAShapeLayer()
-    var triangleWidth   : CGFloat
-    var triangleHeight  : CGFloat
-    var radius          : CGFloat
-    var viewMidx        : CGFloat
-    var viewMaxY        : CGFloat
+    var view            : UIView
+ 
     
-    
-    init(triangleWidth : CGFloat , triangleHeight : CGFloat ,
-         Radius : CGFloat, ViewMidx : CGFloat , ViewMaxy : CGFloat) {
-        self.triangleWidth    = triangleWidth
-        self.triangleHeight   = triangleHeight
-        self.radius   = Radius
-        self.viewMidx = ViewMidx
-        self.viewMaxY = ViewMaxy
+    init(View : UIView) {
+        self.view = View
     }
-   
-   
+    
+    func creatMiddleTextLabel(view: UIView, text : String ,
+                              width : CGFloat , height : CGFloat) -> UIView {
+        
+         let loginText = UILabel()
+        
+        loginText.frame = CGRect(x: view.bounds.midX - width / 2, y: view.bounds.midY, width:width, height: height)
+        
+        loginText.font = UIFont.boldSystemFont(ofSize: 40)
+        loginText.backgroundColor = .loginBackgroundColor
+        loginText.textAlignment = .center
+        loginText.text = text
+        return loginText
+        
+    }
     
     func creatUITriangle() -> CAShapeLayer {
         
-        
+        let triangleWidth   = view.bounds.width
+        let triangleHeight  = view.bounds.height
+        let radius          = 40.0
+        let viewMidx        = view.bounds.midX
+        let viewMaxY        = view.bounds.maxY
         triangle.fillColor = UIColor.loginBackgroundColor.cgColor
+        
         
         triangle.path = createRoundedTriangle(width: triangleWidth, height: triangleHeight, radius: radius)
         
@@ -44,7 +59,7 @@ class Triangle {
         
     }
 
-        func createRoundedTriangle(width: CGFloat, height: CGFloat, radius: CGFloat) -> CGPath {
+       private func createRoundedTriangle(width: CGFloat, height: CGFloat, radius: CGFloat) -> CGPath {
             // Draw the triangle path with its origin at the center.
             let point1 = CGPoint(x: -width , y: height / 2) // sol kenar
             let point2 = CGPoint(x: 0, y: -height)  // orta nokta
@@ -61,3 +76,5 @@ class Triangle {
         }
     
 }
+
+

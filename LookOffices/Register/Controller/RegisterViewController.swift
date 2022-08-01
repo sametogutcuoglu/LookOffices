@@ -12,59 +12,42 @@ final class RegisterViewController : UIViewController {
     
   
     @IBOutlet weak var triangleView: UIView!
-    
-    let loginText   = UILabel()
-    var viewHeight  : CGFloat?
-    var viewWidth   : CGFloat?
-    var viewMidX    : CGFloat?
-    var viewMaxY    : CGFloat?
     var triangle    = CAShapeLayer()
-    var count       = 0
+    var count = 0
     
     override func viewDidLoad() {
-        
-        createLoginLabel()
-    
+
     }
     
     override func viewDidLayoutSubviews()
     {
         super.viewDidLayoutSubviews()
-        
-         viewHeight = triangleView.bounds.height
-         viewWidth  = triangleView.bounds.width
-         viewMidX   = triangleView.bounds.midX
-         viewMaxY   = triangleView.bounds.maxY
-        
         count += 1
-        
         if count == 2 {
-            DrawTriangle()
+            drawTriangle()
         }
-    }
-    
-    private func DrawTriangle() {
-        
-        
-        let classTriangle = Triangle(triangleWidth: viewWidth!, triangleHeight: viewHeight!,
-                                     Radius: 40, ViewMidx: viewMidX!, ViewMaxy: viewMaxY!)
-        
-            triangle = classTriangle.creatUITriangle()
-        
-            triangleView.layer.addSublayer(triangle)
-        
-    }
-    
 
+    }
     
-    private func createLoginLabel() {
+    
+    private func drawTriangle() {
+
+        let classTriangle = Triangle(View: triangleView)
         
-        loginText.frame = CGRect(x: (view.frame.width - 150) / 2, y: view.frame.midY - view.frame.height / 9, width: 150, height: 40)
-        loginText.font = UIFont.boldSystemFont(ofSize: 40)
-        loginText.backgroundColor = .loginBackgroundColor
-        loginText.textAlignment = .left
-        loginText.text = "Register"
-        view.addSubview(loginText)
+        triangle  = classTriangle.creatUITriangle()
+        
+     
+        
+        triangleView.layer.addSublayer(triangle)
+        
+        loginTextCreat(ClassTriangle: classTriangle)
+        
+        
+    }
+    public func loginTextCreat(ClassTriangle : Triangle) {
+        
+        let login = ClassTriangle.creatMiddleTextLabel(view: triangleView, text: "Register", width: 150, height: 50)
+        triangleView.addSubview(login)
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -75,13 +58,10 @@ final class RegisterViewController : UIViewController {
             else { return }
             
             triangle.fillColor = UIColor.loginBackgroundColor.cgColor
-            
+  
         }
         
     }
-    
-    
-
     
     
     @IBAction func clickSingUpButton(_ sender: Any) {

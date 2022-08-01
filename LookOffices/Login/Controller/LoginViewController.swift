@@ -11,22 +11,11 @@ import UIKit
 final class LoginViewController : UIViewController {
     
     @IBOutlet weak var triangleView: UIView!
-    @IBOutlet weak var creatButton : UIButton!
-    let loginText   = UILabel()
-    var viewHeight  : CGFloat?
-    var viewWidth   : CGFloat?
-    var viewMidX    : CGFloat?
-    var viewMaxY    : CGFloat?
+    var count = 0
     var triangle    = CAShapeLayer()
-    var count       = 0
-
-    @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        createLoginLabel()
-        
         
     }
     
@@ -34,39 +23,32 @@ final class LoginViewController : UIViewController {
     override func viewDidLayoutSubviews()
     {
         super.viewDidLayoutSubviews()
-        
-        viewHeight = triangleView.bounds.height
-        viewWidth  = triangleView.bounds.width
-        viewMidX   = triangleView.bounds.midX
-        viewMaxY   = triangleView.bounds.maxY
-        
         count += 1
         
         if count == 2 {
-       
-            DrawTriangle()
+            
+            drawTriangle()
+            
         }
+        
     }
     
-    private func DrawTriangle() {
+    
+    private func drawTriangle() {
         
-        let classTriangle = Triangle(triangleWidth: viewWidth!, triangleHeight: viewHeight!,
-                                     Radius: 40, ViewMidx: viewMidX!, ViewMaxy: viewMaxY!)
-    
-        triangle = classTriangle.creatUITriangle()
-    
+        let classTriangle = Triangle(View: self.triangleView)
+        
+        triangle  = classTriangle.creatUITriangle()
+        
         triangleView.layer.addSublayer(triangle)
+        
+        loginTextCreat(ClassTriangle: classTriangle)
     }
     
-    private func createLoginLabel() {
-        
-        loginText.frame = CGRect(x: (view.frame.width - 100) / 2, y: view.frame.midY - view.frame.height / 9, width: 100, height: 40)
-        loginText.font = UIFont.boldSystemFont(ofSize: 40)
-        loginText.backgroundColor = .loginBackgroundColor
-        loginText.textAlignment = .left
-        loginText.text = "Login"
-        view.addSubview(loginText)
-        
+    private func loginTextCreat(ClassTriangle : Triangle) {
+
+        let login = ClassTriangle.creatMiddleTextLabel(view: triangleView, text: "Login", width: 100, height: 50)
+        triangleView.addSubview(login)
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -75,9 +57,9 @@ final class LoginViewController : UIViewController {
         if #available (iOS 13.0, *) {
             guard traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)
             else { return }
-            
+
             triangle.fillColor = UIColor.loginBackgroundColor.cgColor
-            
+    
         }
         
     }
