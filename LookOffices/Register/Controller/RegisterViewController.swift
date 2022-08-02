@@ -2,21 +2,35 @@
 //  RegisterViewController.swift
 //  LookOffices
 //
-//  Created by samet ogutcuoglu on 26.07.2022.
+//  Created by samet ogutcuoglu on 3.08.2022.
 //
 
-import Foundation
 import UIKit
 
-final class RegisterViewController : UIViewController {
+protocol RegisterDisplayLogic: AnyObject {
     
-  
+}
+
+final class RegisterViewController: UIViewController {
+    
     @IBOutlet weak var triangleView: UIView!
+    
+    var interactor: RegisterBusinessLogic?
+    var router: (RegisterRoutingLogic & RegisterDataPassing)?
+    
     var triangle    = CAShapeLayer()
     var count = 0
     
-    override func viewDidLoad() {
-
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
     }
     
     override func viewDidLayoutSubviews()
@@ -29,21 +43,17 @@ final class RegisterViewController : UIViewController {
 
     }
     
-    
     private func drawTriangle() {
 
         let classTriangle = Triangle(View: triangleView)
         
         triangle  = classTriangle.creatUITriangle()
         
-     
-        
         triangleView.layer.addSublayer(triangle)
         
         loginTextCreat(ClassTriangle: classTriangle)
-        
-        
     }
+    
     public func loginTextCreat(ClassTriangle : Triangle) {
         
         let login = ClassTriangle.creatMiddleTextLabel(view: triangleView, text: "Register", width: 150, height: 50)
@@ -63,6 +73,20 @@ final class RegisterViewController : UIViewController {
         
     }
     
+    // MARK: Setup
+    
+    private func setup() {
+        let viewController = self
+        let interactor = RegisterInteractor()
+        let presenter = RegisterPresenter()
+        let router = RegisterRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
     
     @IBAction func clickSingUpButton(_ sender: Any) {
         
@@ -70,4 +94,8 @@ final class RegisterViewController : UIViewController {
         
         
     }
+}
+
+extension RegisterViewController: RegisterDisplayLogic {
+    
 }
