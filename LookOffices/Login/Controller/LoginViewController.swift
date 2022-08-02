@@ -65,7 +65,7 @@ final class LoginViewController : UIViewController {
     }
 
     @IBAction func clickCreateNowButton(_ sender: Any) {
-        
+      
         //performSegue(withIdentifier: "toRegisterView", sender: nil)
         
     }
