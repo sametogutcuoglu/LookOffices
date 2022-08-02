@@ -20,16 +20,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OzI-Gf-ovU">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homekit" translatesAutoresizingMaskIntoConstraints="NO" id="uMZ-NS-vse">
-                                        <rect key="frame" x="169" y="105.5" width="76" height="45.5"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homekit" translatesAutoresizingMaskIntoConstraints="NO" id="uMZ-NS-vse">
+                                        <rect key="frame" x="0.0" y="96" width="414" height="90"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="UcS-HB-XOg"/>
+                                        </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOE-1B-tYl">
                                         <rect key="frame" x="0.0" y="224" width="414" height="224"/>
                                         <color key="backgroundColor" name="LoginTopBackground"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Find Your Office" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5s-0r-f0G">
-                                        <rect key="frame" x="152" y="156" width="110" height="18"/>
+                                        <rect key="frame" x="152" y="186" width="110" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
@@ -37,12 +40,12 @@
                                 </subviews>
                                 <color key="backgroundColor" name="LoginTopBackground"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="uMZ-NS-vse" secondAttribute="trailing" constant="169" id="ZKv-KE-AVO"/>
-                                    <constraint firstItem="n5s-0r-f0G" firstAttribute="top" secondItem="uMZ-NS-vse" secondAttribute="bottom" constant="5" id="ZP9-YG-JfP"/>
+                                    <constraint firstAttribute="trailing" secondItem="uMZ-NS-vse" secondAttribute="trailing" id="ZKv-KE-AVO"/>
+                                    <constraint firstItem="n5s-0r-f0G" firstAttribute="top" secondItem="uMZ-NS-vse" secondAttribute="bottom" id="ZP9-YG-JfP"/>
                                     <constraint firstItem="n5s-0r-f0G" firstAttribute="centerX" secondItem="OzI-Gf-ovU" secondAttribute="centerX" id="ctw-7h-3xV"/>
                                     <constraint firstItem="TOE-1B-tYl" firstAttribute="height" secondItem="OzI-Gf-ovU" secondAttribute="height" multiplier="0.5" id="dwC-nm-Bzs"/>
-                                    <constraint firstItem="uMZ-NS-vse" firstAttribute="leading" secondItem="OzI-Gf-ovU" secondAttribute="leading" constant="169" id="fQN-CB-HtK"/>
-                                    <constraint firstItem="TOE-1B-tYl" firstAttribute="top" secondItem="n5s-0r-f0G" secondAttribute="bottom" constant="50" id="mtj-ew-DGg"/>
+                                    <constraint firstItem="uMZ-NS-vse" firstAttribute="leading" secondItem="OzI-Gf-ovU" secondAttribute="leading" id="fQN-CB-HtK"/>
+                                    <constraint firstItem="TOE-1B-tYl" firstAttribute="top" secondItem="n5s-0r-f0G" secondAttribute="bottom" constant="20" id="mtj-ew-DGg"/>
                                     <constraint firstAttribute="trailing" secondItem="TOE-1B-tYl" secondAttribute="trailing" id="pDj-ZG-pAT"/>
                                     <constraint firstAttribute="bottom" secondItem="TOE-1B-tYl" secondAttribute="bottom" id="yEL-Q8-rrT"/>
                                     <constraint firstItem="TOE-1B-tYl" firstAttribute="leading" secondItem="OzI-Gf-ovU" secondAttribute="leading" id="zVX-kT-oxr"/>

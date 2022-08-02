@@ -20,16 +20,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Uf-yR-73J" userLabel="triangleView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homekit" translatesAutoresizingMaskIntoConstraints="NO" id="vwq-t9-EsB">
-                                        <rect key="frame" x="169" y="105.5" width="76" height="45.5"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homekit" translatesAutoresizingMaskIntoConstraints="NO" id="vwq-t9-EsB">
+                                        <rect key="frame" x="0.0" y="96" width="414" height="90"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="eOY-Lz-kKx"/>
+                                        </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svM-qS-u91">
                                         <rect key="frame" x="0.0" y="224" width="414" height="224"/>
                                         <color key="backgroundColor" name="LoginTopBackground"/>
                                     </view>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Find Your Office" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deS-TD-Gjl">
-                                        <rect key="frame" x="152" y="156" width="110" height="18"/>
+                                        <rect key="frame" x="152" y="186" width="110" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
@@ -37,14 +40,14 @@
                                 </subviews>
                                 <color key="backgroundColor" name="LoginTopBackground"/>
                                 <constraints>
-                                    <constraint firstItem="svM-qS-u91" firstAttribute="top" secondItem="deS-TD-Gjl" secondAttribute="bottom" constant="50" id="0L3-s1-WBn"/>
+                                    <constraint firstItem="svM-qS-u91" firstAttribute="top" secondItem="deS-TD-Gjl" secondAttribute="bottom" constant="20" id="0L3-s1-WBn"/>
                                     <constraint firstItem="svM-qS-u91" firstAttribute="height" secondItem="1Uf-yR-73J" secondAttribute="height" multiplier="0.5" id="6J8-D6-ZMe"/>
                                     <constraint firstAttribute="trailing" secondItem="svM-qS-u91" secondAttribute="trailing" id="CXE-zk-38J"/>
-                                    <constraint firstAttribute="trailing" secondItem="vwq-t9-EsB" secondAttribute="trailing" constant="169" id="GLV-1V-mYB"/>
-                                    <constraint firstItem="vwq-t9-EsB" firstAttribute="leading" secondItem="1Uf-yR-73J" secondAttribute="leading" constant="169" id="JLw-U7-a3M"/>
+                                    <constraint firstAttribute="trailing" secondItem="vwq-t9-EsB" secondAttribute="trailing" id="GLV-1V-mYB"/>
+                                    <constraint firstItem="vwq-t9-EsB" firstAttribute="leading" secondItem="1Uf-yR-73J" secondAttribute="leading" id="JLw-U7-a3M"/>
                                     <constraint firstItem="svM-qS-u91" firstAttribute="leading" secondItem="1Uf-yR-73J" secondAttribute="leading" id="Kn2-4o-fSq"/>
                                     <constraint firstItem="deS-TD-Gjl" firstAttribute="centerX" secondItem="1Uf-yR-73J" secondAttribute="centerX" id="UZv-gm-mHf"/>
-                                    <constraint firstItem="deS-TD-Gjl" firstAttribute="top" secondItem="vwq-t9-EsB" secondAttribute="bottom" constant="5" id="oNo-kR-p2v"/>
+                                    <constraint firstItem="deS-TD-Gjl" firstAttribute="top" secondItem="vwq-t9-EsB" secondAttribute="bottom" id="oNo-kR-p2v"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4x-iU-1fs">
