@@ -10,6 +10,7 @@
 		5B26C33328914F05003AE9B0 /* DrawTriangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26C33228914F05003AE9B0 /* DrawTriangle.swift */; };
 		5B9A57822899D8670076FA9E /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A57812899D8670076FA9E /* AppConstants.swift */; };
 		5B9A57852899D8B20076FA9E /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A57842899D8B20076FA9E /* UIButton.swift */; };
+		5B9A57882899DA930076FA9E /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5B9A57872899DA930076FA9E /* SDWebImage */; };
 		5B9CE2F7287347A60085859A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CE2F6287347A60085859A /* AppDelegate.swift */; };
 		5B9CE2F9287347A60085859A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CE2F8287347A60085859A /* SceneDelegate.swift */; };
 		5B9CE300287347A70085859A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B9CE2FF287347A70085859A /* Assets.xcassets */; };
@@ -93,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B9A57882899DA930076FA9E /* SDWebImage in Frameworks */,
 				5BCD68282897A6BC0086F416 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +308,7 @@
 			name = LookOffices;
 			packageProductDependencies = (
 				5BCD68272897A6BC0086F416 /* IQKeyboardManagerSwift */,
+				5B9A57872899DA930076FA9E /* SDWebImage */,
 			);
 			productName = LookOffices;
 			productReference = 5B9CE2F3287347A60085859A /* LookOfficesDev.app */;
@@ -381,6 +384,7 @@
 			mainGroup = 5B9CE2EA287347A60085859A;
 			packageReferences = (
 				5BCD68262897A6BC0086F416 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				5B9A57862899DA930076FA9E /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 5B9CE2F4287347A60085859A /* Products */;
 			projectDirPath = "";
@@ -1078,6 +1082,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5B9A57862899DA930076FA9E /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		5BCD68262897A6BC0086F416 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
@@ -1089,6 +1101,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5B9A57872899DA930076FA9E /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B9A57862899DA930076FA9E /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		5BCD68272897A6BC0086F416 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5BCD68262897A6BC0086F416 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
