@@ -11,7 +11,7 @@ protocol ListOfficesRoutingLogic: AnyObject {
     
 }
 
-protocol ListOfficesDataPassing: class {
+protocol ListOfficesDataPassing: AnyObject {
     var dataStore: ListOfficesDataStore? { get }
 }
 

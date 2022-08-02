@@ -11,12 +11,12 @@ protocol ListOfficesWorkingLogic: AnyObject {
   
 }
 protocol APIOfficeProtocol {
-    func getFecthOffice(url : URL, complation : @escaping ([Office]?) -> () )
+    func getFetchOffice(url : URL, complation : @escaping ([Office]?) -> () )
 }
 
 final class ListOfficesWorker: ListOfficesWorkingLogic,APIOfficeProtocol {
     
-    func getFecthOffice(url: URL, complation: @escaping ([Office]?) -> ()) {
+    func getFetchOffice(url: URL, complation: @escaping ([Office]?) -> ()) {
         
         let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
             if error != nil {

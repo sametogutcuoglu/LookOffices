@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ListOfficesBusinessLogic: AnyObject {
-    func fetchOffices(request : ListOffices.FetchOffices.Request)
+    func fetchOffices()
 }
 
 protocol ListOfficesDataStore: AnyObject {
@@ -20,12 +20,14 @@ final class ListOfficesInteractor: ListOfficesBusinessLogic, ListOfficesDataStor
     var presenter: ListOfficesPresentationLogic?
     var worker =   ListOfficesWorker()
     
-    func fetchOffices(request: ListOffices.FetchOffices.Request) {
+    func fetchOffices() {
         // MARK: _worker. işlemleri
-        let url = URL(string: "https://officer-ad6ef-default-rtdb.firebaseio.com/offices.json")
-        worker.getFecthOffice(url: url!) { OfficeList in
-            if OfficeList != nil {
-                let response = ListOffices.FetchOffices.Response(Offices: OfficeList!)
+        guard let url = URL(string: AppConstants.firebaseURL) else {
+            return // popup alert Appconstant.Urlnotfound
+        }
+        worker.getFetchOffice(url: url) { response in
+            if let officeList = response {
+                let response = ListOffices.FetchOffices.Response(Offices: officeList)
                 self.presenter?.presentOffices(response: response)
             }
             else {

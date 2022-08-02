@@ -73,8 +73,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="ImageView" destination="RyT-2I-0DW" id="sn5-Ke-Mot"/>
                 <outlet property="adress" destination="dRY-HH-ze3" id="m2e-98-8sL"/>
+                <outlet property="officeImageView" destination="RyT-2I-0DW" id="sn5-Ke-Mot"/>
                 <outlet property="rooms" destination="K41-jd-7Sn" id="MHM-TS-fYO"/>
                 <outlet property="spaces" destination="dfZ-vT-v7t" id="Waw-Fk-3LD"/>
             </connections>

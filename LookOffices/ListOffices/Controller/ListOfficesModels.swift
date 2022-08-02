@@ -9,12 +9,9 @@ import Foundation
 
 // swiftlint:disable nesting
 enum ListOffices {
-    
     enum FetchOffices {
         
-        struct Request {
-           
-        }
+        struct Request {}
         
         struct Response {
             var Offices: [Office]
@@ -32,9 +29,5 @@ enum ListOffices {
             }
             var displayedOffices: [DisplayedOffice]
         }
-        
     }
-    
 }
-
-// swiftlint:enable nesting

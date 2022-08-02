@@ -14,6 +14,7 @@ protocol ListOfficesDisplayLogic: AnyObject {
 final class ListOfficesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
     var interactor: ListOfficesBusinessLogic?
     var router: (ListOfficesRoutingLogic & ListOfficesDataPassing)?
     
@@ -25,11 +26,6 @@ final class ListOfficesViewController: UIViewController {
 
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
@@ -37,15 +33,13 @@ final class ListOfficesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.setNavigationBarHidden(true, animated: false)
         fetchOffices()
         tableView.register(UINib(nibName: "OfficeCell", bundle: .main), forCellReuseIdentifier: "OfficeCell")
-        
-       
     }
+    
     private func fetchOffices() {
-        let request = ListOffices.FetchOffices.Request()
-        interactor?.fetchOffices(request: request)
+        interactor?.fetchOffices()
     }
     
     // MARK: Setup
@@ -68,8 +62,8 @@ final class ListOfficesViewController: UIViewController {
 extension ListOfficesViewController: ListOfficesDisplayLogic {
     func displayFetchedOffices(viewModel: ListOffices.FetchOffices.ViewModel) {
         displayedOffices = viewModel.displayedOffices
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
         }
        
     }
