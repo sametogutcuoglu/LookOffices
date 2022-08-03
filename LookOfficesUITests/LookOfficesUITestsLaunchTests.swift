@@ -8,7 +8,6 @@
 import XCTest
 
 class LookOfficesUITestsLaunchTests: XCTestCase {
-
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }

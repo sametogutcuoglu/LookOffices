@@ -5,11 +5,10 @@
 //  Created by samet ogutcuoglu on 4.07.2022.
 //
 
-import XCTest
 @testable import LookOffices
+import XCTest
 
 class LookOfficesTests: XCTestCase {
-
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -28,9 +27,8 @@ class LookOfficesTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }
-
 }
