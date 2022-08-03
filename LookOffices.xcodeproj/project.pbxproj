@@ -13,6 +13,13 @@
 		5B13C0FE289AAA41001D4626 /* ListOfficesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B13C0FD289AAA41001D4626 /* ListOfficesWorker.swift */; };
 		5B13C100289AAA87001D4626 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B13C0FF289AAA87001D4626 /* AppConstants.swift */; };
 		5B13C102289AAAE0001D4626 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B13C101289AAAE0001D4626 /* UIColor.swift */; };
+		5B13C10A289AADF1001D4626 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B13C103289AADF1001D4626 /* Register.storyboard */; };
+		5B13C10B289AADF1001D4626 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B13C104289AADF1001D4626 /* RegisterViewController.swift */; };
+		5B13C10C289AADF1001D4626 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B13C105289AADF1001D4626 /* RegisterPresenter.swift */; };
+		5B13C10D289AADF1001D4626 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B13C106289AADF1001D4626 /* RegisterInteractor.swift */; };
+		5B13C10E289AADF1001D4626 /* RegisterModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B13C107289AADF1001D4626 /* RegisterModels.swift */; };
+		5B13C10F289AADF1001D4626 /* RegisterWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B13C108289AADF1001D4626 /* RegisterWorker.swift */; };
+		5B13C110289AADF1001D4626 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B13C109289AADF1001D4626 /* RegisterRouter.swift */; };
 		5B26C33328914F05003AE9B0 /* DrawTriangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26C33228914F05003AE9B0 /* DrawTriangle.swift */; };
 		5B84D33B289AA3BA00505E94 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B84D334289AA3BA00505E94 /* Login.storyboard */; };
 		5B84D33C289AA3BA00505E94 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B84D335289AA3BA00505E94 /* LoginViewController.swift */; };
@@ -24,13 +31,11 @@
 		5B84D343289AA4B300505E94 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B84D342289AA4B300505E94 /* Image.xcassets */; };
 		5B9CE2F7287347A60085859A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CE2F6287347A60085859A /* AppDelegate.swift */; };
 		5B9CE2F9287347A60085859A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CE2F8287347A60085859A /* SceneDelegate.swift */; };
-		5B9CE2FE287347A60085859A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9CE2FC287347A60085859A /* Main.storyboard */; };
 		5B9CE300287347A70085859A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B9CE2FF287347A70085859A /* Assets.xcassets */; };
 		5B9CE303287347A70085859A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9CE301287347A70085859A /* LaunchScreen.storyboard */; };
 		5B9CE30E287347A70085859A /* LookOfficesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CE30D287347A70085859A /* LookOfficesTests.swift */; };
 		5B9CE318287347A70085859A /* LookOfficesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CE317287347A70085859A /* LookOfficesUITests.swift */; };
 		5B9CE31A287347A70085859A /* LookOfficesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CE319287347A70085859A /* LookOfficesUITestsLaunchTests.swift */; };
-		5BC0639428902313004FA4FA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC0639328902313004FA4FA /* RegisterViewController.swift */; };
 		5BCD68282897A6BC0086F416 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5BCD68272897A6BC0086F416 /* IQKeyboardManagerSwift */; };
 		5BCE5CFF289821E200563B19 /* ListOfficesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE5CF8289821E200563B19 /* ListOfficesViewController.swift */; };
 		5BCE5D00289821E200563B19 /* ListOfficesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE5CF9289821E200563B19 /* ListOfficesPresenter.swift */; };
@@ -63,6 +68,13 @@
 		5B13C0FD289AAA41001D4626 /* ListOfficesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfficesWorker.swift; sourceTree = "<group>"; };
 		5B13C0FF289AAA87001D4626 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		5B13C101289AAAE0001D4626 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		5B13C103289AADF1001D4626 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		5B13C104289AADF1001D4626 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		5B13C105289AADF1001D4626 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		5B13C106289AADF1001D4626 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
+		5B13C107289AADF1001D4626 /* RegisterModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModels.swift; sourceTree = "<group>"; };
+		5B13C108289AADF1001D4626 /* RegisterWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWorker.swift; sourceTree = "<group>"; };
+		5B13C109289AADF1001D4626 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
 		5B26C33228914F05003AE9B0 /* DrawTriangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawTriangle.swift; sourceTree = "<group>"; };
 		5B84D334289AA3BA00505E94 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		5B84D335289AA3BA00505E94 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +88,6 @@
 		5B9CE2F3287347A60085859A /* LookOfficesDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LookOfficesDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9CE2F6287347A60085859A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B9CE2F8287347A60085859A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5B9CE2FD287347A60085859A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B9CE2FF287347A70085859A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B9CE302287347A70085859A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B9CE304287347A70085859A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,7 +98,6 @@
 		5B9CE319287347A70085859A /* LookOfficesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookOfficesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5B9CE327287348890085859A /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		5B9CE328287348DC0085859A /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
-		5BC0639328902313004FA4FA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5BCE5CF7289821E200563B19 /* ListOffices.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListOffices.storyboard; sourceTree = "<group>"; };
 		5BCE5CF8289821E200563B19 /* ListOfficesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfficesViewController.swift; sourceTree = "<group>"; };
 		5BCE5CF9289821E200563B19 /* ListOfficesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfficesPresenter.swift; sourceTree = "<group>"; };
@@ -139,6 +149,14 @@
 				3DD7D6E0289968E2004A9F6F /* UIButton.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		5B13C111289AAEA4001D4626 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B26C33228914F05003AE9B0 /* DrawTriangle.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5B84D327289AA1C200505E94 /* System */ = {
@@ -217,18 +235,15 @@
 		5BC0638E289022D6004FA4FA /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				5BC06390289022E3004FA4FA /* Controller */,
+				5B13C103289AADF1001D4626 /* Register.storyboard */,
+				5B13C104289AADF1001D4626 /* RegisterViewController.swift */,
+				5B13C105289AADF1001D4626 /* RegisterPresenter.swift */,
+				5B13C106289AADF1001D4626 /* RegisterInteractor.swift */,
+				5B13C107289AADF1001D4626 /* RegisterModels.swift */,
+				5B13C108289AADF1001D4626 /* RegisterWorker.swift */,
+				5B13C109289AADF1001D4626 /* RegisterRouter.swift */,
 			);
 			path = Register;
-			sourceTree = "<group>";
-		};
-		5BC06390289022E3004FA4FA /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				5BC0639328902313004FA4FA /* RegisterViewController.swift */,
-				5B26C33228914F05003AE9B0 /* DrawTriangle.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		5BCE5D05289821FF00563B19 /* ListOffices */ = {
@@ -276,8 +291,8 @@
 		5BE4E62C288FFFBF009FF44B /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				5B13C111289AAEA4001D4626 /* View */,
 				5B9CE301287347A70085859A /* LaunchScreen.storyboard */,
-				5B9CE2FC287347A60085859A /* Main.storyboard */,
 				5B84D334289AA3BA00505E94 /* Login.storyboard */,
 				5B84D335289AA3BA00505E94 /* LoginViewController.swift */,
 				5B84D336289AA3BA00505E94 /* LoginPresenter.swift */,
@@ -405,7 +420,7 @@
 				5B9CE303287347A70085859A /* LaunchScreen.storyboard in Resources */,
 				5B84D343289AA4B300505E94 /* Image.xcassets in Resources */,
 				5B9CE300287347A70085859A /* Assets.xcassets in Resources */,
-				5B9CE2FE287347A60085859A /* Main.storyboard in Resources */,
+				5B13C10A289AADF1001D4626 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,20 +450,25 @@
 				5BCE5D00289821E200563B19 /* ListOfficesPresenter.swift in Sources */,
 				5B84D33E289AA3BA00505E94 /* LoginInteractor.swift in Sources */,
 				5B13C100289AAA87001D4626 /* AppConstants.swift in Sources */,
+				5B13C110289AADF1001D4626 /* RegisterRouter.swift in Sources */,
 				5B84D340289AA3BA00505E94 /* LoginWorker.swift in Sources */,
 				5BCE5D0C2898297900563B19 /* OfficesResponse.swift in Sources */,
+				5B13C10C289AADF1001D4626 /* RegisterPresenter.swift in Sources */,
 				5B13C102289AAAE0001D4626 /* UIColor.swift in Sources */,
+				5B13C10F289AADF1001D4626 /* RegisterWorker.swift in Sources */,
 				5B9CE2F7287347A60085859A /* AppDelegate.swift in Sources */,
 				5BCE5CFF289821E200563B19 /* ListOfficesViewController.swift in Sources */,
 				5BCE5D01289821E200563B19 /* ListOfficesInteractor.swift in Sources */,
+				5B13C10E289AADF1001D4626 /* RegisterModels.swift in Sources */,
 				5BCE5D02289821E200563B19 /* ListOfficesModels.swift in Sources */,
 				5B84D33D289AA3BA00505E94 /* LoginPresenter.swift in Sources */,
 				5B13C0FC289AA9DD001D4626 /* ListOfficesRouter.swift in Sources */,
+				5B13C10B289AADF1001D4626 /* RegisterViewController.swift in Sources */,
 				5B84D33F289AA3BA00505E94 /* LoginModels.swift in Sources */,
-				5BC0639428902313004FA4FA /* RegisterViewController.swift in Sources */,
 				5B84D341289AA3BA00505E94 /* LoginRouter.swift in Sources */,
 				5BCE5D09289826EB00563B19 /* OfficeCell.swift in Sources */,
 				3DD7D6E1289968E2004A9F6F /* UIButton.swift in Sources */,
+				5B13C10D289AADF1001D4626 /* RegisterInteractor.swift in Sources */,
 				5B9CE2F7287347A60085859A /* AppDelegate.swift in Sources */,
 				5B9CE2F9287347A60085859A /* SceneDelegate.swift in Sources */,
 				5B13C0FE289AAA41001D4626 /* ListOfficesWorker.swift in Sources */,
@@ -488,14 +508,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5B9CE2FC287347A60085859A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5B9CE2FD287347A60085859A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5B9CE301287347A70085859A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
