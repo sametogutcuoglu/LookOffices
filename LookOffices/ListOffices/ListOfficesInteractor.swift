@@ -24,14 +24,15 @@ final class ListOfficesInteractor: ListOfficesBusinessLogic, ListOfficesDataStor
         // MARK: _worker. işlemleri
 
         guard let url = URL(string: AppConstants.firebaseURL) else {
-            return // popup alert Appconstant.Urlnotfound
+            self.presenter?.Alert(AlertMessage: AppConstants.notFoundURL)
+            return
         }
-        worker.getFetchOffice(url: url) { response in
+        worker.getFetchOffice(url: url) { response,error in
             if let officeList = response {
                 let response = ListOffices.FetchOffices.Response(offices: officeList)
                 self.presenter?.presentOffices(response: response)
             } else {
-                print("Liste Boş") // popup alert
+                self.presenter?.Alert(AlertMessage:error)
             }
         }
     }

@@ -9,10 +9,17 @@ import Foundation
 
 protocol ListOfficesPresentationLogic: AnyObject {
     func presentOffices(response: ListOffices.FetchOffices.Response)
+    func Alert(AlertMessage: String)
 }
 
 final class ListOfficesPresenter: ListOfficesPresentationLogic {
+
+    
     weak var viewController: ListOfficesDisplayLogic?
+    
+    func Alert(AlertMessage: String) {
+        viewController?.showAlert(AlertMessage: AlertMessage)
+    }
 
     func presentOffices(response: ListOffices.FetchOffices.Response) {
         var displayedOffices: [ListOffices.FetchOffices.ViewModel.Office] = []

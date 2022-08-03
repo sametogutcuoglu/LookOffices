@@ -9,6 +9,7 @@ import UIKit
 
 protocol ListOfficesDisplayLogic: AnyObject {
     func displayFetchedOffices(viewModel: ListOffices.FetchOffices.ViewModel)
+    func showAlert(AlertMessage : String)
 }
 
 final class ListOfficesViewController: UIViewController {
@@ -44,10 +45,6 @@ final class ListOfficesViewController: UIViewController {
 
     // MARK: Setup
 
-    func alertPopUP() {
-        // TODO: .....
-    }
-
     private func setup() {
         let viewController = self
         let interactor = ListOfficesInteractor()
@@ -63,6 +60,17 @@ final class ListOfficesViewController: UIViewController {
 }
 
 extension ListOfficesViewController: ListOfficesDisplayLogic {
+     func showAlert(AlertMessage: String) {
+        
+        let alert = UIAlertController(title: "Hata", message: AlertMessage, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
+            self.navigationController?.popViewController(animated: true)
+            
+        })
+        alert.addAction(okButton)
+        self.present(alert, animated: true)
+    }
+    
     func displayFetchedOffices(viewModel: ListOffices.FetchOffices.ViewModel) {
         displayedOffices = viewModel.Offices
         DispatchQueue.main.async { [weak self] in
@@ -82,8 +90,6 @@ extension ListOfficesViewController: UITableViewDelegate, UITableViewDataSource 
             return UITableViewCell()
         }
         cell.configure(viewModel: displayOffice)
-        // Cell elemanları erime
-
         return cell
     }
 }
