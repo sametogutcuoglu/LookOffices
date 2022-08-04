@@ -10,10 +10,9 @@ import SDWebImage
 
 class OfficeCell: UITableViewCell {
     
-    @IBOutlet var spaces: UILabel!
-    @IBOutlet var rooms: UILabel!
-    @IBOutlet var adress: UILabel!
+    @IBOutlet weak var officeName: UILabel!
     @IBOutlet var officeImageView: UIImageView!
+    var liked : Bool = true
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,11 +25,22 @@ class OfficeCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func clickLikeButton(_ sender: Any) {
+        guard let button = sender as? UIButton else { return }
+        if (liked) {
+            button.setImage(UIImage(systemName: "heart"), for: .normal)
+            liked = false
+        }
+        else {
+            button.setImage(UIImage(named: "heart"), for: .normal)
+            liked = true
+        }
+
+    }
     func configure(viewModel: ListOffices.FetchOffices.ViewModel.Office) {
+        officeImageView.layer.cornerRadius = 10
         officeImageView.sd_setImage(with: URL(string: viewModel.image ?? ""))
-        rooms.text = "\(viewModel.rooms ?? .zero)"
-        adress.text = viewModel.address
-        spaces.text = viewModel.space
+        officeName.text = viewModel.name
     }
     
 }
