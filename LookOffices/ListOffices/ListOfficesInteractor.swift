@@ -29,6 +29,7 @@ final class ListOfficesInteractor: ListOfficesBusinessLogic, ListOfficesDataStor
         }
         worker.getFetchOffice(url: url) { response,error in
             if let officeList = response {
+                self.offices = officeList
                 let response = ListOffices.FetchOffices.Response(offices: officeList)
                 self.presenter?.presentOffices(response: response)
             } else {

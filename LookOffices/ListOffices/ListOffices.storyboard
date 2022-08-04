@@ -11,7 +11,7 @@
         <!--List Offices View Controller-->
         <scene sceneID="yJw-NY-GeY">
             <objects>
-                <viewController storyboardIdentifier="ListStoryboard" modalPresentationStyle="currentContext" id="kgN-b4-HSQ" customClass="ListOfficesViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListStoryboard" modalPresentationStyle="currentContext" id="kgN-b4-HSQ" customClass="ListOfficesViewController" customModule="LookOffices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qLl-Pn-966">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

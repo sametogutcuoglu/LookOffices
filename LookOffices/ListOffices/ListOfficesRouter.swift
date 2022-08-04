@@ -6,14 +6,25 @@
 //
 
 import Foundation
+import UIKit
 
-protocol ListOfficesRoutingLogic: AnyObject {}
+protocol ListOfficesRoutingLogic: AnyObject {
+    func routerToOfficeDetail(index: Int)
+}
 
 protocol ListOfficesDataPassing: AnyObject {
     var dataStore: ListOfficesDataStore? { get }
 }
 
 final class ListOfficesRouter: ListOfficesRoutingLogic, ListOfficesDataPassing {
+    
     weak var viewController: ListOfficesViewController?
     var dataStore: ListOfficesDataStore?
+    
+    func routerToOfficeDetail(index: Int) {
+        let storyboard = UIStoryboard(name: "OfficeDetail", bundle: nil)
+        let destVC : OfficeDetailViewController = storyboard.instantiateViewController(identifier: "OfficeDetail")
+        destVC.router?.dataStore?.office = dataStore?.offices?[index]
+        self.viewController?.navigationController?.pushViewController(destVC, animated: true)
+    }
 }

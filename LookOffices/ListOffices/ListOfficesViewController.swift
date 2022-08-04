@@ -10,6 +10,7 @@ import UIKit
 protocol ListOfficesDisplayLogic: AnyObject {
     func displayFetchedOffices(viewModel: ListOffices.FetchOffices.ViewModel)
     func showAlert(AlertMessage : String)
+    func displayOfficeDetail(index: Int)
 }
 
 final class ListOfficesViewController: UIViewController {
@@ -60,6 +61,10 @@ final class ListOfficesViewController: UIViewController {
 }
 
 extension ListOfficesViewController: ListOfficesDisplayLogic {
+    func displayOfficeDetail(index: Int) {
+        router?.routerToOfficeDetail(index: index)
+    }
+    
      func showAlert(AlertMessage: String) {
         
         let alert = UIAlertController(title: "Hata", message: AlertMessage, preferredStyle: UIAlertController.Style.alert)
@@ -91,5 +96,8 @@ extension ListOfficesViewController: UITableViewDelegate, UITableViewDataSource 
         }
         cell.configure(viewModel: displayOffice)
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        displayOfficeDetail(index: indexPath.row)
     }
 }

@@ -23,6 +23,7 @@ final class ListOfficesWorker: ListOfficesWorkingLogic, APIOfficeProtocol {
             guard let data = data else {
                 return
             }
+
             let officesList = try? JSONDecoder().decode([Office].self, from: data)
 
             if let officesList = officesList {
