@@ -22,6 +22,6 @@ final class OfficeDetailInteractor: OfficeDetailBusinessLogic, OfficeDetailDataS
     
     func fetchOffice() {
         let response = OfficeDetail.FetchOfficeDetail.Response(office: office)
-        self.presenter?.presentOfficeDetail(request: response)
+        self.presenter?.presentOfficeDetail(Response: response)
     }
 }

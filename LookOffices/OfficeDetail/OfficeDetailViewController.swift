@@ -8,7 +8,7 @@
 import UIKit
 
 protocol OfficeDetailDisplayLogic: AnyObject {
- func detailOffice(request: OfficeDetail.FetchOfficeDetail.Response)
+    func detailOffice(viewModel: OfficeDetail.FetchOfficeDetail.ViewModel.OfficeDetail)
 }
 
 final class OfficeDetailViewController: UIViewController {
@@ -17,7 +17,7 @@ final class OfficeDetailViewController: UIViewController {
     var interactor: OfficeDetailBusinessLogic?
     var router: (OfficeDetailRoutingLogic & OfficeDetailDataPassing)?
     
-    var detailOffice: OfficeDetail.FetchOfficeDetail.Response?
+    var detailOffice: OfficeDetail.FetchOfficeDetail.ViewModel.OfficeDetail?
     
     // MARK: Object lifecycle
     
@@ -66,8 +66,8 @@ final class OfficeDetailViewController: UIViewController {
 }
 
 extension OfficeDetailViewController: OfficeDetailDisplayLogic {
-    func detailOffice(request: OfficeDetail.FetchOfficeDetail.Response) {
-        detailOffice = request
+    func detailOffice(viewModel: OfficeDetail.FetchOfficeDetail.ViewModel.OfficeDetail) {
+        detailOffice = viewModel
     }
 }
 
@@ -85,7 +85,7 @@ extension OfficeDetailViewController : UICollectionViewDelegate, UICollectionVie
         case .detailData:
            return 1
         case .image:
-            guard let imageCount = detailOffice?.office?.images.count else { return 0 }
+            guard let imageCount = detailOffice?.images?.count else { return 0 }
             return imageCount
         }
     }
@@ -97,7 +97,7 @@ extension OfficeDetailViewController : UICollectionViewDelegate, UICollectionVie
         case .image:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OfficeDetailCell.identifier, for: indexPath)
                     as? OfficeDetailCell else { return UICollectionViewCell()}
-            cell.configure(image: (detailOffice?.office?.images[indexPath.row]))
+            cell.configure(image: (detailOffice?.images?[indexPath.row]))
             return cell
             
         case .detailData:
@@ -105,7 +105,6 @@ extension OfficeDetailViewController : UICollectionViewDelegate, UICollectionVie
                     as? OfficeDetailDataCell else { return UICollectionViewCell()}
             
             guard let model = detailOffice else { return UICollectionViewCell() }
-            
             cell.configureData(Model: model)
             return cell
         }

@@ -21,16 +21,17 @@ enum OfficeDetail {
         }
         
         struct ViewModel {
+            
             struct OfficeDetail {
-                let address, capacity: String?
-                let id: Int?
+                let address: String?
+                let capacity: String?
                 let image: String?
-                let location: Location?
+                let images: [String]?
                 let name: String?
                 let rooms: Int?
                 let space: String?
             }
-            var officeDetail : Office
+            var displayoffice : OfficeDetail
         }
         
     }

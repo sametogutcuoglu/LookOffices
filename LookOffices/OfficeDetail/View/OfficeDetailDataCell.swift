@@ -18,11 +18,11 @@ class OfficeDetailDataCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    func configureData(Model:OfficeDetail.FetchOfficeDetail.Response) {
-        kapasite.text = Model.office?.capacity
-        alan.text = Model.office?.space
-        odaSayisi.text = "\(Model.office?.rooms ?? .zero)"
-        adres.text = Model.office?.address
+    func configureData(Model:OfficeDetail.FetchOfficeDetail.ViewModel.OfficeDetail) {
+        kapasite.text = Model.capacity
+        alan.text = Model.space
+        odaSayisi.text = "\(Model.rooms ?? .zero)"
+        adres.text = Model.address
         
     }
 

@@ -8,15 +8,22 @@
 import Foundation
 
 protocol OfficeDetailPresentationLogic: AnyObject {
-    func presentOfficeDetail(request : OfficeDetail.FetchOfficeDetail.Response)
+    func presentOfficeDetail(Response : OfficeDetail.FetchOfficeDetail.Response)
 }
 
 final class OfficeDetailPresenter: OfficeDetailPresentationLogic {
     weak var viewController: OfficeDetailDisplayLogic?
     
-    func presentOfficeDetail(request: OfficeDetail.FetchOfficeDetail.Response) {
-        
-        self.viewController!.detailOffice(request: request)
-       // self.viewController?.(response: request)
+    func presentOfficeDetail(Response: OfficeDetail.FetchOfficeDetail.Response) {
+        let displayoffice = OfficeDetail.FetchOfficeDetail.ViewModel.OfficeDetail (
+            address: Response.office?.address,
+            capacity: Response.office?.capacity,
+            image: Response.office?.image,
+            images: Response.office?.images,
+            name: Response.office?.name,
+            rooms: Response.office?.rooms,
+            space: Response.office?.space)
+
+        self.viewController?.detailOffice(viewModel: displayoffice)
     }
 }
