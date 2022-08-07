@@ -13,8 +13,11 @@ protocol OfficeDetailDisplayLogic: AnyObject {
 
 final class OfficeDetailViewController: UIViewController {
     
+    @IBOutlet weak var detailCollectionView: UICollectionView!
     var interactor: OfficeDetailBusinessLogic?
     var router: (OfficeDetailRoutingLogic & OfficeDetailDataPassing)?
+    
+    var detailOffice: OfficeDetail.FetchOfficeDetail.Response?
     
     // MARK: Object lifecycle
     
@@ -30,6 +33,16 @@ final class OfficeDetailViewController: UIViewController {
     override func viewDidLoad() {
 
         fetchOffice()
+        setupUI()
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        detailCollectionView.setCollectionViewLayout(createLayout(), animated: true)
+    }
+    
+    private func setupUI () {
+        detailCollectionView.register(UINib(nibName: "OfficeDetailCell", bundle: nil)
+                                      , forCellWithReuseIdentifier: "OfficeDetailCell")
+        detailCollectionView.register(UINib(nibName: "OfficeDetailDataCell", bundle: nil)
+                                      , forCellWithReuseIdentifier: "OfficeDetailDataCell")
     }
 
     func fetchOffice() {
@@ -54,9 +67,85 @@ final class OfficeDetailViewController: UIViewController {
 
 extension OfficeDetailViewController: OfficeDetailDisplayLogic {
     func detailOffice(request: OfficeDetail.FetchOfficeDetail.Response) {
-        print(request.office?.address)
+        detailOffice = request
+    }
+}
+
+extension OfficeDetailViewController : UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        
+        return sections.allCases.count
+        
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let section = sections(rawValue: section) else { return 0 }
+        switch section {
+        case .detailData:
+           return 1
+        case .image:
+            guard let imageCount = detailOffice?.office?.images.count else { return 0 }
+            return imageCount
+        }
+    }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let sectionCell = sections(rawValue: indexPath.section) else { return UICollectionViewCell() }
+        
+        switch sectionCell {
+        case .image:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OfficeDetailCell.identifier, for: indexPath)
+                    as? OfficeDetailCell else { return UICollectionViewCell()}
+            cell.configure(image: (detailOffice?.office?.images[indexPath.row]))
+            return cell
+            
+        case .detailData:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OfficeDetailDataCell.identifier, for: indexPath)
+                    as? OfficeDetailDataCell else { return UICollectionViewCell()}
+            
+            guard let model = detailOffice else { return UICollectionViewCell() }
+            
+            cell.configureData(Model: model)
+            return cell
+        }
+    }
+}
+
+extension OfficeDetailViewController {
+    func makeHorizontalLayout() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                              heightDimension: .fractionalWidth(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = .init(top: 2, leading: 2, bottom: 2, trailing: 2)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.4), heightDimension: .estimated(100))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        let section = NSCollectionLayoutSection (group: group)
+        section.contentInsets = .init(top: 5, leading: 5, bottom: 5, trailing: 5)
+        section.orthogonalScrollingBehavior = .continuous
+        return section
+    }
     
+    func makeVerticalLayout () -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize (widthDimension: .fractionalWidth(1),
+                                               heightDimension: .fractionalWidth(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                               heightDimension: .fractionalWidth(1))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        return section
+    }
+    
+    func createLayout () -> UICollectionViewLayout {
+        UICollectionViewCompositionalLayout { sectionIndex, _ in
+            if sectionIndex == 0 {
+                return self.makeHorizontalLayout()
+            }
+            else {
+               return self.makeVerticalLayout()
+                
+            }
+        }
+    }
 }

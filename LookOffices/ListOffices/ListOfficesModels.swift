@@ -21,6 +21,7 @@ enum ListOffices {
                 let address, capacity: String?
                 let id: Int?
                 let image: String?
+                let images: [String]?
                 let location: Location?
                 let name: String?
                 let rooms: Int?

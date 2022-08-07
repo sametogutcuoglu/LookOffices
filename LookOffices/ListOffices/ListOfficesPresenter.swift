@@ -29,6 +29,7 @@ final class ListOfficesPresenter: ListOfficesPresentationLogic {
                 capacity: office.capacity,
                 id: office.id,
                 image: office.image,
+                images: office.images,
                 location: office.location,
                 name: office.name,
                 rooms: office.rooms,

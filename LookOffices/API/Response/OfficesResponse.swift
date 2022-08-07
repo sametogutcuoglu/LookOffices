@@ -11,6 +11,7 @@ struct Office: Codable {
     let address, capacity: String?
     let id: Int?
     let image: String?
+    var images: [String]
     let location: Location?
     let name: String?
     let rooms: Int?
