@@ -32,12 +32,15 @@ final class ListOfficesViewController: UIViewController {
         super.init(coder: aDecoder)
         setup()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchOffices()
         tableView.register(UINib(nibName: "OfficeCell", bundle: .main), forCellReuseIdentifier: "OfficeCell")
-        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     private func fetchOffices() {

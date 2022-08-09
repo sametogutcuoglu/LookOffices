@@ -57,6 +57,7 @@
 		5BCE5D01289821E200563B19 /* ListOfficesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE5CFA289821E200563B19 /* ListOfficesInteractor.swift */; };
 		5BCE5D02289821E200563B19 /* ListOfficesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE5CFB289821E200563B19 /* ListOfficesModels.swift */; };
 		5BCE5D0C2898297900563B19 /* OfficesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE5D0B2898297800563B19 /* OfficesResponse.swift */; };
+		5BD2E47028A0F33E004D6E1A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD2E46F28A0F33E004D6E1A /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		5BCE5CFA289821E200563B19 /* ListOfficesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfficesInteractor.swift; sourceTree = "<group>"; };
 		5BCE5CFB289821E200563B19 /* ListOfficesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfficesModels.swift; sourceTree = "<group>"; };
 		5BCE5D0B2898297800563B19 /* OfficesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficesResponse.swift; sourceTree = "<group>"; };
+		5BD2E46F28A0F33E004D6E1A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 		5B9CE2F5287347A60085859A /* LookOffices */ = {
 			isa = PBXGroup;
 			children = (
+				5BD2E46E28A0F287004D6E1A /* Network */,
 				5B9CD86F289B0507006FCC4A /* OfficeDetail */,
 				5B8D92112873687E002DF1D1 /* LookOffices.entitlements */,
 				3DD7D6DE2899679C004A9F6F /* API */,
@@ -340,6 +343,14 @@
 				5B13C101289AAAE0001D4626 /* UIColor.swift */,
 			);
 			path = ImageColor;
+			sourceTree = "<group>";
+		};
+		5BD2E46E28A0F287004D6E1A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5BD2E46F28A0F33E004D6E1A /* NetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		5BE4E62C288FFFBF009FF44B /* Login */ = {
@@ -523,6 +534,7 @@
 				5BCE5D01289821E200563B19 /* ListOfficesInteractor.swift in Sources */,
 				5B13C10E289AADF1001D4626 /* RegisterModels.swift in Sources */,
 				5B1A22CF289C3564003C10EA /* OfficeDetailCell.swift in Sources */,
+				5BD2E47028A0F33E004D6E1A /* NetworkManager.swift in Sources */,
 				5BCE5D02289821E200563B19 /* ListOfficesModels.swift in Sources */,
 				5B84D33D289AA3BA00505E94 /* LoginPresenter.swift in Sources */,
 				5B13C0FC289AA9DD001D4626 /* ListOfficesRouter.swift in Sources */,

@@ -22,19 +22,15 @@ final class ListOfficesInteractor: ListOfficesBusinessLogic, ListOfficesDataStor
 
     func fetchOffices() {
         // MARK: _worker. işlemleri
-
-        guard let url = URL(string: AppConstants.firebaseURL) else {
-            self.presenter?.Alert(AlertMessage: AppConstants.notFoundURL)
-            return
-        }
-        worker.getFetchOffice(url: url) { response,error in
-            if let officeList = response {
-                self.offices = officeList
-                let response = ListOffices.FetchOffices.Response(offices: officeList)
+        worker.getFetchOffice(complation: { response in
+            switch response {
+            case .success(let data):
+                self.offices = data
+                let response = ListOffices.FetchOffices.Response(offices: data)
                 self.presenter?.presentOffices(response: response)
-            } else {
-                self.presenter?.Alert(AlertMessage:error)
+            case .failure(let error):
+                self.presenter?.Alert(AlertMessage: "Hata oluştu !  \(error)")
             }
-        }
+        })
     }
 }
