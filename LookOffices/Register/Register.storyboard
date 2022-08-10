@@ -21,15 +21,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homekit" translatesAutoresizingMaskIntoConstraints="NO" id="4Ro-Rf-RAk">
-                                        <rect key="frame" x="169" y="105.5" width="76" height="45.5"/>
+                                        <rect key="frame" x="132" y="101" width="150" height="70"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="Fvk-An-1xR"/>
+                                            <constraint firstAttribute="height" constant="70" id="NNw-Do-Gkb"/>
+                                        </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQV-5h-htK">
                                         <rect key="frame" x="0.0" y="224" width="414" height="224"/>
                                         <color key="backgroundColor" name="LoginTopBackground"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Find Your Office" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDh-tn-xr1">
-                                        <rect key="frame" x="152" y="156" width="110" height="18"/>
+                                        <rect key="frame" x="152" y="176" width="110" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
@@ -40,11 +44,10 @@
                                     <constraint firstItem="gDh-tn-xr1" firstAttribute="centerX" secondItem="5ob-MY-2to" secondAttribute="centerX" id="IiB-Ml-HU3"/>
                                     <constraint firstAttribute="trailing" secondItem="LQV-5h-htK" secondAttribute="trailing" id="RKz-MY-zxZ"/>
                                     <constraint firstItem="LQV-5h-htK" firstAttribute="height" secondItem="5ob-MY-2to" secondAttribute="height" multiplier="0.5" id="Tyn-dT-8OP"/>
-                                    <constraint firstItem="4Ro-Rf-RAk" firstAttribute="leading" secondItem="5ob-MY-2to" secondAttribute="leading" constant="169" id="Tzj-Sf-IqI"/>
                                     <constraint firstAttribute="bottom" secondItem="LQV-5h-htK" secondAttribute="bottom" id="dYy-Ld-sQm"/>
-                                    <constraint firstAttribute="trailing" secondItem="4Ro-Rf-RAk" secondAttribute="trailing" constant="169" id="gbo-GJ-ulH"/>
                                     <constraint firstItem="LQV-5h-htK" firstAttribute="leading" secondItem="5ob-MY-2to" secondAttribute="leading" id="n4X-6L-k6B"/>
-                                    <constraint firstItem="LQV-5h-htK" firstAttribute="top" secondItem="gDh-tn-xr1" secondAttribute="bottom" constant="50" id="ngC-xh-KPo"/>
+                                    <constraint firstItem="LQV-5h-htK" firstAttribute="top" secondItem="gDh-tn-xr1" secondAttribute="bottom" constant="30" id="ngC-xh-KPo"/>
+                                    <constraint firstItem="4Ro-Rf-RAk" firstAttribute="centerX" secondItem="5ob-MY-2to" secondAttribute="centerX" id="pGO-zi-4gm"/>
                                     <constraint firstItem="gDh-tn-xr1" firstAttribute="top" secondItem="4Ro-Rf-RAk" secondAttribute="bottom" constant="5" id="yFb-hJ-1Yt"/>
                                 </constraints>
                             </view>

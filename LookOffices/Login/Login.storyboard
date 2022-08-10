@@ -20,30 +20,33 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHb-tq-bpG" userLabel="triangleView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homekit" translatesAutoresizingMaskIntoConstraints="NO" id="ih7-az-GqI">
-                                        <rect key="frame" x="169" y="105.5" width="76" height="45.5"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vee-BI-6e4">
                                         <rect key="frame" x="0.0" y="224" width="414" height="224"/>
                                         <color key="backgroundColor" name="LoginTopBackground"/>
                                     </view>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Find Your Office" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUS-Vr-Jgv">
-                                        <rect key="frame" x="152" y="156" width="110" height="18"/>
+                                        <rect key="frame" x="152" y="176" width="110" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homekit" translatesAutoresizingMaskIntoConstraints="NO" id="ih7-az-GqI">
+                                        <rect key="frame" x="132" y="101" width="150" height="70"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="CP3-J7-kJN"/>
+                                            <constraint firstAttribute="width" constant="150" id="WRr-g4-RG0"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" name="LoginTopBackground"/>
                                 <constraints>
                                     <constraint firstItem="NUS-Vr-Jgv" firstAttribute="top" secondItem="ih7-az-GqI" secondAttribute="bottom" constant="5" id="ODf-Sc-wNU"/>
-                                    <constraint firstItem="ih7-az-GqI" firstAttribute="leading" secondItem="bHb-tq-bpG" secondAttribute="leading" constant="169" id="ROx-5N-tem"/>
-                                    <constraint firstItem="Vee-BI-6e4" firstAttribute="top" secondItem="NUS-Vr-Jgv" secondAttribute="bottom" constant="50" id="Rc0-C6-lUf"/>
-                                    <constraint firstAttribute="trailing" secondItem="ih7-az-GqI" secondAttribute="trailing" constant="169" id="aeq-kV-vF7"/>
+                                    <constraint firstItem="Vee-BI-6e4" firstAttribute="top" secondItem="NUS-Vr-Jgv" secondAttribute="bottom" constant="30" id="Rc0-C6-lUf"/>
                                     <constraint firstItem="NUS-Vr-Jgv" firstAttribute="centerX" secondItem="bHb-tq-bpG" secondAttribute="centerX" id="cP9-2a-Izc"/>
                                     <constraint firstAttribute="trailing" secondItem="Vee-BI-6e4" secondAttribute="trailing" id="ghS-oh-MMO"/>
                                     <constraint firstItem="Vee-BI-6e4" firstAttribute="leading" secondItem="bHb-tq-bpG" secondAttribute="leading" id="gro-T4-9wz"/>
+                                    <constraint firstItem="ih7-az-GqI" firstAttribute="centerX" secondItem="bHb-tq-bpG" secondAttribute="centerX" id="kYj-NC-gKX"/>
                                     <constraint firstItem="Vee-BI-6e4" firstAttribute="height" secondItem="bHb-tq-bpG" secondAttribute="height" multiplier="0.5" id="qcV-i5-hSL"/>
                                 </constraints>
                             </view>

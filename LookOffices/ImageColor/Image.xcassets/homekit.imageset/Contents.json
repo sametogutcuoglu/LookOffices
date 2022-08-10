@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "light.png",
+      "filename" : "lightt.png",
       "idiom" : "iphone",
       "scale" : "1x"
     },
@@ -12,12 +12,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "dark.png",
+      "filename" : "darkk.png",
       "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "filename" : "light-1.png",
+      "filename" : "lightt-1.png",
       "idiom" : "iphone",
       "scale" : "2x"
     },
@@ -28,12 +28,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "dark-1.png",
+      "filename" : "darkk-1.png",
       "idiom" : "iphone",
       "scale" : "2x"
     },
     {
-      "filename" : "light-2.png",
+      "filename" : "lightt-2.png",
       "idiom" : "iphone",
       "scale" : "3x"
     },
@@ -44,7 +44,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "dark-2.png",
+      "filename" : "darkk-2.png",
       "idiom" : "iphone",
       "scale" : "3x"
     }

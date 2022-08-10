@@ -25,6 +25,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="MZl-hR-Enz"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="addShadow" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OnS-fG-Rtj">
                                 <rect key="frame" x="258" y="16" width="24" height="24"/>
@@ -50,11 +53,6 @@
                             <constraint firstItem="OnS-fG-Rtj" firstAttribute="trailing" secondItem="kYb-r5-5wP" secondAttribute="trailing" constant="-10" id="gBH-tq-TrF"/>
                             <constraint firstAttribute="trailing" secondItem="kYb-r5-5wP" secondAttribute="trailing" constant="10" id="mUF-tO-HOJ"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="10"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8S-cS-qoW">
                         <rect key="frame" x="223" y="173" width="0.0" height="0.0"/>
@@ -63,8 +61,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tke-Pl-jaM">
-                        <rect key="frame" x="0.0" y="180" width="302" height="62"/>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tke-Pl-jaM">
+                        <rect key="frame" x="0.0" y="173" width="302" height="21.5"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zhr-tC-bwA">
                                 <rect key="frame" x="10" y="0.0" width="282" height="62"/>
@@ -95,9 +93,7 @@
                             <constraint firstItem="zhr-tC-bwA" firstAttribute="top" secondItem="Tke-Pl-jaM" secondAttribute="top" id="mft-49-NIV"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="10"/>
-                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="addShadow" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
@@ -109,7 +105,6 @@
                     <constraint firstItem="YrZ-tc-lhe" firstAttribute="top" secondItem="7hq-eF-QEL" secondAttribute="top" id="VXf-mu-hu1"/>
                     <constraint firstAttribute="bottom" secondItem="Tke-Pl-jaM" secondAttribute="bottom" id="ZH1-ff-lIe"/>
                     <constraint firstItem="Tke-Pl-jaM" firstAttribute="trailing" secondItem="YrZ-tc-lhe" secondAttribute="trailing" id="hkh-RF-KGC"/>
-                    <constraint firstItem="Tke-Pl-jaM" firstAttribute="height" secondItem="YrZ-tc-lhe" secondAttribute="height" multiplier="0.344444" id="kS6-pL-IUp"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="wxq-KO-7Gr"/>

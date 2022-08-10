@@ -127,7 +127,7 @@ extension OfficeDetailViewController {
     
     func makeVerticalLayout () -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize (widthDimension: .fractionalWidth(1),
-                                               heightDimension: .fractionalWidth(1))
+                                               heightDimension: .fractionalWidth(0.5))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                heightDimension: .fractionalWidth(1))
