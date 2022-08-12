@@ -29,6 +29,7 @@
 		5B1A22CF289C3564003C10EA /* OfficeDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1A22CD289C3564003C10EA /* OfficeDetailCell.swift */; };
 		5B1A22D0289C3564003C10EA /* OfficeDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B1A22CE289C3564003C10EA /* OfficeDetailCell.xib */; };
 		5B26C33328914F05003AE9B0 /* DrawTriangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26C33228914F05003AE9B0 /* DrawTriangle.swift */; };
+		5B8491F628A5267B0014DA05 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8491F528A5267B0014DA05 /* FilterViewController.swift */; };
 		5B84D33B289AA3BA00505E94 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B84D334289AA3BA00505E94 /* Login.storyboard */; };
 		5B84D33C289AA3BA00505E94 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B84D335289AA3BA00505E94 /* LoginViewController.swift */; };
 		5B84D33D289AA3BA00505E94 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B84D336289AA3BA00505E94 /* LoginPresenter.swift */; };
@@ -99,6 +100,7 @@
 		5B1A22CD289C3564003C10EA /* OfficeDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeDetailCell.swift; sourceTree = "<group>"; };
 		5B1A22CE289C3564003C10EA /* OfficeDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfficeDetailCell.xib; sourceTree = "<group>"; };
 		5B26C33228914F05003AE9B0 /* DrawTriangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawTriangle.swift; sourceTree = "<group>"; };
+		5B8491F528A5267B0014DA05 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		5B84D334289AA3BA00505E94 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		5B84D335289AA3BA00505E94 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5B84D336289AA3BA00505E94 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 			children = (
 				5B13C116289AB23F001D4626 /* OfficeCell.swift */,
 				5B13C117289AB23F001D4626 /* OfficeCell.xib */,
+				5B8491F528A5267B0014DA05 /* FilterViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				5B13C118289AB23F001D4626 /* OfficeCell.swift in Sources */,
 				5B13C10D289AADF1001D4626 /* RegisterInteractor.swift in Sources */,
 				5B9CD87D289B0553006FCC4A /* OfficeDetailRouter.swift in Sources */,
+				5B8491F628A5267B0014DA05 /* FilterViewController.swift in Sources */,
 				5B9CD87A289B0553006FCC4A /* OfficeDetailInteractor.swift in Sources */,
 				5B9CE2F7287347A60085859A /* AppDelegate.swift in Sources */,
 				5B9CE2F9287347A60085859A /* SceneDelegate.swift in Sources */,

@@ -42,7 +42,7 @@ final class ListOfficesViewController: UIViewController {
         fetchOffices()
         tableView.register(UINib(nibName: "OfficeCell", bundle: .main), forCellReuseIdentifier: "OfficeCell")
     }
-
+    
     private func fetchOffices() {
         interactor?.fetchOffices()
     }
@@ -81,6 +81,9 @@ extension ListOfficesViewController: ListOfficesDisplayLogic {
     
     func displayFetchedOffices(viewModel: ListOffices.FetchOffices.ViewModel) {
         displayedOffices = viewModel.Offices
+        let list3 = displayedOffices.filter{ ($0.rooms?.isMultiple(of: 2))! }
+        let list4 = list3.filter({$0.capacity!.contains("15-20")})
+        print(list3.map({"\($0.capacity!)"}))
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
         }
@@ -102,5 +105,25 @@ extension ListOfficesViewController: UITableViewDelegate, UITableViewDataSource 
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         displayOfficeDetail(index: indexPath.row)
+    }
+}
+
+extension ListOfficesViewController: FilterDataPass  {
+    func responseData(viewModel: ListOffices.FetchOffices.ViewModel) {
+        displayedOffices = viewModel.Offices
+        tableView.reloadData()
+    }
+    
+    @IBAction func clickFilterButton(_ sender: Any) {
+        
+        performSegue(withIdentifier: "toFilter", sender: nil)
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toFilter" {
+            let dsVC = segue.destination as! FilterViewController
+            dsVC.filterData = displayedOffices
+            dsVC.filterDataDelegate = self
+        }
     }
 }
