@@ -3,8 +3,8 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="LoginTopBackground"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="kYb-r5-5wP" secondAttribute="bottom" constant="10" id="0oK-Ox-J2l"/>
                             <constraint firstItem="kYb-r5-5wP" firstAttribute="top" secondItem="OnS-fG-Rtj" secondAttribute="bottom" constant="-30" id="RWh-EE-iPS"/>
@@ -85,7 +85,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="LoginTopBackground"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="zhr-tC-bwA" secondAttribute="trailing" constant="10" id="1Ly-qb-TtZ"/>
                             <constraint firstAttribute="bottom" secondItem="zhr-tC-bwA" secondAttribute="bottom" id="5a3-Ws-ocM"/>
@@ -118,8 +118,8 @@
     <resources>
         <image name="1.gif" width="200" height="200"/>
         <image name="heart" width="24" height="24"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="LoginTopBackground">
+            <color red="0.68199998140335083" green="0.82400000095367432" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

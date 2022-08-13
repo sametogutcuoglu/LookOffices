@@ -18,14 +18,14 @@ enum ListOffices {
 
         struct ViewModel {
             struct Office {
-                let address, capacity: String?
-                let id: Int?
-                let image: String?
-                let images: [String]?
-                let location: Location?
-                let name: String?
-                let rooms: Int?
-                let space: String?
+                let address, capacity: String
+                let id: Int
+                let image: String
+                let images: [String]
+                let location: Location
+                let name: String
+                let rooms: Int
+                let space: String
             }
 
             var Offices: [Office]

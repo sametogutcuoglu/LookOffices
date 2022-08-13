@@ -39,7 +39,7 @@ class OfficeCell: UITableViewCell {
     }
     func configure(viewModel: ListOffices.FetchOffices.ViewModel.Office) {
         officeImageView.layer.cornerRadius = 10
-        officeImageView.sd_setImage(with: URL(string: viewModel.image ?? ""))
+        officeImageView.sd_setImage(with: URL(string: viewModel.image ))
         officeName.text = viewModel.name
     }
     

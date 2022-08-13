@@ -17,22 +17,27 @@ protocol ListOfficesDataPassing: AnyObject {
     var dataStore: ListOfficesDataStore? { get }
 }
 
-final class ListOfficesRouter: ListOfficesRoutingLogic, ListOfficesDataPassing {
-    
+final class ListOfficesRouter: ListOfficesRoutingLogic, ListOfficesDataPassing, FilterDataPass {
+  
     weak var viewController: ListOfficesViewController?
     var dataStore: ListOfficesDataStore?
     
     func routerToOfficeDetail(index: Int) {
         let storyboard = UIStoryboard(name: "OfficeDetail", bundle: nil)
         let destVC : OfficeDetailViewController = storyboard.instantiateViewController(identifier: "OfficeDetail")
-        destVC.router?.dataStore?.office = dataStore?.offices?[index]
+        destVC.router?.dataStore?.office = dataStore?.offices[index]
         self.viewController?.navigationController?.pushViewController(destVC, animated: true)
     }
     
     func filterToOfficeData() {
-        let storyboard = UIStoryboard(name: "Filter", bundle: nil)
-        let destVC : OfficeDetailViewController = storyboard.instantiateViewController(identifier: "Filter")
-        destVC.router?.dataStore?.office = dataStore?.offices? // dizi olursa kabul eder
-        self.viewController?.navigationController?.pushViewController(destVC, animated: true)
+        let filtreStoryboard = UIStoryboard(name: "Filter", bundle: nil)
+        let filterVC : FilterViewController = filtreStoryboard.instantiateViewController(identifier: "filterViewController")
+        filterVC.filterDataDelegate = self
+        filterVC.router?.dataStore?.officedata = dataStore?.offices
+        self.viewController?.navigationController?.pushViewController(filterVC, animated: true)
+    }
+    
+    func responseFilterData(viewModel: ListOffices.FetchOffices.ViewModel,changeImage:Bool) {
+        dataStore?.responseFilterData(data: viewModel,changeImage:changeImage)
     }
 }

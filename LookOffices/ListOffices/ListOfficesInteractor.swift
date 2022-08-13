@@ -12,11 +12,16 @@ protocol ListOfficesBusinessLogic: AnyObject {
 }
 
 protocol ListOfficesDataStore: AnyObject {
-    var offices: [Office]? { get }
+    var offices: [Office] { get set }
+    func responseFilterData(data : ListOffices.FetchOffices.ViewModel,changeImage:Bool)
 }
 
 final class ListOfficesInteractor: ListOfficesBusinessLogic, ListOfficesDataStore {
-    var offices: [Office]?
+    func responseFilterData(data: ListOffices.FetchOffices.ViewModel,changeImage:Bool) {
+        self.presenter?.responseFilterData(response: data,changeImage:changeImage)
+    }
+    
+    var offices: [Office] = []
     var presenter: ListOfficesPresentationLogic?
     var worker = ListOfficesWorker()
 
@@ -29,7 +34,7 @@ final class ListOfficesInteractor: ListOfficesBusinessLogic, ListOfficesDataStor
                 let response = ListOffices.FetchOffices.Response(offices: data)
                 self.presenter?.presentOffices(response: response)
             case .failure(let error):
-                self.presenter?.Alert(AlertMessage: "Hata oluştu !  \(error)")
+                self.presenter?.alert(AlertMessage: AppConstants.error + "\(error.localizedDescription)")
             }
         })
     }

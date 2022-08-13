@@ -13,7 +13,7 @@ protocol LoginDisplayLogic: AnyObject {
 
 final class LoginViewController: UIViewController {
     
-    @IBOutlet var triangleView: UIView!
+    @IBOutlet weak var triangleView: UIView!
     
     var interactor: LoginBusinessLogic?
     var router: (LoginRoutingLogic & LoginDataPassing)?
