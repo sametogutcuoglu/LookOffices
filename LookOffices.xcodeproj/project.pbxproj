@@ -216,6 +216,27 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		5B3814E328A7EA85007066FD /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				5BE4E62C288FFFBF009FF44B /* Login */,
+				5BC0638E289022D6004FA4FA /* Register */,
+				5BCE5D05289821FF00563B19 /* ListOffices */,
+				5B9CD86F289B0507006FCC4A /* OfficeDetail */,
+				5B5748A628A6B0650084F5C1 /* Filter */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		5B3814E428A7EAFE007066FD /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				3DD7D6DF289968C6004A9F6F /* Extension */,
+				5BCE5D112899482D00563B19 /* ImageColor */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		5B5748A628A6B0650084F5C1 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,17 +301,12 @@
 		5B9CE2F5287347A60085859A /* LookOffices */ = {
 			isa = PBXGroup;
 			children = (
-				5B5748A628A6B0650084F5C1 /* Filter */,
+				5B3814E328A7EA85007066FD /* Scenes */,
+				5B3814E428A7EAFE007066FD /* Resource */,
 				5BD2E46E28A0F287004D6E1A /* Network */,
-				5B9CD86F289B0507006FCC4A /* OfficeDetail */,
 				5B8D92112873687E002DF1D1 /* LookOffices.entitlements */,
 				3DD7D6DE2899679C004A9F6F /* API */,
 				5B84D327289AA1C200505E94 /* System */,
-				5BCE5D05289821FF00563B19 /* ListOffices */,
-				5BC0638E289022D6004FA4FA /* Register */,
-				5BE4E62C288FFFBF009FF44B /* Login */,
-				3DD7D6DF289968C6004A9F6F /* Extension */,
-				5BCE5D112899482D00563B19 /* ImageColor */,
 			);
 			path = LookOffices;
 			sourceTree = "<group>";

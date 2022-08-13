@@ -526,8 +526,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
             endingLineNumber = "35"
-            landmarkName = "ListOfficesRouter"
-            landmarkType = "3">
+            landmarkName = "filterToOfficeData()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
