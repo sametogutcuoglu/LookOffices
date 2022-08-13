@@ -10,7 +10,6 @@ import UIKit
 protocol ListOfficesDisplayLogic: AnyObject {
     func displayFetchedOffices(viewModel: ListOffices.FetchOffices.ViewModel)
     func showAlert(AlertMessage : String)
-    func displayOfficeDetail(index: Int)
     func filteredData (viewModel : ListOffices.FetchOffices.ViewModel,changeImage:Bool)
 }
 
@@ -84,7 +83,7 @@ extension ListOfficesViewController: ListOfficesDisplayLogic {
     }
     
     func displayOfficeDetail(index: Int) {
-        router?.routerToOfficeDetail(index: index)
+        
     }
     
      func showAlert(AlertMessage: String) {
@@ -120,6 +119,7 @@ extension ListOfficesViewController: UITableViewDelegate, UITableViewDataSource 
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        displayOfficeDetail(index: indexPath.row)
+        let chooseModel = displayedOffices[indexPath.row]
+        router?.DetailrouterToOfficeDetail(model: chooseModel)
     }
 }

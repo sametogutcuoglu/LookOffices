@@ -9,8 +9,9 @@ import Foundation
 import UIKit
 
 protocol ListOfficesRoutingLogic: AnyObject {
-    func routerToOfficeDetail(index: Int)
+//    func routerToOfficeDetail(index: Int)
     func filterToOfficeData()
+    func DetailrouterToOfficeDetail(model :ListOffices.FetchOffices.ViewModel.Office)
 }
 
 protocol ListOfficesDataPassing: AnyObject {
@@ -22,10 +23,10 @@ final class ListOfficesRouter: ListOfficesRoutingLogic, ListOfficesDataPassing, 
     weak var viewController: ListOfficesViewController?
     var dataStore: ListOfficesDataStore?
     
-    func routerToOfficeDetail(index: Int) {
+    func DetailrouterToOfficeDetail(model: ListOffices.FetchOffices.ViewModel.Office) {
         let storyboard = UIStoryboard(name: "OfficeDetail", bundle: nil)
         let destVC : OfficeDetailViewController = storyboard.instantiateViewController(identifier: "OfficeDetail")
-        destVC.router?.dataStore?.office = dataStore?.offices[index]
+        destVC.router?.dataStore?.officeDetail = model
         self.viewController?.navigationController?.pushViewController(destVC, animated: true)
     }
     

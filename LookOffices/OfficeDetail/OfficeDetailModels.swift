@@ -7,7 +7,6 @@
 
 import Foundation
 
-// swiftlint:disable nesting
 enum OfficeDetail {
     
     enum FetchOfficeDetail {
@@ -37,4 +36,3 @@ enum OfficeDetail {
     }
     
 }
-// swiftlint:enable nesting

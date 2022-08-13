@@ -13,15 +13,19 @@ protocol OfficeDetailBusinessLogic: AnyObject {
 
 protocol OfficeDetailDataStore: AnyObject {
     var office : Office? {get set }
+    var officeDetail : ListOffices.FetchOffices.ViewModel.Office? {get set }
 }
 
 final class OfficeDetailInteractor: OfficeDetailBusinessLogic, OfficeDetailDataStore {
+    var officeDetail: ListOffices.FetchOffices.ViewModel.Office?
+
     var office: Office?
     var presenter: OfficeDetailPresentationLogic?
     var worker: OfficeDetailWorkingLogic = OfficeDetailWorker()
     
     func fetchOffice() {
-        let response = OfficeDetail.FetchOfficeDetail.Response(office: office)
-        self.presenter?.presentOfficeDetail(Response: response)
+
+        guard let model = officeDetail else {return}
+        self.presenter?.presentOfficeDetail(Response: model)
     }
 }
