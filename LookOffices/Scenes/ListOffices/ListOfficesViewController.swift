@@ -42,7 +42,7 @@ final class ListOfficesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchOffices()
-        tableView.register(UINib(nibName: "OfficeCell", bundle: .main), forCellReuseIdentifier: "OfficeCell")
+        tableView.register(UINib(nibName: OfficeCell.identifier, bundle: .main),forCellReuseIdentifier: OfficeCell.identifier)
     }
     
     private func fetchOffices() {
@@ -73,17 +73,13 @@ extension ListOfficesViewController: ListOfficesDisplayLogic {
     
     func filteredData(viewModel: ListOffices.FetchOffices.ViewModel,changeImage:Bool) {
         if changeImage {
-            FilterButton.setImage(UIImage(named: "selectFilter"), for: .normal)
+            FilterButton.setImage(UIImage.filter, for: .normal)
         }
         else {
-            FilterButton.setImage(UIImage(named: "filter"), for: .normal)
+            FilterButton.setImage(UIImage.notFilter, for: .normal)
         }
         displayedOffices = viewModel.Offices
         tableView.reloadData()
-    }
-    
-    func displayOfficeDetail(index: Int) {
-        
     }
     
      func showAlert(AlertMessage: String) {
@@ -112,7 +108,7 @@ extension ListOfficesViewController: UITableViewDelegate, UITableViewDataSource 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let displayOffice = displayedOffices[indexPath.row]
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "OfficeCell", for: indexPath) as? OfficeCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: OfficeCell.identifier, for: indexPath) as? OfficeCell else {
             return UITableViewCell()
         }
         cell.configure(viewModel: displayOffice)

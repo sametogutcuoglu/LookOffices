@@ -9,7 +9,7 @@ import Foundation
 
 protocol FilterBusinessLogic: AnyObject {
     func getDistinctFilterData()
-    func getfetchWillFilterData()
+    func responseFilterData(capacity: String,room:String,space:String)
 }
 
 protocol FilterDataStore: AnyObject {
@@ -27,7 +27,6 @@ final class FilterInteractor: FilterBusinessLogic, FilterDataStore {
         worker.getWillFilterData(complation: { response in
             switch response {
             case .success(let data):
-                
                 let response = Filter.Fetch.Response(offices: data)
                 self.presenter?.getDistinctFilterData(response: response)
             case .failure(_):
@@ -36,8 +35,11 @@ final class FilterInteractor: FilterBusinessLogic, FilterDataStore {
         })
     }
     
-    func getfetchWillFilterData() {
-        guard let officedata = officedata else { return }
-        self.presenter?.getFetchWillFilterData(data: officedata )
+    func responseFilterData(capacity: String, room: String, space: String) {
+        guard let officedata = officedata else {
+            return
+        }
+        presenter?.getFetchWillFilterData(data: officedata, capacity: capacity, room: room, space: space)
     }
+    
 }

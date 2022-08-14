@@ -9,7 +9,7 @@ import Foundation
 
 protocol FilterPresentationLogic: AnyObject {
     func getDistinctFilterData(response: Filter.Fetch.Response)
-    func getFetchWillFilterData(data: [Office])
+    func getFetchWillFilterData(data: [Office],capacity:String,room:String,space:String)
 }
 
 final class FilterPresenter: FilterPresentationLogic {
@@ -41,7 +41,7 @@ final class FilterPresenter: FilterPresentationLogic {
         viewController?.distinctFilterData(capacity: distinctCapacity, room: distinctroom, space: distinctspace)
     }
     
-    func getFetchWillFilterData(data: [Office]) {
+    func getFetchWillFilterData(data: [Office],capacity:String,room:String,space:String) {
         var willFilterDatas: [ListOffices.FetchOffices.ViewModel.Office] = []
         for item in data {
             let willFilterData = ListOffices.FetchOffices.ViewModel.Office(address: item.address ?? "",
@@ -55,7 +55,31 @@ final class FilterPresenter: FilterPresentationLogic {
                                                                         space: item.space ?? "")
             willFilterDatas.append(willFilterData)
         }
-        viewController?.willFilterOfficesData(viewModel: ListOffices.FetchOffices.ViewModel(Offices: willFilterDatas))
+        var chooseImage : Bool = false
+            if  capacity == AppConstants.filterDefaultText {
+                
+            }
+            else {
+                chooseImage = true
+                willFilterDatas = willFilterDatas.filter({$0.capacity.contains(capacity)})
+            }
+            if room == AppConstants.filterDefaultText {
+                
+            }
+            else {
+                chooseImage = true
+                willFilterDatas = willFilterDatas.filter({$0.rooms.isMultiple(of: Int(room)!) })
+            }
+            if space == AppConstants.filterDefaultText {
+                
+            }
+            else {
+                chooseImage = true
+                willFilterDatas = willFilterDatas.filter({$0.space.contains(space) })
+            }
+        
+        viewController?.FilterOfficesData(viewModel: ListOffices.FetchOffices.ViewModel(Offices: willFilterDatas),
+                                          chooseImage: chooseImage)
     }
     
 }

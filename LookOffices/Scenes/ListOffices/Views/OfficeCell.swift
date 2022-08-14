@@ -10,9 +10,11 @@ import SDWebImage
 
 class OfficeCell: UITableViewCell {
     
+    static let identifier = "OfficeCell"
     @IBOutlet weak var officeName: UILabel!
     @IBOutlet var officeImageView: UIImageView!
     var liked : Bool = true
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

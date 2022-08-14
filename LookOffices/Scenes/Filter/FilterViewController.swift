@@ -10,7 +10,8 @@ import IQKeyboardManagerSwift
 
 protocol FilterDisplayLogic: AnyObject {
     func distinctFilterData(capacity: [String],room:[Int],space:[String])
-    func willFilterOfficesData(viewModel: ListOffices.FetchOffices.ViewModel)
+    func FilterOfficesData(viewModel: ListOffices.FetchOffices.ViewModel,chooseImage:Bool)
+    func responseFilterData(capacity:String,room:String,space:String)
 }
 
 protocol FilterDataPass : AnyObject{
@@ -19,7 +20,7 @@ protocol FilterDataPass : AnyObject{
 
 final class FilterViewController: UIViewController {
     let defualts = UserDefaults.standard
-    var chooseImage : Bool = false
+    var changeImage : Bool = false
     @IBOutlet weak var capacityLabel: UILabel!
     @IBOutlet weak var roomLabel: UILabel!
     @IBOutlet weak var spaceLabel: UILabel!
@@ -70,19 +71,15 @@ final class FilterViewController: UIViewController {
         spaceView.addBorder()
         
         interactor?.getDistinctFilterData()
-        interactor?.getfetchWillFilterData()
         
         setupTextfiled()
-        
         defualts.register(
             defaults: [
-                "capacity": "Lütfen bir değer giriniz.",
-                "room": "Lütfen bir değer giriniz.",
-                "space": "Lütfen bir değer giriniz."
+                "capacity": AppConstants.filterDefaultText,
+                "room": AppConstants.filterDefaultText,
+                "space":  AppConstants.filterDefaultText
             ])
-        capacityLabel.text = defualts.string(forKey: "capacity")
-        spaceLabel.text = defualts.string(forKey: "space")
-        roomLabel.text = defualts.string(forKey: "room")
+        labelTextControl()
         
         capacityPickerView.tag = 1
         roomPickerView.tag = 2
@@ -95,7 +92,6 @@ final class FilterViewController: UIViewController {
         roomPickerView.dataSource = self
         spacePickerView.delegate = self
         spacePickerView.dataSource = self
-
     }
     
     private func setupTextfiled() {
@@ -150,16 +146,17 @@ final class FilterViewController: UIViewController {
     }
     
     @IBAction func clickFilterButton(_ sender: Any) {
-        guard let capacity = capacityLabel.text else { return }
-        guard let room = roomLabel.text else { return }
-        guard let space = spaceLabel.text else { return }
-        fetchFilterData(capacity: capacity, room: room, space: space)
-        
         defualts.set(capacityLabel.text, forKey: "capacity")
         defualts.set(roomLabel.text, forKey: "room")
         defualts.set(spaceLabel.text, forKey: "space")
+        labelTextControl()
+        guard let capacity = capacityLabel.text else { return }
+        guard let room = roomLabel.text else { return }
+        guard let space = spaceLabel.text else { return }
         
-        filterDataDelegate?.responseFilterData(viewModel: ListOffices.FetchOffices.ViewModel(Offices: listOfficeData),changeImage:chooseImage)
+        interactor?.responseFilterData(capacity: capacity, room: room, space: space)
+        
+        filterDataDelegate?.responseFilterData(viewModel: ListOffices.FetchOffices.ViewModel(Offices: listOfficeData),changeImage:changeImage)
         
         self.navigationController?.popViewController(animated: true)
     }
@@ -168,47 +165,40 @@ final class FilterViewController: UIViewController {
         UserDefaults.standard.removeObject(forKey: "capacity")
         UserDefaults.standard.removeObject(forKey: "room")
         UserDefaults.standard.removeObject(forKey: "space")
-        filterDataDelegate?.responseFilterData(viewModel: ListOffices.FetchOffices.ViewModel(Offices: listOfficeData),changeImage:chooseImage)
+        labelTextControl()
+        guard let capacity = capacityLabel.text else { return }
+        guard let room = roomLabel.text else { return }
+        guard let space = spaceLabel.text else { return }
+
+        interactor?.responseFilterData(capacity: capacity, room: room, space: space)
+        
+        filterDataDelegate?.responseFilterData(viewModel: ListOffices.FetchOffices.ViewModel(Offices: listOfficeData),changeImage:changeImage)
+
         self.navigationController?.popViewController(animated: true)
     }
-
-    private func fetchFilterData(capacity: String,room:String,space:String) {
-        // TODO: kontroller yap ve varsa array filtrele yoksa mevcut etteriyi döndür sonraki if blogouna gitsin
-        if  capacity == "Lütfen bir değer giriniz." {
-            
-        }
-        else {
-            chooseImage = true
-            listOfficeData = listOfficeData.filter({$0.capacity.contains(capacity)})
-        }
-        if room == "Lütfen bir değer giriniz." {
-            
-        }
-        else {
-            chooseImage = true
-            listOfficeData = listOfficeData.filter({$0.rooms.isMultiple(of: Int(room)!) })
-        }
-        if space == "Lütfen bir değer giriniz." {
-            
-        }
-        else {
-            chooseImage = true
-            listOfficeData = listOfficeData.filter({$0.space.contains(space) })
-        }
+    
+    private func labelTextControl() {
+        capacityLabel.text = defualts.string(forKey: "capacity")
+        spaceLabel.text = defualts.string(forKey: "space")
+        roomLabel.text = defualts.string(forKey: "room")
     }
 }
 
 extension FilterViewController: FilterDisplayLogic {
     
-    func willFilterOfficesData(viewModel: ListOffices.FetchOffices.ViewModel) {
+    func FilterOfficesData(viewModel: ListOffices.FetchOffices.ViewModel,chooseImage:Bool) {
         listOfficeData = viewModel.Offices
+        changeImage = chooseImage
     }
-    
     
     func distinctFilterData(capacity: [String],room:[Int],space:[String]) {
         distinctCapacity = capacity
         distinctroom = room
         distinctspace = space
+    }
+    
+    func responseFilterData(capacity: String, room: String, space: String) {
+        interactor?.responseFilterData(capacity: capacity, room: room, space: space)
     }
 }
 extension FilterViewController : UIPickerViewDelegate,UIPickerViewDataSource {
@@ -259,6 +249,5 @@ extension FilterViewController : UIPickerViewDelegate,UIPickerViewDataSource {
             spaceLabel.text = distinctspace[row]
         default: break
         }
-        
     }
 }

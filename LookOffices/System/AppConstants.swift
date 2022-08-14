@@ -12,4 +12,5 @@ struct AppConstants {
     static let notFoundURL =  "Bağlantı hatası. Lütfen daha sonra tekrar deneyin."
     static let notConnet =  "Lütfen internet bağlantınızı kontrol edip tekrar deneyin."
     static let error = "Servis bağlantısı kurulamadı. Lütfen daha sonra tekrar deneyin."
+    static let filterDefaultText = "Lütfen bir değer giriniz."
 }
