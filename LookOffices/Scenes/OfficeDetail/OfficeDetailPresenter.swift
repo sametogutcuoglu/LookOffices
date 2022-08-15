@@ -16,9 +16,7 @@ final class OfficeDetailPresenter: OfficeDetailPresentationLogic {
     weak var viewController: OfficeDetailDisplayLogic?
     
     func presentOfficeDetail(Response: ListOffices.FetchOffices.ViewModel.Office) {
-        let displayoffice =
-        
-        OfficeDetail.FetchOfficeDetail.ViewModel.OfficeDetail (
+        let displayoffice = OfficeDetail.FetchOfficeDetail.ViewModel.OfficeDetail (
             address: Response.address,
             capacity: Response.capacity,
             image: Response.image,

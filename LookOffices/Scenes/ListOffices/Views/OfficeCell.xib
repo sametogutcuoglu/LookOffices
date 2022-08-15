@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YrZ-tc-lhe">
                         <rect key="frame" x="0.0" y="0.0" width="302" height="180"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.gif" translatesAutoresizingMaskIntoConstraints="NO" id="kYb-r5-5wP">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kYb-r5-5wP">
                                 <rect key="frame" x="10" y="10" width="282" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="MZl-hR-Enz"/>
@@ -30,10 +30,10 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OnS-fG-Rtj">
-                                <rect key="frame" x="258" y="16" width="24" height="24"/>
+                                <rect key="frame" x="250" y="18" width="32" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="heart"/>
+                                <state key="normal" image="dislike"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="radius">
                                         <real key="value" value="5"/>
@@ -47,7 +47,7 @@
                         <color key="backgroundColor" name="LoginTopBackground"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="kYb-r5-5wP" secondAttribute="bottom" constant="10" id="0oK-Ox-J2l"/>
-                            <constraint firstItem="kYb-r5-5wP" firstAttribute="top" secondItem="OnS-fG-Rtj" secondAttribute="bottom" constant="-30" id="RWh-EE-iPS"/>
+                            <constraint firstItem="kYb-r5-5wP" firstAttribute="top" secondItem="OnS-fG-Rtj" secondAttribute="bottom" constant="-40" id="RWh-EE-iPS"/>
                             <constraint firstItem="kYb-r5-5wP" firstAttribute="top" secondItem="YrZ-tc-lhe" secondAttribute="top" constant="10" id="aB5-kO-1HZ"/>
                             <constraint firstItem="kYb-r5-5wP" firstAttribute="leading" secondItem="YrZ-tc-lhe" secondAttribute="leading" constant="10" id="eu5-h1-Urw"/>
                             <constraint firstItem="OnS-fG-Rtj" firstAttribute="trailing" secondItem="kYb-r5-5wP" secondAttribute="trailing" constant="-10" id="gBH-tq-TrF"/>
@@ -109,6 +109,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="wxq-KO-7Gr"/>
             <connections>
+                <outlet property="likeButton" destination="OnS-fG-Rtj" id="UoT-op-i8f"/>
                 <outlet property="officeImageView" destination="kYb-r5-5wP" id="S7r-HF-4ZB"/>
                 <outlet property="officeName" destination="riv-sh-lTo" id="UZ7-s6-lq5"/>
             </connections>
@@ -116,8 +117,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="1.gif" width="200" height="200"/>
-        <image name="heart" width="24" height="24"/>
+        <image name="dislike" width="32" height="32"/>
         <namedColor name="LoginTopBackground">
             <color red="0.68199998140335083" green="0.82400000095367432" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

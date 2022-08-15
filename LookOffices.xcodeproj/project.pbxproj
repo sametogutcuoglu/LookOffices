@@ -26,10 +26,12 @@
 		5B13C115289AB115001D4626 /* ListOffices.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B13C114289AB115001D4626 /* ListOffices.storyboard */; };
 		5B13C118289AB23F001D4626 /* OfficeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B13C116289AB23F001D4626 /* OfficeCell.swift */; };
 		5B13C119289AB23F001D4626 /* OfficeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B13C117289AB23F001D4626 /* OfficeCell.xib */; };
+		5B15CC3528AA4E7900EA55AB /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B15CC3328AA4E7900EA55AB /* CoreDataModel.xcdatamodeld */; };
 		5B1A22CF289C3564003C10EA /* OfficeDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1A22CD289C3564003C10EA /* OfficeDetailCell.swift */; };
 		5B1A22D0289C3564003C10EA /* OfficeDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B1A22CE289C3564003C10EA /* OfficeDetailCell.xib */; };
 		5B26C33328914F05003AE9B0 /* DrawTriangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26C33228914F05003AE9B0 /* DrawTriangle.swift */; };
 		5B29F48828A9793D0078AE24 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B29F48728A9793D0078AE24 /* UIImage.swift */; };
+		5B2B61E828AA7CC200C5DECC /* FavoriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B61E728AA7CC200C5DECC /* FavoriViewController.swift */; };
 		5B3AF64728A6EEF100D8C748 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3AF64628A6EEF100D8C748 /* UIView.swift */; };
 		5B5748AF28A6B0980084F5C1 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5748A828A6B0980084F5C1 /* FilterViewController.swift */; };
 		5B5748B028A6B0980084F5C1 /* FilterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5748A928A6B0980084F5C1 /* FilterPresenter.swift */; };
@@ -105,10 +107,12 @@
 		5B13C114289AB115001D4626 /* ListOffices.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListOffices.storyboard; sourceTree = "<group>"; };
 		5B13C116289AB23F001D4626 /* OfficeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeCell.swift; sourceTree = "<group>"; };
 		5B13C117289AB23F001D4626 /* OfficeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfficeCell.xib; sourceTree = "<group>"; };
+		5B15CC3428AA4E7900EA55AB /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		5B1A22CD289C3564003C10EA /* OfficeDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeDetailCell.swift; sourceTree = "<group>"; };
 		5B1A22CE289C3564003C10EA /* OfficeDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfficeDetailCell.xib; sourceTree = "<group>"; };
 		5B26C33228914F05003AE9B0 /* DrawTriangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawTriangle.swift; sourceTree = "<group>"; };
 		5B29F48728A9793D0078AE24 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		5B2B61E728AA7CC200C5DECC /* FavoriViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriViewController.swift; sourceTree = "<group>"; };
 		5B3AF64628A6EEF100D8C748 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		5B5748A828A6B0980084F5C1 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		5B5748A928A6B0980084F5C1 /* FilterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPresenter.swift; sourceTree = "<group>"; };
@@ -237,6 +241,7 @@
 			children = (
 				3DD7D6DF289968C6004A9F6F /* Extension */,
 				5BCE5D112899482D00563B19 /* ImageColor */,
+				5B15CC3328AA4E7900EA55AB /* CoreDataModel.xcdatamodeld */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 			children = (
 				5B13C116289AB23F001D4626 /* OfficeCell.swift */,
 				5B13C117289AB23F001D4626 /* OfficeCell.xib */,
+				5B2B61E728AA7CC200C5DECC /* FavoriViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -596,6 +602,7 @@
 				5B13C10B289AADF1001D4626 /* RegisterViewController.swift in Sources */,
 				5B84D33F289AA3BA00505E94 /* LoginModels.swift in Sources */,
 				5B84D341289AA3BA00505E94 /* LoginRouter.swift in Sources */,
+				5B2B61E828AA7CC200C5DECC /* FavoriViewController.swift in Sources */,
 				3DD7D6E1289968E2004A9F6F /* UIButton.swift in Sources */,
 				5B9CD878289B0553006FCC4A /* OfficeDetailViewController.swift in Sources */,
 				5B9CD87B289B0553006FCC4A /* OfficeDetailModels.swift in Sources */,
@@ -607,6 +614,7 @@
 				5B5748B428A6B0980084F5C1 /* FilterRouter.swift in Sources */,
 				5B9CE2F7287347A60085859A /* AppDelegate.swift in Sources */,
 				5B9CE2F9287347A60085859A /* SceneDelegate.swift in Sources */,
+				5B15CC3528AA4E7900EA55AB /* CoreDataModel.xcdatamodeld in Sources */,
 				5B13C0FE289AAA41001D4626 /* ListOfficesWorker.swift in Sources */,
 				5B5748B028A6B0980084F5C1 /* FilterPresenter.swift in Sources */,
 				5B5748B328A6B0980084F5C1 /* FilterWorker.swift in Sources */,
@@ -1271,6 +1279,19 @@
 			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		5B15CC3328AA4E7900EA55AB /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5B15CC3428AA4E7900EA55AB /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 5B15CC3428AA4E7900EA55AB /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5B9CE2EB287347A60085859A /* Project object */;
 }

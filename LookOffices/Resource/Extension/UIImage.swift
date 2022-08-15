@@ -11,6 +11,8 @@ import UIKit
 public extension UIImage {
     static var filter : UIImage { UIImage(imageName: "selectFilter") }
     static var notFilter : UIImage { UIImage(imageName: "filter") }
+    static var like : UIImage { UIImage(imageName: "like") }
+    static var dislike : UIImage { UIImage(imageName: "dislike") }
 }
 
 public extension UIImage {
