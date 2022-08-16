@@ -37,18 +37,17 @@ final class FavoriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: OfficeCell.identifier, bundle: .main),forCellReuseIdentifier: OfficeCell.identifier)
-        getdata()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         interactor?.getCoreData()
         officeImage.removeAll()
         officeId.removeAll()
         officeName.removeAll()
         getdata()
         tableView.reloadData()
-        
     }
     
     private func getdata() {
