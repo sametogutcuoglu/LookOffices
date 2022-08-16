@@ -67,8 +67,10 @@ final class FilterPresenter: FilterPresentationLogic {
                 
             }
             else {
-                chooseImage = true
-                willFilterDatas = willFilterDatas.filter({$0.rooms.isMultiple(of: Int(room)!) })
+                if let room = Int(room) {
+                    chooseImage = true
+                    willFilterDatas = willFilterDatas.filter(({$0.rooms.words.contains(Int.Words.Element(room)) }))
+                }
             }
             if space == AppConstants.filterDefaultText {
                 

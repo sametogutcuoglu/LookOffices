@@ -6,9 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ListOfficesBusinessLogic: AnyObject {
     func fetchOffices()
+    func saveCoreDataModel(id:Int,name:String,image:UIImage)
+    func deleteCoreDataModel(id:Int)
+    func getCoreData()
 }
 
 protocol ListOfficesDataStore: AnyObject {
@@ -17,6 +21,7 @@ protocol ListOfficesDataStore: AnyObject {
 }
 
 final class ListOfficesInteractor: ListOfficesBusinessLogic, ListOfficesDataStore {
+    
     func responseFilterData(data: ListOffices.FetchOffices.ViewModel,changeImage:Bool) {
         self.presenter?.responseFilterData(response: data,changeImage:changeImage)
     }
@@ -37,5 +42,24 @@ final class ListOfficesInteractor: ListOfficesBusinessLogic, ListOfficesDataStor
                 self.presenter?.alert(AlertMessage: AppConstants.error + "\(error.localizedDescription)")
             }
         })
+    }
+    
+    func saveCoreDataModel(id: Int, name: String, image: UIImage) {
+        worker.saveCoreDataModels(id: id, name: name, image: image)
+    }
+    
+    func deleteCoreDataModel(id: Int) {
+        worker.deleteCoreDataModels(officeId:id)
+    }
+    
+    func getCoreData() {
+        worker.getCoreData { response in
+            switch response {
+            case .success(let coreData):
+                self.presenter?.getCoreData(officesId: coreData)
+            case .failure(let error):
+                self.presenter?.alert(AlertMessage: error.localizedDescription)
+            }
+        }
     }
 }

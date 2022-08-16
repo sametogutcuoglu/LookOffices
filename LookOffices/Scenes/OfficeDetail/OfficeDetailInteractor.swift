@@ -8,24 +8,32 @@
 import Foundation
 
 protocol OfficeDetailBusinessLogic: AnyObject {
-    func fetchOffice()
+    func fetchOffices()
 }
 
 protocol OfficeDetailDataStore: AnyObject {
-    var office : Office? {get set }
-    var officeDetail : ListOffices.FetchOffices.ViewModel.Office? {get set }
+    var officeId : Int? { get set}
 }
 
 final class OfficeDetailInteractor: OfficeDetailBusinessLogic, OfficeDetailDataStore {
-    var officeDetail: ListOffices.FetchOffices.ViewModel.Office?
+    var officeId: Int?
 
-    var office: Office?
     var presenter: OfficeDetailPresentationLogic?
     var worker: OfficeDetailWorkingLogic = OfficeDetailWorker()
     
-    func fetchOffice() {
-
-        guard let model = officeDetail else {return}
-        self.presenter?.presentOfficeDetail(Response: model)
+    func fetchOffices() {
+        guard let officeId = officeId else {
+            self.presenter?.alert(Error: AppConstants.errorNilOfficeId)
+            return
+        }
+        worker.getFetchOffice(complation: { response in
+            switch response {
+            case .success(let data):
+                let response = OfficeDetail.FetchOfficeDetail.Response(offices: data)
+                self.presenter?.presentOfficeDetail(Response: response, officeId: officeId)
+            case .failure(let error): break
+                self.presenter?.alert(Error: AppConstants.error + "\(error.localizedDescription)")
+            }
+        })
     }
 }

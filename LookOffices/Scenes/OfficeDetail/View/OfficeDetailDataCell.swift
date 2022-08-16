@@ -14,16 +14,11 @@ class OfficeDetailDataCell: UICollectionViewCell {
     @IBOutlet weak var kapasite: UILabel!
     @IBOutlet weak var alan: UILabel!
     @IBOutlet weak var adres: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    
     func configureData(Model:OfficeDetail.FetchOfficeDetail.ViewModel.OfficeDetail) {
         kapasite.text = Model.capacity
         alan.text = Model.space
-        odaSayisi.text = "\(Model.rooms ?? .zero)"
+        odaSayisi.text = "\(Model.rooms)"
         adres.text = Model.address
-        
     }
-
 }

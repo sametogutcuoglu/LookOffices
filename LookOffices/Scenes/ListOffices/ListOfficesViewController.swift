@@ -6,12 +6,12 @@
 //
 
 import UIKit
-import CoreData
 
 protocol ListOfficesDisplayLogic: AnyObject {
     func displayFetchedOffices(viewModel: ListOffices.FetchOffices.ViewModel)
     func showAlert(AlertMessage : String)
     func filteredData (viewModel : ListOffices.FetchOffices.ViewModel,changeImage:Bool)
+    func getCoreData(responseOfficeId:[Int])
 }
 
 final class ListOfficesViewController: UIViewController {
@@ -40,14 +40,13 @@ final class ListOfficesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
-        getCoredata()
+        interactor?.getCoreData()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchOffices()
         tableView.register(UINib(nibName: OfficeCell.identifier, bundle: .main),forCellReuseIdentifier: OfficeCell.identifier)
-       
     }
     
     private func fetchOffices() {
@@ -76,6 +75,12 @@ final class ListOfficesViewController: UIViewController {
 
 extension ListOfficesViewController: ListOfficesDisplayLogic {
     
+    func getCoreData(responseOfficeId: [Int]) {
+        coreDataOfficeId.removeAll()
+        coreDataOfficeId = responseOfficeId
+        fetchData()
+    }
+    
     func filteredData(viewModel: ListOffices.FetchOffices.ViewModel,changeImage:Bool) {
         if changeImage {
             FilterButton.setImage(UIImage.filter, for: .normal)
@@ -87,12 +92,10 @@ extension ListOfficesViewController: ListOfficesDisplayLogic {
         tableView.reloadData()
     }
     
-     func showAlert(AlertMessage: String) {
-        
-        let alert = UIAlertController(title: "Hata", message: AlertMessage, preferredStyle: UIAlertController.Style.alert)
+    func showAlert(AlertMessage: String) {
+        let alert = AppConstants.alertError(Error: AlertMessage)
         let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
             self.navigationController?.popViewController(animated: true)
-            
         })
         alert.addAction(okButton)
         self.present(alert, animated: true)
@@ -120,101 +123,33 @@ extension ListOfficesViewController: UITableViewDelegate, UITableViewDataSource 
         cell.likeButtonDelegate = self
         cell.disLikeButtonDelegate = self
         cell.likeButton.setImage(UIImage.dislike, for: .normal)
+        cell.liked = true
         for item in coreDataOfficeId {
             if item == displayOffice.id {
                 cell.likeButton.setImage(UIImage.like, for: .normal)
+                cell.liked = false
             }
         }
-        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let chooseModel = displayedOffices[indexPath.row]
-        router?.DetailrouterToOfficeDetail(model: chooseModel)
+        let selectedOfficeId = displayedOffices[indexPath.row].id
+        router?.routerToOfficeDetail(officeId: selectedOfficeId)
     }
 }
 
-extension ListOfficesViewController : ClickLikeDelegate{
+extension ListOfficesViewController : ClickDisLikeDelegate,ClickLikeDelegate{
     func clickDisLike(officeId: Int) {
-        let appDelaget = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelaget.persistentContainer.viewContext
-        
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CoreDataModel")
-        
-        fetchRequest.predicate = NSPredicate(format: "id = %@", "\(officeId)")
-        do {
-            let results = try context.fetch(fetchRequest)
-            if results.count < 10 {
-                for result in results as! [NSManagedObject] {
-                    if let id = result.value(forKey: "id") as? Int {
-                        print(id)
-                        if  id == officeId {
-                            context.delete(result)
-                            try context.save()
-                        }
-                    }
-                }
-            }
-            else {
-                print("obje yok")
-            }
-        }
-        catch {
-            print("Error")
-        }
-        getCoredata()
-        tableView.reloadData()
+        interactor?.deleteCoreDataModel(id:officeId)
+        interactor?.getCoreData()
     }
     
     func clickLike(officeId : Int,officeName: String,officeImage: UIImage) {
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let newLikeOffice = NSEntityDescription.insertNewObject(forEntityName: "CoreDataModel", into: context)
-        newLikeOffice.setValue(officeName, forKey: "officeName")
-        newLikeOffice.setValue(officeId, forKey: "id")
-        newLikeOffice.setValue(officeImage.jpegData(compressionQuality:0.5), forKey: "officeImage")
-        do {
-            try context.save()
-        }
-        catch {
-            print("kaydetme işlemi gerçeleşmedi")
-        }
+        interactor?.saveCoreDataModel(id:officeId,name:officeName,image:officeImage)
+        interactor?.getCoreData()
     }
     
-    func getCoredata() {
-        coreDataOfficeId.removeAll()
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CoreDataModel")
-        
-        fetchRequest.returnsObjectsAsFaults = false
-        do {
-            let data = try context.fetch(fetchRequest)
-            for result in data as! [NSManagedObject] {
-                if let id = result.value(forKey: "id") as? Int{
-                    print(id)
-                    coreDataOfficeId.append(id)
-                }
-            }
-        }
-        catch {
-            print("olmadı")
-        }
+    func fetchData() {
         tableView.reloadData()
     }
 }
-
-//all object delete
-//        fetchRequest.returnsObjectsAsFaults = false
-//        do
-//        {
-//            let results = try context.fetch(fetchRequest)
-//            for managedObject in results
-//            {
-//                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
-//                context.delete(managedObjectData)
-//            }
-//        } catch let error as NSError {
-//
-//        }

@@ -9,6 +9,7 @@ import UIKit
 
 protocol OfficeDetailDisplayLogic: AnyObject {
     func detailOffice(viewModel: OfficeDetail.FetchOfficeDetail.ViewModel.OfficeDetail)
+    func showAlert(error: String)
 }
 
 final class OfficeDetailViewController: UIViewController {
@@ -31,22 +32,21 @@ final class OfficeDetailViewController: UIViewController {
         setup()
     }
     override func viewDidLoad() {
-
-        fetchOffice()
-        setupUI()
+        interactor?.fetchOffices()
         navigationController?.setNavigationBarHidden(false, animated: true)
-        detailCollectionView.setCollectionViewLayout(createLayout(), animated: true)
+        detailCollectionView.register(UINib(nibName: OfficeDetailCell.identifier, bundle: nil)
+                                      , forCellWithReuseIdentifier: OfficeDetailCell.identifier)
+        detailCollectionView.register(UINib(nibName: OfficeDetailDataCell.identifier, bundle: nil)
+                                      , forCellWithReuseIdentifier: OfficeDetailDataCell.identifier)
     }
     
     private func setupUI () {
-        detailCollectionView.register(UINib(nibName: "OfficeDetailCell", bundle: nil)
-                                      , forCellWithReuseIdentifier: "OfficeDetailCell")
-        detailCollectionView.register(UINib(nibName: "OfficeDetailDataCell", bundle: nil)
-                                      , forCellWithReuseIdentifier: "OfficeDetailDataCell")
-    }
-
-    func fetchOffice() {
-        interactor?.fetchOffice()
+        DispatchQueue.main.async { [weak self] in
+            self?.detailCollectionView.dataSource = self
+            self?.detailCollectionView.delegate = self
+            self?.detailCollectionView.setCollectionViewLayout(self?.createLayout() ?? UICollectionViewLayout(), animated: true)
+            self?.detailCollectionView.reloadData()
+        }
     }
     
     // MARK: Setup
@@ -66,17 +66,25 @@ final class OfficeDetailViewController: UIViewController {
 }
 
 extension OfficeDetailViewController: OfficeDetailDisplayLogic {
+    
     func detailOffice(viewModel: OfficeDetail.FetchOfficeDetail.ViewModel.OfficeDetail) {
         detailOffice = viewModel
+        setupUI()
+        
+    }
+    
+    func showAlert(error: String) {
+        let alert = AppConstants.alertError(Error: error)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:nil)
+        alert.addAction(okButton)
+        self.present(alert, animated: true)
     }
 }
 
 extension OfficeDetailViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
         return sections.allCases.count
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -85,19 +93,20 @@ extension OfficeDetailViewController : UICollectionViewDelegate, UICollectionVie
         case .detailData:
            return 1
         case .image:
-            guard let imageCount = detailOffice?.images?.count else { return 0 }
+            guard let imageCount = detailOffice?.officeDetailimages.count else { return 0 }
             return imageCount
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let sectionCell = sections(rawValue: indexPath.section) else { return UICollectionViewCell() }
+        guard let sectionCell = sections(rawValue: indexPath.section)
+        else { return UICollectionViewCell() }
         
         switch sectionCell {
         case .image:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OfficeDetailCell.identifier, for: indexPath)
                     as? OfficeDetailCell else { return UICollectionViewCell()}
-            cell.configure(image: (detailOffice?.images?[indexPath.row]))
+            cell.configure(image: (detailOffice?.officeDetailimages[indexPath.row]))
             return cell
             
         case .detailData:
@@ -143,7 +152,6 @@ extension OfficeDetailViewController {
             }
             else {
                return self.makeVerticalLayout()
-                
             }
         }
     }

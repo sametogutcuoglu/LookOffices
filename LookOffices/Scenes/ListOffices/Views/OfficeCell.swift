@@ -11,6 +11,8 @@ import CoreData
 
 protocol ClickLikeDelegate: AnyObject {
     func clickLike(officeId : Int,officeName : String,officeImage : UIImage)
+}
+protocol ClickDisLikeDelegate: AnyObject {
     func clickDisLike(officeId : Int)
 }
 
@@ -23,18 +25,10 @@ class OfficeCell: UITableViewCell {
     var liked : Bool = true
     var officeId : Int?
     weak var likeButtonDelegate : ClickLikeDelegate?
-    weak var disLikeButtonDelegate : ClickLikeDelegate?
-    
+    weak var disLikeButtonDelegate : ClickDisLikeDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-    func getButtonImage(like: Bool) {
-        if like {
-            likeButton.setImage(UIImage.like, for: .normal)
-        }
-        else {
-            likeButton.setImage(UIImage.dislike, for: .normal)
-        }
+        officeImageView.layer.cornerRadius = 10
     }
     @IBAction func clickLikeButton(_ sender: Any) {
 
@@ -43,7 +37,7 @@ class OfficeCell: UITableViewCell {
             return
         }
         if (liked) {
-            likeButtonDelegate?.clickLike(officeId: officeId,officeName : officeName.text!,officeImage : officeImageView.image!)
+            likeButtonDelegate?.clickLike(officeId: officeId,officeName : officeName.text ?? "",officeImage : officeImageView.image ?? UIImage())
             button.setImage(UIImage.like, for: .normal)
             liked = false
         }
@@ -56,7 +50,6 @@ class OfficeCell: UITableViewCell {
     
     func configure(viewModel: ListOffices.FetchOffices.ViewModel.Office) {
         officeId = viewModel.id
-        officeImageView.layer.cornerRadius = 10
         officeImageView.sd_setImage(with: URL(string: viewModel.image))
         officeName.text = viewModel.name
     }

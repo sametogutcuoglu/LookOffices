@@ -1,57 +1,39 @@
 //
-//  FavoriViewController.swift
+//  FavoriteViewController.swift
 //  LookOffices
 //
-//  Created by samet ogutcuoglu on 15.08.2022.
+//  Created by samet ogutcuoglu on 16.08.2022.
 //
 
-import Foundation
 import UIKit
 import CoreData
 
+protocol FavoriteDisplayLogic: AnyObject {
+    func getCoreData(responseOfficeId:[Int])
+}
 
-class FavoriViewController : UIViewController, ClickLikeDelegate {
-    func clickLike(officeId: Int, officeName: String, officeImage: UIImage) {
-        
-    }
+final class FavoriteViewController: UIViewController {
     
-    func clickDisLike(officeId: Int) {
-        
-        let appDelaget = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelaget.persistentContainer.viewContext
-        
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CoreDataModel")
-        
-        fetchRequest.predicate = NSPredicate(format: "id = %@", "\(officeId)")
-        do {
-            let results = try context.fetch(fetchRequest)
-            if results.count < 10 {
-                for result in results as! [NSManagedObject] {
-                    if let id = result.value(forKey: "id") as? Int {
-                        print(id)
-                        if  id == officeId {
-                            context.delete(result)
-                            try context.save()
-                        }
-                    }
-                }
-            }
-            else {
-                print("obje yok")
-            }
-        }
-        catch {
-            print("Error")
-        }
-        
-        getdata()
-        tableView.reloadData()
-    }
+    var interactor: FavoriteBusinessLogic?
+    var router: (FavoriteRoutingLogic & FavoriteDataPassing)?
     
     @IBOutlet var tableView: UITableView!
     var officeName : [String] = []
     var officeImage : [UIImage] = []
     var officeId : [Int] = []
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: OfficeCell.identifier, bundle: .main),forCellReuseIdentifier: OfficeCell.identifier)
@@ -60,17 +42,20 @@ class FavoriViewController : UIViewController, ClickLikeDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        interactor?.getCoreData()
         officeImage.removeAll()
         officeId.removeAll()
         officeName.removeAll()
         getdata()
         tableView.reloadData()
+        
     }
     
     private func getdata() {
         officeImage.removeAll()
         officeId.removeAll()
         officeName.removeAll()
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CoreDataModel")
@@ -96,9 +81,33 @@ class FavoriViewController : UIViewController, ClickLikeDelegate {
       
         }
     }
+    
+    // MARK: Setup
+    
+    private func setup() {
+        let viewController = self
+        let interactor = FavoriteInteractor()
+        let presenter = FavoritePresenter()
+        let router = FavoriteRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
 }
 
-extension FavoriViewController : UITableViewDelegate, UITableViewDataSource {
+extension FavoriteViewController: FavoriteDisplayLogic {
+    
+    func getCoreData(responseOfficeId: [Int]) {
+        officeId.removeAll()
+        officeId = responseOfficeId
+        fetchData()
+    }
+}
+
+extension FavoriteViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return officeId.count
@@ -115,5 +124,17 @@ extension FavoriViewController : UITableViewDelegate, UITableViewDataSource {
         cell.disLikeButtonDelegate = self
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        router?.routerToOfficeDetail(officeId: officeId[indexPath.row])
+    }
+}
+
+extension FavoriteViewController: ClickDisLikeDelegate {
+    func clickDisLike(officeId: Int) {
+        interactor?.deleteCoreDataModel(id:officeId)
+        interactor?.getCoreData()
+    }
+    func fetchData() {
+        tableView.reloadData()
+    }
 }

@@ -11,9 +11,14 @@ protocol ListOfficesPresentationLogic: AnyObject {
     func presentOffices(response: ListOffices.FetchOffices.Response)
     func alert(AlertMessage: String)
     func responseFilterData (response :ListOffices.FetchOffices.ViewModel,changeImage:Bool)
+    func getCoreData(officesId : [Int])
 }
 
 final class ListOfficesPresenter: ListOfficesPresentationLogic {
+    func getCoreData(officesId : [Int]) {
+        viewController?.getCoreData(responseOfficeId: officesId)
+    }
+    
     
     weak var viewController: ListOfficesDisplayLogic?
     

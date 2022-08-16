@@ -16,55 +16,28 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0gP-dz-OYv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="LoginTopBackground"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" name="LoginTopBackground"/>
                     </tabBar>
                     <connections>
                         <segue destination="kgN-b4-HSQ" kind="relationship" relationship="viewControllers" id="K5N-2x-yoq"/>
-                        <segue destination="bca-W0-J1p" kind="relationship" relationship="viewControllers" id="lsi-7z-uv2"/>
+                        <segue destination="EN4-XM-UOq" kind="relationship" relationship="viewControllers" id="I1e-Er-d7T"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Xc-XK-5WS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-570" y="-104"/>
         </scene>
-        <!--Favori-->
-        <scene sceneID="saJ-YJ-yhh">
+        <!--FavoriteVC-->
+        <scene sceneID="lky-xq-v6T">
             <objects>
-                <viewController id="bca-W0-J1p" customClass="FavoriViewController" customModule="LookOffices" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Akl-r9-L5L">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XoX-CT-NW6">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
-                                <color key="backgroundColor" name="LoginTopBackground"/>
-                                <color key="sectionIndexBackgroundColor" name="LoginTopBackground"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="bca-W0-J1p" id="SV7-I5-1xR"/>
-                                    <outlet property="delegate" destination="bca-W0-J1p" id="vbb-QE-mFV"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="WWQ-MD-JZ1"/>
-                        <color key="backgroundColor" name="LoginTopBackground"/>
-                        <constraints>
-                            <constraint firstItem="WWQ-MD-JZ1" firstAttribute="trailing" secondItem="XoX-CT-NW6" secondAttribute="trailing" id="Ci5-bd-8RX"/>
-                            <constraint firstItem="WWQ-MD-JZ1" firstAttribute="bottom" secondItem="XoX-CT-NW6" secondAttribute="bottom" id="Zjs-pf-KMF"/>
-                            <constraint firstItem="XoX-CT-NW6" firstAttribute="leading" secondItem="WWQ-MD-JZ1" secondAttribute="leading" id="g0N-Bq-8hx"/>
-                            <constraint firstItem="XoX-CT-NW6" firstAttribute="top" secondItem="WWQ-MD-JZ1" secondAttribute="top" id="qwH-f4-dwv"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Favori" image="TabbarFavoriButton" selectedImage="tabbarSelectFavoriButton" id="pKo-Mo-CSa"/>
-                    <navigationItem key="navigationItem" id="9O8-BP-Yur"/>
-                    <connections>
-                        <outlet property="tableView" destination="XoX-CT-NW6" id="zh2-mL-gQo"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DjR-Jj-ZSb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Favorite" referencedIdentifier="FavoriteVC" id="EN4-XM-UOq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="vsH-LM-S0D"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e59-Nk-a8f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="298.55072463768118" y="241.74107142857142"/>
+            <point key="canvasLocation" x="315" y="50"/>
         </scene>
         <!--Home-->
         <scene sceneID="yJw-NY-GeY">
@@ -127,10 +100,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="TabbarFavoriButton" width="32" height="32"/>
         <image name="filter" width="24" height="24"/>
         <image name="tabbarListButton" width="32" height="32"/>
-        <image name="tabbarSelectFavoriButton" width="32" height="32"/>
         <image name="tabbarSelectListButton" width="32" height="32"/>
         <namedColor name="FiltreButtonBackground">
             <color red="0.28099998831748962" green="0.29699999094009399" blue="0.40799999237060547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

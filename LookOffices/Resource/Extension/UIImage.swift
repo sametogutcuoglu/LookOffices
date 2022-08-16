@@ -13,6 +13,7 @@ public extension UIImage {
     static var notFilter : UIImage { UIImage(imageName: "filter") }
     static var like : UIImage { UIImage(imageName: "like") }
     static var dislike : UIImage { UIImage(imageName: "dislike") }
+    static var notFoundImage : UIImage { UIImage(imageName: "notFoundImage") }
 }
 
 public extension UIImage {

@@ -31,7 +31,14 @@
 		5B1A22D0289C3564003C10EA /* OfficeDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B1A22CE289C3564003C10EA /* OfficeDetailCell.xib */; };
 		5B26C33328914F05003AE9B0 /* DrawTriangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26C33228914F05003AE9B0 /* DrawTriangle.swift */; };
 		5B29F48828A9793D0078AE24 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B29F48728A9793D0078AE24 /* UIImage.swift */; };
-		5B2B61E828AA7CC200C5DECC /* FavoriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B61E728AA7CC200C5DECC /* FavoriViewController.swift */; };
+		5B2B61EC28AAF48000C5DECC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B61EB28AAF48000C5DECC /* CoreDataManager.swift */; };
+		5B2B61F528AAF6BE00C5DECC /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2B61EE28AAF6BE00C5DECC /* Favorite.storyboard */; };
+		5B2B61F628AAF6BE00C5DECC /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B61EF28AAF6BE00C5DECC /* FavoriteViewController.swift */; };
+		5B2B61F728AAF6BE00C5DECC /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B61F028AAF6BE00C5DECC /* FavoritePresenter.swift */; };
+		5B2B61F828AAF6BE00C5DECC /* FavoriteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B61F128AAF6BE00C5DECC /* FavoriteInteractor.swift */; };
+		5B2B61F928AAF6BE00C5DECC /* FavoriteModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B61F228AAF6BE00C5DECC /* FavoriteModels.swift */; };
+		5B2B61FA28AAF6BE00C5DECC /* FavoriteWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B61F328AAF6BE00C5DECC /* FavoriteWorker.swift */; };
+		5B2B61FB28AAF6BE00C5DECC /* FavoriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B61F428AAF6BE00C5DECC /* FavoriteRouter.swift */; };
 		5B3AF64728A6EEF100D8C748 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3AF64628A6EEF100D8C748 /* UIView.swift */; };
 		5B5748AF28A6B0980084F5C1 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5748A828A6B0980084F5C1 /* FilterViewController.swift */; };
 		5B5748B028A6B0980084F5C1 /* FilterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5748A928A6B0980084F5C1 /* FilterPresenter.swift */; };
@@ -112,7 +119,14 @@
 		5B1A22CE289C3564003C10EA /* OfficeDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfficeDetailCell.xib; sourceTree = "<group>"; };
 		5B26C33228914F05003AE9B0 /* DrawTriangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawTriangle.swift; sourceTree = "<group>"; };
 		5B29F48728A9793D0078AE24 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		5B2B61E728AA7CC200C5DECC /* FavoriViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriViewController.swift; sourceTree = "<group>"; };
+		5B2B61EB28AAF48000C5DECC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		5B2B61EE28AAF6BE00C5DECC /* Favorite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorite.storyboard; sourceTree = "<group>"; };
+		5B2B61EF28AAF6BE00C5DECC /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		5B2B61F028AAF6BE00C5DECC /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
+		5B2B61F128AAF6BE00C5DECC /* FavoriteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteInteractor.swift; sourceTree = "<group>"; };
+		5B2B61F228AAF6BE00C5DECC /* FavoriteModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModels.swift; sourceTree = "<group>"; };
+		5B2B61F328AAF6BE00C5DECC /* FavoriteWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWorker.swift; sourceTree = "<group>"; };
+		5B2B61F428AAF6BE00C5DECC /* FavoriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRouter.swift; sourceTree = "<group>"; };
 		5B3AF64628A6EEF100D8C748 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		5B5748A828A6B0980084F5C1 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		5B5748A928A6B0980084F5C1 /* FilterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPresenter.swift; sourceTree = "<group>"; };
@@ -224,9 +238,42 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		5B2B61E928AAF44E00C5DECC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3DD7D6DE2899679C004A9F6F /* API */,
+				5BD2E46E28A0F287004D6E1A /* Network */,
+				5B2B61EA28AAF45400C5DECC /* CoreData */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5B2B61EA28AAF45400C5DECC /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				5B2B61EB28AAF48000C5DECC /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		5B2B61ED28AAF6A700C5DECC /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				5B2B61EE28AAF6BE00C5DECC /* Favorite.storyboard */,
+				5B2B61EF28AAF6BE00C5DECC /* FavoriteViewController.swift */,
+				5B2B61F028AAF6BE00C5DECC /* FavoritePresenter.swift */,
+				5B2B61F128AAF6BE00C5DECC /* FavoriteInteractor.swift */,
+				5B2B61F228AAF6BE00C5DECC /* FavoriteModels.swift */,
+				5B2B61F328AAF6BE00C5DECC /* FavoriteWorker.swift */,
+				5B2B61F428AAF6BE00C5DECC /* FavoriteRouter.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
 		5B3814E328A7EA85007066FD /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5B2B61ED28AAF6A700C5DECC /* Favorite */,
 				5BE4E62C288FFFBF009FF44B /* Login */,
 				5BC0638E289022D6004FA4FA /* Register */,
 				5BCE5D05289821FF00563B19 /* ListOffices */,
@@ -310,11 +357,10 @@
 		5B9CE2F5287347A60085859A /* LookOffices */ = {
 			isa = PBXGroup;
 			children = (
+				5B2B61E928AAF44E00C5DECC /* Data */,
 				5B3814E328A7EA85007066FD /* Scenes */,
 				5B3814E428A7EAFE007066FD /* Resource */,
-				5BD2E46E28A0F287004D6E1A /* Network */,
 				5B8D92112873687E002DF1D1 /* LookOffices.entitlements */,
-				3DD7D6DE2899679C004A9F6F /* API */,
 				5B84D327289AA1C200505E94 /* System */,
 			);
 			path = LookOffices;
@@ -380,7 +426,6 @@
 			children = (
 				5B13C116289AB23F001D4626 /* OfficeCell.swift */,
 				5B13C117289AB23F001D4626 /* OfficeCell.xib */,
-				5B2B61E728AA7CC200C5DECC /* FavoriViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -540,6 +585,7 @@
 			files = (
 				5B84D33B289AA3BA00505E94 /* Login.storyboard in Resources */,
 				5B9CE303287347A70085859A /* LaunchScreen.storyboard in Resources */,
+				5B2B61F528AAF6BE00C5DECC /* Favorite.storyboard in Resources */,
 				5B6DB24728A6C1CD0064CE86 /* Filter.storyboard in Resources */,
 				5B13C115289AB115001D4626 /* ListOffices.storyboard in Resources */,
 				5B84D343289AA4B300505E94 /* Image.xcassets in Resources */,
@@ -575,17 +621,21 @@
 			files = (
 				5B84D33C289AA3BA00505E94 /* LoginViewController.swift in Sources */,
 				5B26C33328914F05003AE9B0 /* DrawTriangle.swift in Sources */,
+				5B2B61F728AAF6BE00C5DECC /* FavoritePresenter.swift in Sources */,
 				5BCE5D00289821E200563B19 /* ListOfficesPresenter.swift in Sources */,
+				5B2B61FA28AAF6BE00C5DECC /* FavoriteWorker.swift in Sources */,
 				5B84D33E289AA3BA00505E94 /* LoginInteractor.swift in Sources */,
 				5B13C100289AAA87001D4626 /* AppConstants.swift in Sources */,
 				5B13C110289AADF1001D4626 /* RegisterRouter.swift in Sources */,
 				5B29F48828A9793D0078AE24 /* UIImage.swift in Sources */,
+				5B2B61F828AAF6BE00C5DECC /* FavoriteInteractor.swift in Sources */,
 				5B84D340289AA3BA00505E94 /* LoginWorker.swift in Sources */,
 				5BCE5D0C2898297900563B19 /* OfficesResponse.swift in Sources */,
 				5B10CE55289D5D7700FEBB5B /* OfficeDetailDataCell.swift in Sources */,
 				5B10CE7428A026FF00FEBB5B /* Section.swift in Sources */,
 				5B13C10C289AADF1001D4626 /* RegisterPresenter.swift in Sources */,
 				5B13C102289AAAE0001D4626 /* UIColor.swift in Sources */,
+				5B2B61F928AAF6BE00C5DECC /* FavoriteModels.swift in Sources */,
 				5B13C10F289AADF1001D4626 /* RegisterWorker.swift in Sources */,
 				5B5748B228A6B0980084F5C1 /* FilterModels.swift in Sources */,
 				5B9CE2F7287347A60085859A /* AppDelegate.swift in Sources */,
@@ -602,7 +652,8 @@
 				5B13C10B289AADF1001D4626 /* RegisterViewController.swift in Sources */,
 				5B84D33F289AA3BA00505E94 /* LoginModels.swift in Sources */,
 				5B84D341289AA3BA00505E94 /* LoginRouter.swift in Sources */,
-				5B2B61E828AA7CC200C5DECC /* FavoriViewController.swift in Sources */,
+				5B2B61EC28AAF48000C5DECC /* CoreDataManager.swift in Sources */,
+				5B2B61F628AAF6BE00C5DECC /* FavoriteViewController.swift in Sources */,
 				3DD7D6E1289968E2004A9F6F /* UIButton.swift in Sources */,
 				5B9CD878289B0553006FCC4A /* OfficeDetailViewController.swift in Sources */,
 				5B9CD87B289B0553006FCC4A /* OfficeDetailModels.swift in Sources */,
@@ -617,6 +668,7 @@
 				5B15CC3528AA4E7900EA55AB /* CoreDataModel.xcdatamodeld in Sources */,
 				5B13C0FE289AAA41001D4626 /* ListOfficesWorker.swift in Sources */,
 				5B5748B028A6B0980084F5C1 /* FilterPresenter.swift in Sources */,
+				5B2B61FB28AAF6BE00C5DECC /* FavoriteRouter.swift in Sources */,
 				5B5748B328A6B0980084F5C1 /* FilterWorker.swift in Sources */,
 				5B9CD879289B0553006FCC4A /* OfficeDetailPresenter.swift in Sources */,
 				5B5748B128A6B0980084F5C1 /* FilterInteractor.swift in Sources */,

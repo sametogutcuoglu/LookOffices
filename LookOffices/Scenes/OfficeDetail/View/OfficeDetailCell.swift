@@ -11,14 +11,10 @@ class OfficeDetailCell: UICollectionViewCell {
 
     @IBOutlet weak var officeImagesView: UIImageView!
     static let identifier = "OfficeDetailCell"
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        officeImagesView.layer.cornerRadius = 10
-    }
     
     func configure (image : String?) {
-        guard let url = URL(string: image ?? "") else  { return }
+        officeImagesView.layer.cornerRadius = 10
+        guard let url = URL(string: image ?? AppConstants.notFoundImage) else  { return }
             officeImagesView.sd_setImage(with: url)
     }
 }
