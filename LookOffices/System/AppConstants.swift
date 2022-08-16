@@ -17,6 +17,9 @@ struct AppConstants {
     static let errorNotFoundOfficeId = "Unique Key İd Not Found"
     static let errorNilOfficeId = "Nil OfficeId"
     static let notFoundImage = "https://e7.pngegg.com/pngimages/829/733/png-clipart-logo-brand-product-trademark-font-not-found-logo-brand.png"
+    static let kSecAttrAccount = "samet"
+    static let kSecAttrServer = "mainServer"
+    static let kSecAttrPath = "com.samet"
     
     static func alertError(Error: String) -> UIAlertController {
     let alert = UIAlertController(title: "Error", message: Error, preferredStyle: UIAlertController.Style.alert)

@@ -81,6 +81,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
+                                                    <action selector="clickLoginButton:" destination="tcC-na-7an" eventType="touchUpInside" id="tz6-zZ-mGH"/>
                                                     <segue destination="KkU-lL-9tJ" kind="show" id="rtT-n5-CDf"/>
                                                 </connections>
                                             </button>
@@ -147,6 +148,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="0Xc-yl-LfN"/>
                     <connections>
+                        <outlet property="passwordTextField" destination="W7T-4q-ZFt" id="npe-eY-oio"/>
                         <outlet property="triangleView" destination="Vee-BI-6e4" id="hlq-ao-gh8"/>
                     </connections>
                 </viewController>

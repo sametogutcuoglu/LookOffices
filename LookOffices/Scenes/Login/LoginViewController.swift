@@ -14,10 +14,12 @@ protocol LoginDisplayLogic: AnyObject {
 final class LoginViewController: UIViewController {
     
     @IBOutlet weak var triangleView: UIView!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     var interactor: LoginBusinessLogic?
     var router: (LoginRoutingLogic & LoginDataPassing)?
     
+    var savePassword : Bool = false
     var count = 0
     var triangle = CAShapeLayer()
     
@@ -32,10 +34,31 @@ final class LoginViewController: UIViewController {
         super.init(coder: aDecoder)
         setup()
     }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        let query = [
+            kSecClass : kSecClassInternetPassword,
+            kSecAttrAccount : AppConstants.kSecAttrAccount,
+            kSecAttrServer : AppConstants.kSecAttrServer,
+            kSecAttrPath : AppConstants.kSecAttrPath,
+            kSecReturnAttributes : true,
+            kSecReturnData : true
+        ] as CFDictionary
+        
+        var result : AnyObject?
+        let keyChainStatus = SecItemCopyMatching(query, &result)
+        print("Result : \(keyChainStatus)")
+        if keyChainStatus == 0 {
+            let dic = result as! NSDictionary
+            let passwordData = dic[kSecValueData] as! Data
+            guard let password = String(data: passwordData, encoding: .utf8) else { return }
+            print(password)
+            savePassword = true
+        }
+        else {
+            print("Kayıt bulunamadı")
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -89,9 +112,26 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction func clickCreateNowButton(_: Any) {
-        // performSegue(withIdentifier: "toRegisterView", sender: nil)
+
     }
     
+    @IBAction func clickLoginButton(_:  Any) {
+        if savePassword {
+            print("paralo zaaten kayıtlı")
+        }
+        else {
+            guard let password = passwordTextField.text?.data(using: .utf8) else { return }
+            let keyChainItem = [
+                kSecValueData: password,
+                kSecAttrAccount : AppConstants.kSecAttrAccount,
+                kSecAttrServer : AppConstants.kSecAttrServer,
+                kSecAttrPath : AppConstants.kSecAttrPath,
+                kSecClass : kSecClassInternetPassword
+            ] as CFDictionary
+            let status = SecItemAdd(keyChainItem, nil)
+            print("kaydetdi \(status)")
+        }
+    }
 }
 
 extension LoginViewController: LoginDisplayLogic {
