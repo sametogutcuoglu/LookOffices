@@ -121,6 +121,8 @@ extension ListOfficesViewController: UITableViewDelegate, UITableViewDataSource 
             return UITableViewCell()
         }
         cell.configure(viewModel: displayOffice)
+        cell.layer.borderWidth = CGFloat(3) // satırlar arası boşluk için veriyorum
+        cell.layer.borderColor = tableView.backgroundColor?.cgColor
         cell.likeButtonDelegate = self
         cell.disLikeButtonDelegate = self
         cell.likeButton.setImage(UIImage.dislike, for: .normal)
@@ -136,6 +138,10 @@ extension ListOfficesViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedOfficeId = displayedOffices[indexPath.row].id
         router?.routerToOfficeDetail(officeId: selectedOfficeId)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
 }
 //  MARK: Favoriye ekleme ve kaldırma işlemleri için delegate işlemeri

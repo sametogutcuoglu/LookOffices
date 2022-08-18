@@ -18,7 +18,7 @@ import UIKit
         }
     }
     
-    @IBInspectable var borderColor: UIColor? {
+    @IBInspectable override var borderColor: UIColor? {
         get {
             return UIColor(cgColor: layer.borderColor!)
         }

@@ -121,10 +121,16 @@ extension FavoriteViewController : UITableViewDelegate, UITableViewDataSource {
         cell.likeButton.setImage(UIImage.like, for: .normal)
         cell.liked = false
         cell.disLikeButtonDelegate = self
+        cell.layer.borderWidth = CGFloat(3)
+        cell.layer.borderColor = tableView.backgroundColor?.cgColor
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         router?.routerToOfficeDetail(officeId: officeId[indexPath.row])
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
 }
 

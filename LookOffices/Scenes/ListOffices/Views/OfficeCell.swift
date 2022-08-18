@@ -19,7 +19,10 @@ protocol ClickDisLikeDelegate: AnyObject {
 class OfficeCell: UITableViewCell {
     
     static let identifier = "OfficeCell"
-    @IBOutlet weak var officeName: UILabel!
+    @IBOutlet weak var officeNameLabel: UILabel!
+    @IBOutlet weak var officeRoomLabel: UILabel!
+    @IBOutlet weak var officeCapacityLabel: UILabel!
+    @IBOutlet weak var officeSpaceLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet var officeImageView: UIImageView!
     var liked : Bool = true
@@ -30,6 +33,7 @@ class OfficeCell: UITableViewCell {
         super.awakeFromNib()
         officeImageView.layer.cornerRadius = 10
     }
+    
     @IBAction func clickLikeButton(_ sender: Any) {
 
         guard let button = sender as? UIButton else { return }
@@ -37,7 +41,7 @@ class OfficeCell: UITableViewCell {
             return
         }
         if (liked) {
-            likeButtonDelegate?.clickLike(officeId: officeId,officeName : officeName.text ?? "",officeImage : officeImageView.image ?? UIImage())
+            likeButtonDelegate?.clickLike(officeId: officeId,officeName : officeNameLabel.text ?? "",officeImage : officeImageView.image ?? UIImage())
             button.setImage(UIImage.like, for: .normal)
             liked = false
         }
@@ -51,13 +55,26 @@ class OfficeCell: UITableViewCell {
     func configure(viewModel: ListOffices.FetchOffices.ViewModel.Office) {
         officeId = viewModel.id
         officeImageView.sd_setImage(with: URL(string: viewModel.image))
-        officeName.text = viewModel.name
+        officeNameLabel.text = viewModel.name
+        officeRoomLabel.text = "\(viewModel.rooms)"
+        officeCapacityLabel.text = viewModel.capacity
+        officeSpaceLabel.text = viewModel.space
     }
     
     func configure(image: UIImage, Name: String, officeId: Int) {
         self.officeId = officeId
-        officeName.text = Name
+        officeNameLabel.text = Name
         officeImageView.image = image
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        if #available(iOS 13.0, *) {
+            guard traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)
+            else { return }
+            self.layer.borderColor = UIColor.loginTopViewBackgroundColor.cgColor
+        }
     }
     
 }
