@@ -32,6 +32,7 @@ final class OfficeDetailViewController: UIViewController {
         setup()
     }
     override func viewDidLoad() {
+        super.viewDidLoad()
         interactor?.fetchOffices()
         navigationController?.setNavigationBarHidden(false, animated: true)
         detailCollectionView.register(UINib(nibName: OfficeDetailCell.identifier, bundle: nil)

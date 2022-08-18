@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mFg-GG-oLI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="4VD-WR-fB9">
+            <objects>
+                <navigationController id="mFg-GG-oLI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="y0B-6F-ite">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7DR-VU-wi5" kind="relationship" relationship="rootViewController" id="iZA-f0-QHU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P8e-6a-ZOi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-128" y="116"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="mtl-NX-ZQk">
+            <objects>
+                <viewController id="7DR-VU-wi5" customClass="WelcomeViewController" customModule="LookOffices" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zda-qn-jcH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Look  Offices" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itq-Ec-Dqh">
+                                <rect key="frame" x="30" y="378.5" width="354" height="139"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="60"/>
+                                <color key="textColor" name="WelcomeTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Lo4-b8-Sdz"/>
+                        <color key="backgroundColor" name="WelcomeBackground"/>
+                        <constraints>
+                            <constraint firstItem="Lo4-b8-Sdz" firstAttribute="trailing" secondItem="itq-Ec-Dqh" secondAttribute="trailing" constant="30" id="MO8-pB-X7k"/>
+                            <constraint firstItem="itq-Ec-Dqh" firstAttribute="leading" secondItem="Lo4-b8-Sdz" secondAttribute="leading" constant="30" id="Mzv-me-Iqv"/>
+                            <constraint firstItem="itq-Ec-Dqh" firstAttribute="centerY" secondItem="zda-qn-jcH" secondAttribute="centerY" id="Xf0-i0-da2"/>
+                            <constraint firstItem="itq-Ec-Dqh" firstAttribute="centerX" secondItem="zda-qn-jcH" secondAttribute="centerX" id="YJ6-ZL-h0j"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KDO-Id-eYL"/>
+                    <connections>
+                        <outlet property="label" destination="itq-Ec-Dqh" id="hwo-CF-c9U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wWJ-gN-eud" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="915.94202898550736" y="108.48214285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="WelcomeBackground">
+            <color red="0.68199998140335083" green="0.82400000095367432" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="WelcomeTextColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

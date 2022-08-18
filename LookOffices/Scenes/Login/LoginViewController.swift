@@ -37,6 +37,7 @@ final class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.setHidesBackButton(true, animated: true) 
         let query = [
             kSecClass : kSecClassInternetPassword,
             kSecAttrAccount : AppConstants.kSecAttrAccount,
@@ -112,7 +113,7 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction func clickCreateNowButton(_: Any) {
-
+        router?.getRegister()
     }
     
     @IBAction func clickLoginButton(_:  Any) {
@@ -131,6 +132,7 @@ final class LoginViewController: UIViewController {
             let status = SecItemAdd(keyChainItem, nil)
             print("kaydetdi \(status)")
         }
+        router?.getOfficeList()
     }
 }
 

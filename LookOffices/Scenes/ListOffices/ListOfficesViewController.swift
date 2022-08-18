@@ -39,6 +39,7 @@ final class ListOfficesViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationItem.setHidesBackButton(true, animated: true)
         navigationController?.setNavigationBarHidden(true, animated: false)
         interactor?.getCoreData()
     }

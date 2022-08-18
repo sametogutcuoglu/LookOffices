@@ -13,6 +13,7 @@ public extension UIColor {
     static var loginTextBackgroundColor: UIColor { UIColor(colorName: "loginTextColor") }
     static var loginTopViewBackgroundColor: UIColor { UIColor(colorName: "LoginTopBackground") }
     static var filtreViewBorderColor: UIColor { UIColor(colorName: "FiltreViewBorderColor") }
+    static var WelcomeBackgroundDarknees: UIColor { UIColor(colorName: "WelcomeBackgroundDarknees") }
     
 }
 

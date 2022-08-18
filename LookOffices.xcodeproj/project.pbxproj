@@ -62,6 +62,9 @@
 		5B89D5ED28AD78DA0068638A /* OfficeWebSiteModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89D5E628AD78DA0068638A /* OfficeWebSiteModels.swift */; };
 		5B89D5EE28AD78DA0068638A /* OfficeWebSiteWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89D5E728AD78DA0068638A /* OfficeWebSiteWorker.swift */; };
 		5B89D5EF28AD78DA0068638A /* OfficeWebSiteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89D5E828AD78DA0068638A /* OfficeWebSiteRouter.swift */; };
+		5B89D5F628AE52CA0068638A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89D5F528AE52CA0068638A /* WelcomeViewController.swift */; };
+		5B89D5F828AE530E0068638A /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89D5F728AE530D0068638A /* Welcome.storyboard */; };
+		5B9139CD28AE675100274BE3 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9139CC28AE675100274BE3 /* TabbarController.swift */; };
 		5B9CD877289B0553006FCC4A /* OfficeDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9CD870289B0553006FCC4A /* OfficeDetail.storyboard */; };
 		5B9CD878289B0553006FCC4A /* OfficeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CD871289B0553006FCC4A /* OfficeDetailViewController.swift */; };
 		5B9CD879289B0553006FCC4A /* OfficeDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CD872289B0553006FCC4A /* OfficeDetailPresenter.swift */; };
@@ -157,7 +160,10 @@
 		5B89D5E628AD78DA0068638A /* OfficeWebSiteModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeWebSiteModels.swift; sourceTree = "<group>"; };
 		5B89D5E728AD78DA0068638A /* OfficeWebSiteWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeWebSiteWorker.swift; sourceTree = "<group>"; };
 		5B89D5E828AD78DA0068638A /* OfficeWebSiteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeWebSiteRouter.swift; sourceTree = "<group>"; };
+		5B89D5F528AE52CA0068638A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		5B89D5F728AE530D0068638A /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		5B8D92112873687E002DF1D1 /* LookOffices.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LookOffices.entitlements; sourceTree = "<group>"; };
+		5B9139CC28AE675100274BE3 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		5B9CD870289B0553006FCC4A /* OfficeDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OfficeDetail.storyboard; sourceTree = "<group>"; };
 		5B9CD871289B0553006FCC4A /* OfficeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeDetailViewController.swift; sourceTree = "<group>"; };
 		5B9CD872289B0553006FCC4A /* OfficeDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeDetailPresenter.swift; sourceTree = "<group>"; };
@@ -287,6 +293,7 @@
 		5B3814E328A7EA85007066FD /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5B89D5F228AE52700068638A /* Welcome */,
 				5B89D5E128AD78B80068638A /* OfficeWebSite */,
 				5B2B61ED28AAF6A700C5DECC /* Favorite */,
 				5BE4E62C288FFFBF009FF44B /* Login */,
@@ -345,6 +352,15 @@
 				5B89D5E828AD78DA0068638A /* OfficeWebSiteRouter.swift */,
 			);
 			path = OfficeWebSite;
+			sourceTree = "<group>";
+		};
+		5B89D5F228AE52700068638A /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				5B89D5F528AE52CA0068638A /* WelcomeViewController.swift */,
+				5B89D5F728AE530D0068638A /* Welcome.storyboard */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		5B9CD86F289B0507006FCC4A /* OfficeDetail */ = {
@@ -455,6 +471,7 @@
 			children = (
 				5B13C116289AB23F001D4626 /* OfficeCell.swift */,
 				5B13C117289AB23F001D4626 /* OfficeCell.xib */,
+				5B9139CC28AE675100274BE3 /* TabbarController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -625,6 +642,7 @@
 				5B13C10A289AADF1001D4626 /* Register.storyboard in Resources */,
 				5B10CE56289D5D7700FEBB5B /* OfficeDetailDataCell.xib in Resources */,
 				5B13C119289AB23F001D4626 /* OfficeCell.xib in Resources */,
+				5B89D5F828AE530E0068638A /* Welcome.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,10 +684,12 @@
 				5BCE5D0C2898297900563B19 /* OfficesResponse.swift in Sources */,
 				5B10CE55289D5D7700FEBB5B /* OfficeDetailDataCell.swift in Sources */,
 				5B10CE7428A026FF00FEBB5B /* Section.swift in Sources */,
+				5B9139CD28AE675100274BE3 /* TabbarController.swift in Sources */,
 				5B13C10C289AADF1001D4626 /* RegisterPresenter.swift in Sources */,
 				5B13C102289AAAE0001D4626 /* UIColor.swift in Sources */,
 				5B2B61F928AAF6BE00C5DECC /* FavoriteModels.swift in Sources */,
 				5B13C10F289AADF1001D4626 /* RegisterWorker.swift in Sources */,
+				5B89D5F628AE52CA0068638A /* WelcomeViewController.swift in Sources */,
 				5B5748B228A6B0980084F5C1 /* FilterModels.swift in Sources */,
 				5B9CE2F7287347A60085859A /* AppDelegate.swift in Sources */,
 				5B9CD87C289B0553006FCC4A /* OfficeDetailWorker.swift in Sources */,
@@ -890,7 +910,7 @@
 				INFOPLIST_FILE = LookOffices/System/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Login;
+				INFOPLIST_KEY_UIMainStoryboardFile = Welcome;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -923,7 +943,7 @@
 				INFOPLIST_FILE = LookOffices/System/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Login;
+				INFOPLIST_KEY_UIMainStoryboardFile = Welcome;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1099,7 +1119,7 @@
 				INFOPLIST_FILE = LookOffices/System/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Login;
+				INFOPLIST_KEY_UIMainStoryboardFile = Welcome;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1229,7 +1249,7 @@
 				INFOPLIST_FILE = LookOffices/System/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Login;
+				INFOPLIST_KEY_UIMainStoryboardFile = Welcome;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
