@@ -112,7 +112,7 @@ extension OfficeDetailViewController : UICollectionViewDelegate, UICollectionVie
         case .detailData:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OfficeDetailDataCell.identifier, for: indexPath)
                     as? OfficeDetailDataCell else { return UICollectionViewCell()}
-            
+            cell.clickWebSiteDelegate  = self  //Officesin web sitesine gitmek için butona basıldığını haber veriyoruz
             guard let model = detailOffice else { return UICollectionViewCell() }
             cell.configureData(Model: model)
             return cell
@@ -155,4 +155,13 @@ extension OfficeDetailViewController {
             }
         }
     }
+}
+
+
+extension OfficeDetailViewController : clickWebSiteOpenClick {
+    func buttonClick() {
+        router?.openOfficeWebSite()
+    }
+    
+    
 }

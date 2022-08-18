@@ -124,7 +124,7 @@ extension ListOfficesViewController: UITableViewDelegate, UITableViewDataSource 
         cell.disLikeButtonDelegate = self
         cell.likeButton.setImage(UIImage.dislike, for: .normal)
         cell.liked = true
-        for item in coreDataOfficeId {
+        for item in coreDataOfficeId { // CoreData dan gelen office id'im varsa ve oluşucak olan cellin ofis idsine eşitse like butunun image değiştiriyorum ve liked false yapıyorum ki butona basıldığında bu işlemin dislike olduğunu anlayabiliyim
             if item == displayOffice.id {
                 cell.likeButton.setImage(UIImage.like, for: .normal)
                 cell.liked = false
@@ -137,7 +137,7 @@ extension ListOfficesViewController: UITableViewDelegate, UITableViewDataSource 
         router?.routerToOfficeDetail(officeId: selectedOfficeId)
     }
 }
-
+//  MARK: Favoriye ekleme ve kaldırma işlemleri için delegate işlemeri
 extension ListOfficesViewController : ClickDisLikeDelegate,ClickLikeDelegate{
     func clickDisLike(officeId: Int) {
         interactor?.deleteCoreDataModel(id:officeId)

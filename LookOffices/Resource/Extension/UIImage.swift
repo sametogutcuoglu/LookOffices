@@ -14,6 +14,8 @@ public extension UIImage {
     static var like : UIImage { UIImage(imageName: "like") }
     static var dislike : UIImage { UIImage(imageName: "dislike") }
     static var notFoundImage : UIImage { UIImage(imageName: "notFoundImage") }
+    static var toolbarBackButton : UIImage { UIImage(imageName: "toolbarBackButton") }
+    static var toolbarForwardButton : UIImage { UIImage(imageName: "toolbarForwardButton") }
 }
 
 public extension UIImage {

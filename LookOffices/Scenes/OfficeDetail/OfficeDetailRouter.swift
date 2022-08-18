@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 protocol OfficeDetailRoutingLogic: AnyObject {
-    
+    func openOfficeWebSite()
 }
 
 protocol OfficeDetailDataPassing: AnyObject {
@@ -20,4 +21,9 @@ final class OfficeDetailRouter: OfficeDetailRoutingLogic, OfficeDetailDataPassin
     weak var viewController: OfficeDetailViewController?
     var dataStore: OfficeDetailDataStore?
     
+    func openOfficeWebSite() {
+        let stroyboard = UIStoryboard(name: "OfficeWebSite", bundle: nil)
+        let OfficeWebSiteStoryboard : OfficeWebSiteViewController = stroyboard.instantiateViewController(identifier: "OfficeWebsite")
+        self.viewController?.navigationController?.pushViewController(OfficeWebSiteStoryboard, animated: true)
+    }
 }

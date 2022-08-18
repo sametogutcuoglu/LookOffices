@@ -55,6 +55,13 @@
 		5B84D340289AA3BA00505E94 /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B84D339289AA3BA00505E94 /* LoginWorker.swift */; };
 		5B84D341289AA3BA00505E94 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B84D33A289AA3BA00505E94 /* LoginRouter.swift */; };
 		5B84D343289AA4B300505E94 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B84D342289AA4B300505E94 /* Image.xcassets */; };
+		5B89D5E928AD78DA0068638A /* OfficeWebSite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89D5E228AD78DA0068638A /* OfficeWebSite.storyboard */; };
+		5B89D5EA28AD78DA0068638A /* OfficeWebSiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89D5E328AD78DA0068638A /* OfficeWebSiteViewController.swift */; };
+		5B89D5EB28AD78DA0068638A /* OfficeWebSitePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89D5E428AD78DA0068638A /* OfficeWebSitePresenter.swift */; };
+		5B89D5EC28AD78DA0068638A /* OfficeWebSiteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89D5E528AD78DA0068638A /* OfficeWebSiteInteractor.swift */; };
+		5B89D5ED28AD78DA0068638A /* OfficeWebSiteModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89D5E628AD78DA0068638A /* OfficeWebSiteModels.swift */; };
+		5B89D5EE28AD78DA0068638A /* OfficeWebSiteWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89D5E728AD78DA0068638A /* OfficeWebSiteWorker.swift */; };
+		5B89D5EF28AD78DA0068638A /* OfficeWebSiteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89D5E828AD78DA0068638A /* OfficeWebSiteRouter.swift */; };
 		5B9CD877289B0553006FCC4A /* OfficeDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9CD870289B0553006FCC4A /* OfficeDetail.storyboard */; };
 		5B9CD878289B0553006FCC4A /* OfficeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CD871289B0553006FCC4A /* OfficeDetailViewController.swift */; };
 		5B9CD879289B0553006FCC4A /* OfficeDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CD872289B0553006FCC4A /* OfficeDetailPresenter.swift */; };
@@ -143,6 +150,13 @@
 		5B84D339289AA3BA00505E94 /* LoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorker.swift; sourceTree = "<group>"; };
 		5B84D33A289AA3BA00505E94 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		5B84D342289AA4B300505E94 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
+		5B89D5E228AD78DA0068638A /* OfficeWebSite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OfficeWebSite.storyboard; sourceTree = "<group>"; };
+		5B89D5E328AD78DA0068638A /* OfficeWebSiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeWebSiteViewController.swift; sourceTree = "<group>"; };
+		5B89D5E428AD78DA0068638A /* OfficeWebSitePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeWebSitePresenter.swift; sourceTree = "<group>"; };
+		5B89D5E528AD78DA0068638A /* OfficeWebSiteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeWebSiteInteractor.swift; sourceTree = "<group>"; };
+		5B89D5E628AD78DA0068638A /* OfficeWebSiteModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeWebSiteModels.swift; sourceTree = "<group>"; };
+		5B89D5E728AD78DA0068638A /* OfficeWebSiteWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeWebSiteWorker.swift; sourceTree = "<group>"; };
+		5B89D5E828AD78DA0068638A /* OfficeWebSiteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeWebSiteRouter.swift; sourceTree = "<group>"; };
 		5B8D92112873687E002DF1D1 /* LookOffices.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LookOffices.entitlements; sourceTree = "<group>"; };
 		5B9CD870289B0553006FCC4A /* OfficeDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OfficeDetail.storyboard; sourceTree = "<group>"; };
 		5B9CD871289B0553006FCC4A /* OfficeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeDetailViewController.swift; sourceTree = "<group>"; };
@@ -273,6 +287,7 @@
 		5B3814E328A7EA85007066FD /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5B89D5E128AD78B80068638A /* OfficeWebSite */,
 				5B2B61ED28AAF6A700C5DECC /* Favorite */,
 				5BE4E62C288FFFBF009FF44B /* Login */,
 				5BC0638E289022D6004FA4FA /* Register */,
@@ -316,6 +331,20 @@
 				5B13C0FF289AAA87001D4626 /* AppConstants.swift */,
 			);
 			path = System;
+			sourceTree = "<group>";
+		};
+		5B89D5E128AD78B80068638A /* OfficeWebSite */ = {
+			isa = PBXGroup;
+			children = (
+				5B89D5E228AD78DA0068638A /* OfficeWebSite.storyboard */,
+				5B89D5E328AD78DA0068638A /* OfficeWebSiteViewController.swift */,
+				5B89D5E428AD78DA0068638A /* OfficeWebSitePresenter.swift */,
+				5B89D5E528AD78DA0068638A /* OfficeWebSiteInteractor.swift */,
+				5B89D5E628AD78DA0068638A /* OfficeWebSiteModels.swift */,
+				5B89D5E728AD78DA0068638A /* OfficeWebSiteWorker.swift */,
+				5B89D5E828AD78DA0068638A /* OfficeWebSiteRouter.swift */,
+			);
+			path = OfficeWebSite;
 			sourceTree = "<group>";
 		};
 		5B9CD86F289B0507006FCC4A /* OfficeDetail */ = {
@@ -585,6 +614,7 @@
 			files = (
 				5B84D33B289AA3BA00505E94 /* Login.storyboard in Resources */,
 				5B9CE303287347A70085859A /* LaunchScreen.storyboard in Resources */,
+				5B89D5E928AD78DA0068638A /* OfficeWebSite.storyboard in Resources */,
 				5B2B61F528AAF6BE00C5DECC /* Favorite.storyboard in Resources */,
 				5B6DB24728A6C1CD0064CE86 /* Filter.storyboard in Resources */,
 				5B13C115289AB115001D4626 /* ListOffices.storyboard in Resources */,
@@ -621,13 +651,16 @@
 			files = (
 				5B84D33C289AA3BA00505E94 /* LoginViewController.swift in Sources */,
 				5B26C33328914F05003AE9B0 /* DrawTriangle.swift in Sources */,
+				5B89D5EA28AD78DA0068638A /* OfficeWebSiteViewController.swift in Sources */,
 				5B2B61F728AAF6BE00C5DECC /* FavoritePresenter.swift in Sources */,
 				5BCE5D00289821E200563B19 /* ListOfficesPresenter.swift in Sources */,
+				5B89D5EF28AD78DA0068638A /* OfficeWebSiteRouter.swift in Sources */,
 				5B2B61FA28AAF6BE00C5DECC /* FavoriteWorker.swift in Sources */,
 				5B84D33E289AA3BA00505E94 /* LoginInteractor.swift in Sources */,
 				5B13C100289AAA87001D4626 /* AppConstants.swift in Sources */,
 				5B13C110289AADF1001D4626 /* RegisterRouter.swift in Sources */,
 				5B29F48828A9793D0078AE24 /* UIImage.swift in Sources */,
+				5B89D5EC28AD78DA0068638A /* OfficeWebSiteInteractor.swift in Sources */,
 				5B2B61F828AAF6BE00C5DECC /* FavoriteInteractor.swift in Sources */,
 				5B84D340289AA3BA00505E94 /* LoginWorker.swift in Sources */,
 				5BCE5D0C2898297900563B19 /* OfficesResponse.swift in Sources */,
@@ -642,6 +675,7 @@
 				5B9CD87C289B0553006FCC4A /* OfficeDetailWorker.swift in Sources */,
 				5BCE5CFF289821E200563B19 /* ListOfficesViewController.swift in Sources */,
 				5BCE5D01289821E200563B19 /* ListOfficesInteractor.swift in Sources */,
+				5B89D5EB28AD78DA0068638A /* OfficeWebSitePresenter.swift in Sources */,
 				5B13C10E289AADF1001D4626 /* RegisterModels.swift in Sources */,
 				5B1A22CF289C3564003C10EA /* OfficeDetailCell.swift in Sources */,
 				5BD2E47028A0F33E004D6E1A /* NetworkManager.swift in Sources */,
@@ -660,6 +694,7 @@
 				5B13C118289AB23F001D4626 /* OfficeCell.swift in Sources */,
 				5B13C10D289AADF1001D4626 /* RegisterInteractor.swift in Sources */,
 				5B9CD87D289B0553006FCC4A /* OfficeDetailRouter.swift in Sources */,
+				5B89D5ED28AD78DA0068638A /* OfficeWebSiteModels.swift in Sources */,
 				5B5748AF28A6B0980084F5C1 /* FilterViewController.swift in Sources */,
 				5B9CD87A289B0553006FCC4A /* OfficeDetailInteractor.swift in Sources */,
 				5B5748B428A6B0980084F5C1 /* FilterRouter.swift in Sources */,
@@ -670,6 +705,7 @@
 				5B5748B028A6B0980084F5C1 /* FilterPresenter.swift in Sources */,
 				5B2B61FB28AAF6BE00C5DECC /* FavoriteRouter.swift in Sources */,
 				5B5748B328A6B0980084F5C1 /* FilterWorker.swift in Sources */,
+				5B89D5EE28AD78DA0068638A /* OfficeWebSiteWorker.swift in Sources */,
 				5B9CD879289B0553006FCC4A /* OfficeDetailPresenter.swift in Sources */,
 				5B5748B128A6B0980084F5C1 /* FilterInteractor.swift in Sources */,
 			);
