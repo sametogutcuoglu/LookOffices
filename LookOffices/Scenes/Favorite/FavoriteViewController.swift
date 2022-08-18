@@ -21,6 +21,9 @@ final class FavoriteViewController: UIViewController {
     var officeName : [String] = []
     var officeImage : [UIImage] = []
     var officeId : [Int] = []
+    var officeRoom : [Int] = []
+    var officeCapacity : [String] = []
+    var officeSpace: [String] = []
     
     // MARK: Object lifecycle
     
@@ -43,9 +46,6 @@ final class FavoriteViewController: UIViewController {
         super.viewWillAppear(true)
         navigationController?.setNavigationBarHidden(true, animated: false)
         interactor?.getCoreData()
-        officeImage.removeAll()
-        officeId.removeAll()
-        officeName.removeAll()
         getdata()
         tableView.reloadData()
     }
@@ -54,6 +54,9 @@ final class FavoriteViewController: UIViewController {
         officeImage.removeAll()
         officeId.removeAll()
         officeName.removeAll()
+        officeRoom.removeAll()
+        officeSpace.removeAll()
+        officeCapacity.removeAll()
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -73,6 +76,15 @@ final class FavoriteViewController: UIViewController {
                 if let image = result.value(forKey: "officeImage") as? Data {
                     guard let data = UIImage(data: image) else { return }
                     officeImage.append(data)
+                }
+                if let room = result.value(forKey: "officeRoom") as? Int {
+                    officeRoom.append(room)
+                }
+                if let capacity = result.value(forKey: "officeCapacity") as? String {
+                    officeCapacity.append(capacity)
+                }
+                if let space = result.value(forKey: "officeSpace") as? String {
+                    officeSpace.append(space)
                 }
             }
         }
@@ -117,7 +129,7 @@ extension FavoriteViewController : UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: OfficeCell.identifier, for: indexPath) as? OfficeCell else {
             return UITableViewCell()
         }
-        cell.configure(image: officeImage[indexPath.row], Name: officeName[indexPath.row], officeId: officeId[indexPath.row])
+        cell.configure(image: officeImage[indexPath.row], Name: officeName[indexPath.row],officeRoom: officeRoom[indexPath.row],officeCapacity: officeCapacity[indexPath.row],officeSpace: officeSpace[indexPath.row],officeId: officeId[indexPath.row])
         cell.likeButton.setImage(UIImage.like, for: .normal)
         cell.liked = false
         cell.disLikeButtonDelegate = self

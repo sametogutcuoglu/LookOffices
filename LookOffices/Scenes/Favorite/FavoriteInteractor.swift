@@ -10,7 +10,6 @@ import UIKit
 
 protocol FavoriteBusinessLogic: AnyObject {
     func deleteCoreDataModel(id: Int)
-    func saveCoreDataModel(id: Int, name: String, image: UIImage)
     func getCoreData()
 }
 
@@ -25,10 +24,6 @@ final class FavoriteInteractor: FavoriteBusinessLogic, FavoriteDataStore {
     
     func deleteCoreDataModel(id: Int) {
         worker.deleteCoreDataModels(officeId:id)
-    }
-    
-    func saveCoreDataModel(id: Int, name: String, image: UIImage) {
-        worker.saveCoreDataModels(id: id, name: name, image: image)
     }
     
     func getCoreData() {

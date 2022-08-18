@@ -151,8 +151,8 @@ extension ListOfficesViewController : ClickDisLikeDelegate,ClickLikeDelegate{
         interactor?.getCoreData()
     }
     
-    func clickLike(officeId : Int,officeName: String,officeImage: UIImage) {
-        interactor?.saveCoreDataModel(id:officeId,name:officeName,image:officeImage)
+    func clickLike(officeId: Int, officeName: String, officeImage: UIImage, officeRoom: Int, officeCapacity: String, officeSpace: String) {
+        interactor?.saveCoreDataModel(id:officeId,name:officeName,image:officeImage,capacity: officeCapacity,room: officeRoom,space: officeSpace)
         interactor?.getCoreData()
     }
     

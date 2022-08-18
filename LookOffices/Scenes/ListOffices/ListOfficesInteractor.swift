@@ -10,7 +10,7 @@ import UIKit
 
 protocol ListOfficesBusinessLogic: AnyObject {
     func fetchOffices()
-    func saveCoreDataModel(id:Int,name:String,image:UIImage)
+    func saveCoreDataModel(id:Int,name:String,image:UIImage,capacity: String,room: Int,space: String)
     func deleteCoreDataModel(id:Int)
     func getCoreData()
 }
@@ -44,8 +44,8 @@ final class ListOfficesInteractor: ListOfficesBusinessLogic, ListOfficesDataStor
         })
     }
     
-    func saveCoreDataModel(id: Int, name: String, image: UIImage) {
-        worker.saveCoreDataModels(id: id, name: name, image: image)
+    func saveCoreDataModel(id: Int, name: String, image: UIImage, capacity: String, room: Int, space: String) {
+        worker.saveCoreDataModels(id: id, name: name, image: image,capacity: capacity,room: room,space: space)
     }
     
     func deleteCoreDataModel(id: Int) {

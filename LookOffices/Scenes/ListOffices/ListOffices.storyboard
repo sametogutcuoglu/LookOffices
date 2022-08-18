@@ -88,7 +88,9 @@
                             <constraint firstItem="uIM-dZ-UW5" firstAttribute="bottom" secondItem="GmI-NM-k86" secondAttribute="bottom" id="zdS-sP-IWG"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="tabbarListButton" selectedImage="tabbarSelectListButton" id="NK3-Uy-ESo"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="tabbarListButton" selectedImage="tabbarSelectListButton" id="NK3-Uy-ESo">
+                        <color key="badgeColor" name="LoginTopBackground"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="FilterButton" destination="9M4-oK-nMR" id="Ndp-AX-PNQ"/>
                         <outlet property="tableView" destination="uIM-dZ-UW5" id="POC-qe-8wd"/>

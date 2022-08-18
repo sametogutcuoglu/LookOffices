@@ -10,7 +10,8 @@ import SDWebImage
 import CoreData
 
 protocol ClickLikeDelegate: AnyObject {
-    func clickLike(officeId : Int,officeName : String,officeImage : UIImage)
+    func clickLike(officeId : Int,officeName : String,officeImage : UIImage,officeRoom: Int,
+                   officeCapacity: String,officeSpace:String)
 }
 protocol ClickDisLikeDelegate: AnyObject {
     func clickDisLike(officeId : Int)
@@ -41,7 +42,9 @@ class OfficeCell: UITableViewCell {
             return
         }
         if (liked) {
-            likeButtonDelegate?.clickLike(officeId: officeId,officeName : officeNameLabel.text ?? "",officeImage : officeImageView.image ?? UIImage())
+            guard let room = Int(officeRoomLabel.text ?? "") else { return }
+            likeButtonDelegate?.clickLike(officeId: officeId,officeName : officeNameLabel.text ?? "",officeImage : officeImageView.image ?? UIImage.notFoundImage,officeRoom: room,
+                officeCapacity: officeCapacityLabel.text ?? "",officeSpace: officeSpaceLabel.text ?? "")
             button.setImage(UIImage.like, for: .normal)
             liked = false
         }
@@ -61,10 +64,14 @@ class OfficeCell: UITableViewCell {
         officeSpaceLabel.text = viewModel.space
     }
     
-    func configure(image: UIImage, Name: String, officeId: Int) {
+    func configure(image: UIImage, Name: String, officeRoom: Int,officeCapacity : String ,
+                   officeSpace : String,officeId: Int) {
         self.officeId = officeId
         officeNameLabel.text = Name
         officeImageView.image = image
+        officeRoomLabel.text = "\(officeRoom)"
+        officeSpaceLabel.text = officeSpace
+        officeCapacityLabel.text = officeCapacity
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

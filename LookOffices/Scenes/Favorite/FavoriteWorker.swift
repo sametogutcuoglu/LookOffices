@@ -9,15 +9,11 @@ import Foundation
 import UIKit
 
 protocol FavoriteWorkingLogic: AnyObject {
-    func saveCoreDataModels(id: Int, name: String, image: UIImage)
     func deleteCoreDataModels(officeId:Int)
     func getCoreData(complation: @escaping ((Result<[Int], Error>) -> Void))
 }
 
 final class FavoriteWorker: FavoriteWorkingLogic {
-    func saveCoreDataModels(id: Int, name: String, image: UIImage) {
-        CoreDataManager().saveCoreDataModels(id: id, name: name, image: image)
-    }
     
     func deleteCoreDataModels(officeId: Int) {
         CoreDataManager().deleteCoreDataModels(officeId: officeId)

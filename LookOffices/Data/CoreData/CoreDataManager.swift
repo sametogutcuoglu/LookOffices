@@ -10,7 +10,7 @@ import CoreData
 import UIKit
 
 protocol CoreDataManagerProtocol {
-    func saveCoreDataModels(id: Int, name: String, image: UIImage)
+    func saveCoreDataModels(id: Int, name: String, image: UIImage, capacity: String, room: Int, space: String)
     func deleteCoreDataModels(officeId: Int)
     func getCoreData(complation: @escaping ((Result<[Int], Error>) -> Void))
 }
@@ -38,10 +38,13 @@ class CoreDataManager {
         }
     }
     
-    func saveCoreDataModels(id: Int, name: String, image: UIImage) {
+    func saveCoreDataModels(id: Int, name: String, image: UIImage, capacity: String, room: Int, space: String) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let newLikeOffice = NSEntityDescription.insertNewObject(forEntityName: "CoreDataModel", into: context)
+        newLikeOffice.setValue(capacity, forKey: "officeCapacity")
+        newLikeOffice.setValue(room, forKey: "officeRoom")
+        newLikeOffice.setValue(space, forKey: "officeSpace")
         newLikeOffice.setValue(name, forKey: "officeName")
         newLikeOffice.setValue(id, forKey: "id")
         newLikeOffice.setValue(image.jpegData(compressionQuality:0.5), forKey: "officeImage")
