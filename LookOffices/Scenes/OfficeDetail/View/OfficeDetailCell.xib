@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,6 +23,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" name="LoginTopBackground"/>
             <constraints>
                 <constraint firstItem="yvL-W1-8uP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Crh-rT-eXt"/>
                 <constraint firstAttribute="bottom" secondItem="yvL-W1-8uP" secondAttribute="bottom" id="bEV-1i-ZE9"/>
@@ -35,4 +37,9 @@
             <point key="canvasLocation" x="330.43478260869568" y="108.48214285714285"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <namedColor name="LoginTopBackground">
+            <color red="0.68199998140335083" green="0.82400000095367432" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

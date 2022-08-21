@@ -17,6 +17,7 @@ class OfficeDetailDataCell: UICollectionViewCell {
     @IBOutlet weak var odaSayisi: UILabel!
     @IBOutlet weak var kapasite: UILabel!
     @IBOutlet weak var alan: UILabel!
+    @IBOutlet weak var officeName: UILabel!
     @IBOutlet weak var adres: UILabel!
     weak var clickWebSiteDelegate : clickWebSiteOpenClick?
     
@@ -24,6 +25,7 @@ class OfficeDetailDataCell: UICollectionViewCell {
         kapasite.text = Model.capacity
         alan.text = Model.space
         odaSayisi.text = "\(Model.rooms)"
+        officeName.text = Model.name
         adres.text = Model.address
     }
     @IBAction func clickWebSiteOpenButton( sender: Any) {
