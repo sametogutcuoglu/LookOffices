@@ -9,7 +9,9 @@ import Foundation
 
 // swiftlint:disable nesting
 enum ListOffices {
+    
     enum FetchOffices {
+        
         struct Request {}
 
         struct Response {

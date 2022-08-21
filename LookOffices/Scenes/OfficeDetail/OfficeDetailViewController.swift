@@ -19,6 +19,7 @@ final class OfficeDetailViewController: UIViewController {
     var router: (OfficeDetailRoutingLogic & OfficeDetailDataPassing)?
     
     var detailOffice: OfficeDetail.FetchOfficeDetail.ViewModel.OfficeDetail?
+    var gridLayout : Bool = false
     
     // MARK: Object lifecycle
     
@@ -31,6 +32,7 @@ final class OfficeDetailViewController: UIViewController {
         super.init(coder: aDecoder)
         setup()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor?.fetchOffices()
@@ -39,6 +41,13 @@ final class OfficeDetailViewController: UIViewController {
                                       , forCellWithReuseIdentifier: OfficeDetailCell.identifier)
         detailCollectionView.register(UINib(nibName: OfficeDetailDataCell.identifier, bundle: nil)
                                       , forCellWithReuseIdentifier: OfficeDetailDataCell.identifier)
+        navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(image: UIImage.navigationbarGridImage, style: .done, target: self, action: #selector(clickGridButton))
+    }
+    
+    @objc private func  clickGridButton() {
+        
+        detailCollectionView.setCollectionViewLayout(createLayout(), animated: true)
+        detailCollectionView.reloadSections(IndexSet(integer: 0))
     }
     
     private func setupUI () {
@@ -98,7 +107,7 @@ extension OfficeDetailViewController : UICollectionViewDelegate, UICollectionVie
             return imageCount
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let sectionCell = sections(rawValue: indexPath.section)
         else { return UICollectionViewCell() }
@@ -146,16 +155,35 @@ extension OfficeDetailViewController {
         return section
     }
     
+    func makeVerticalImageLayout () -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize (widthDimension: .fractionalWidth(1/3),
+                                               heightDimension: .fractionalWidth(0.4))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = .init(top: 2, leading: 2, bottom: 2, trailing: 2)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                               heightDimension: .fractionalWidth(0.4))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        return section
+    }
+    
     func createLayout () -> UICollectionViewLayout {
         UICollectionViewCompositionalLayout { sectionIndex, _ in
             if sectionIndex == 0 {
+                if self.gridLayout {
+                    self.gridLayout = false
+                    return self.makeVerticalImageLayout()
+                }
+                self.gridLayout  = true
                 return self.makeHorizontalLayout()
             }
             else {
                return self.makeVerticalLayout()
             }
         }
+       
     }
+    
 }
 
 

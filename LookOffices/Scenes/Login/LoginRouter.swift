@@ -23,9 +23,11 @@ final class LoginRouter: LoginRoutingLogic, LoginDataPassing {
     var dataStore: LoginDataStore?
     
     func getOfficeList() {
-        let storyboard = UIStoryboard(name: "ListOffices", bundle: nil)
-        let loginVC : TabbarController = storyboard.instantiateViewController(identifier: "TabbarController")
-        self.viewController?.navigationController?.pushViewController(loginVC, animated: true)
+        self.viewController?.navigationController?.pushViewController(PageViewController(), animated: true)
+        
+//        let storyboard = UIStoryboard(name: "ListOffices", bundle: nil)
+//        let loginVC : TabbarController = storyboard.instantiateViewController(identifier: "TabbarController")
+//        self.viewController?.navigationController?.pushViewController(loginVC, animated: true)
     }
     
     func getRegister() {

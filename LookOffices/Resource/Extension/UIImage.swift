@@ -16,6 +16,9 @@ public extension UIImage {
     static var notFoundImage : UIImage { UIImage(imageName: "notFoundImage") }
     static var toolbarBackButton : UIImage { UIImage(imageName: "toolbarBackButton") }
     static var toolbarForwardButton : UIImage { UIImage(imageName: "toolbarForwardButton") }
+    static var navigationbarGridImage : UIImage { UIImage(imageName: "navigationbarGridImage") }
+    static var pinImage : UIImage { UIImage(imageName: "pinImage") }
+    static var navigasyonButtonImage : UIImage { UIImage(imageName: "navigasyonButtonImage") }
 }
 
 public extension UIImage {
