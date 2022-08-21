@@ -18,6 +18,7 @@ final class OfficeDetailViewController: UIViewController {
     var interactor: OfficeDetailBusinessLogic?
     var router: (OfficeDetailRoutingLogic & OfficeDetailDataPassing)?
     
+    var Slidermedia: [MediaDownloadable] = []
     var detailOffice: OfficeDetail.FetchOfficeDetail.ViewModel.OfficeDetail?
     var gridLayout : Bool = false
     
@@ -117,6 +118,7 @@ extension OfficeDetailViewController : UICollectionViewDelegate, UICollectionVie
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OfficeDetailCell.identifier, for: indexPath)
                     as? OfficeDetailCell else { return UICollectionViewCell()}
             cell.configure(image: (detailOffice?.officeDetailimages[indexPath.row]))
+            cell.fullScreenImageDelegate = self
             return cell
             
         case .detailData:
@@ -191,6 +193,17 @@ extension OfficeDetailViewController : clickWebSiteOpenClick {
     func buttonClick() {
         router?.openOfficeWebSite()
     }
-    
-    
+}
+
+extension OfficeDetailViewController : FullScreenImageShowDelegate {
+    func showFullScreenImage() {
+        Slidermedia.removeAll()
+        guard let officeImages = detailOffice?.officeDetailimages else {return}
+        for item in officeImages {
+            Slidermedia.append(SingleMedia(imageURL: URL(string:item)))
+        }
+        let vm = FullScreenImageBrowserViewModel(media: Slidermedia)
+        let x = FullScreenImageBrowser(viewModel: vm)
+        present(x, animated: true)
+    }
 }
