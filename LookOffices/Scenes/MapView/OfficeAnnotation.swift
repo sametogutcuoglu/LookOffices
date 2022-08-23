@@ -9,12 +9,16 @@ import Foundation
 import MapKit
 
 class OfficeAnnotation : NSObject,MKAnnotation {
+    var subtitle: String?
+    
     var coordinate: CLLocationCoordinate2D
     var title: String?
+    var id : Int
     
-    init(coordinate: CLLocationCoordinate2D ,title: String)
+    init(coordinate: CLLocationCoordinate2D ,title: String,id : Int)
     {
         self.coordinate = coordinate
         self.title = title
+        self.id = id
     }
 }

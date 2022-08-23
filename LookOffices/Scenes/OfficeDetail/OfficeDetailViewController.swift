@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MapKit
 
 protocol OfficeDetailDisplayLogic: AnyObject {
     func detailOffice(viewModel: OfficeDetail.FetchOfficeDetail.ViewModel.OfficeDetail)
@@ -189,7 +190,7 @@ extension OfficeDetailViewController {
 }
 
 
-extension OfficeDetailViewController : clickWebSiteOpenClick {
+extension OfficeDetailViewController : clickWebSiteOpenClickDelegate {
     func buttonClick() {
         router?.openOfficeWebSite()
     }

@@ -33,7 +33,7 @@ public struct FullScreenImageBrowserViewModel {
     }
 
     public func indexOfMedia(_ media: MediaDownloadable) -> Int? {
-        return self.media.index(where: { $0 === media })
+        return self.media.firstIndex(where: { $0 === media })
     }
 
     public func containsMedia(_ media: MediaDownloadable) -> Bool {

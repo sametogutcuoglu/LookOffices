@@ -24,17 +24,38 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Adv-Ji-4vu">
                                 <rect key="frame" x="15" y="10" width="587" height="24"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kollektif House Bakirkoy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5C4-SD-wsV">
-                                        <rect key="frame" x="0.0" y="0.0" width="222" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="745" text="Kollektif House Bakirkoy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5C4-SD-wsV">
+                                        <rect key="frame" x="0.0" y="0.0" width="505" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLy-J3-Xix">
+                                        <rect key="frame" x="510" y="0.0" width="77" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="tintColor" systemColor="tintColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Web Sitesi"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="clickWebSiteOpenButtonWithSender:" destination="gTV-IL-0wX" eventType="touchUpInside" id="C3x-2L-tVM"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" secondItem="5C4-SD-wsV" secondAttribute="height" id="DOs-Fb-KWm"/>
+                                    <constraint firstItem="iLy-J3-Xix" firstAttribute="leading" secondItem="5C4-SD-wsV" secondAttribute="trailing" constant="5" id="W25-vE-K2g"/>
+                                    <constraint firstAttribute="trailing" secondItem="iLy-J3-Xix" secondAttribute="trailing" id="iO0-xj-4Y6"/>
                                     <constraint firstItem="5C4-SD-wsV" firstAttribute="top" secondItem="Adv-Ji-4vu" secondAttribute="top" id="oZQ-nI-MDx"/>
                                     <constraint firstItem="5C4-SD-wsV" firstAttribute="leading" secondItem="Adv-Ji-4vu" secondAttribute="leading" id="sTk-53-ukd"/>
+                                    <constraint firstItem="iLy-J3-Xix" firstAttribute="top" secondItem="Adv-Ji-4vu" secondAttribute="top" id="yJ6-wJ-Q74"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PEe-A2-CUk">
@@ -160,15 +181,15 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pfg-0U-8Gb">
-                                <rect key="frame" x="15" y="144" width="587" height="90"/>
+                                <rect key="frame" x="15" y="144" width="587" height="110"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KZ-xz-83E">
-                                        <rect key="frame" x="15" y="40.5" width="37.5" height="39.5"/>
+                                        <rect key="frame" x="15" y="40.5" width="37.5" height="59.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfF-1i-ksY">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Adres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfF-1i-ksY">
                                         <rect key="frame" x="15" y="15" width="45.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -182,7 +203,7 @@
                                     <constraint firstItem="CfF-1i-ksY" firstAttribute="top" secondItem="Pfg-0U-8Gb" secondAttribute="top" constant="15" id="HQR-Br-BLe"/>
                                     <constraint firstAttribute="bottom" secondItem="8KZ-xz-83E" secondAttribute="bottom" constant="10" id="i2R-AI-vsI"/>
                                     <constraint firstItem="8KZ-xz-83E" firstAttribute="leading" secondItem="Pfg-0U-8Gb" secondAttribute="leading" constant="15" id="lGD-W3-WH2"/>
-                                    <constraint firstAttribute="height" constant="90" id="v8S-SX-2xX"/>
+                                    <constraint firstAttribute="height" constant="110" id="v8S-SX-2xX"/>
                                     <constraint firstAttribute="trailing" secondItem="8KZ-xz-83E" secondAttribute="trailing" constant="15" id="zAh-Qi-1Av"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -210,7 +231,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QJc-xO-TbR">
-                                <rect key="frame" x="15" y="244" width="587" height="243"/>
+                                <rect key="frame" x="15" y="264" width="587" height="223"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="15"/>
@@ -224,7 +245,7 @@
                             <constraint firstItem="Adv-Ji-4vu" firstAttribute="leading" secondItem="Wwu-2t-813" secondAttribute="leading" constant="15" id="5MM-Of-e9S"/>
                             <constraint firstAttribute="bottom" secondItem="QJc-xO-TbR" secondAttribute="bottom" constant="5" id="8fy-0E-IVt"/>
                             <constraint firstItem="PEe-A2-CUk" firstAttribute="top" secondItem="Adv-Ji-4vu" secondAttribute="bottom" constant="10" id="OoB-zH-1sj"/>
-                            <constraint firstAttribute="trailing" secondItem="Adv-Ji-4vu" secondAttribute="trailing" constant="15" id="V3t-WF-MLN"/>
+                            <constraint firstAttribute="trailing" secondItem="Adv-Ji-4vu" secondAttribute="trailing" constant="15" id="Tno-pf-cTo"/>
                             <constraint firstAttribute="trailing" secondItem="PEe-A2-CUk" secondAttribute="trailing" constant="15" id="WwY-yj-UUq"/>
                             <constraint firstAttribute="trailing" secondItem="QJc-xO-TbR" secondAttribute="trailing" constant="15" id="c2w-l2-WYf"/>
                             <constraint firstItem="QJc-xO-TbR" firstAttribute="top" secondItem="Pfg-0U-8Gb" secondAttribute="bottom" constant="10" id="gse-ED-fEC"/>
@@ -250,6 +271,7 @@
                 <outlet property="adres" destination="8KZ-xz-83E" id="iGT-Oq-CqE"/>
                 <outlet property="alan" destination="71T-Wh-qhR" id="MYA-uW-f5A"/>
                 <outlet property="kapasite" destination="kXj-6T-Src" id="f7P-RQ-p3I"/>
+                <outlet property="mapView" destination="QJc-xO-TbR" id="QgM-Mz-q6w"/>
                 <outlet property="odaSayisi" destination="Yvt-cI-fu6" id="lUS-ag-mC7"/>
                 <outlet property="officeName" destination="5C4-SD-wsV" id="rZ1-rR-YHF"/>
             </connections>
@@ -268,6 +290,9 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

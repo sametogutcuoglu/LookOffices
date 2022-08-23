@@ -11,7 +11,7 @@ protocol OfficeWebSiteRoutingLogic: AnyObject {
     
 }
 
-protocol OfficeWebSiteDataPassing: class {
+protocol OfficeWebSiteDataPassing: AnyObject {
     var dataStore: OfficeWebSiteDataStore? { get }
 }
 

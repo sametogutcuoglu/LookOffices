@@ -26,6 +26,8 @@ enum OfficeDetail {
                 let address: String
                 let capacity: String
                 let officePosterImage: String
+                let latitude: Double
+                let longidute: Double
                 let officeDetailimages: [String]
                 let name: String
                 let rooms: Int

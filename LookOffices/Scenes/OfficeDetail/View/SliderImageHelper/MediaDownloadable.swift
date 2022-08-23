@@ -9,7 +9,7 @@
 import UIKit
 
 /// Media Type protocol for defining media to be either image, or video
-public protocol MediaDownloadable: class {
+public protocol MediaDownloadable: AnyObject {
     var image: UIImage? { get }
     var imageURL: URL? { get }
     var isVideoThumbnail: Bool { get set }

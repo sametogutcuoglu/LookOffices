@@ -24,7 +24,7 @@ public final class SingleMediaViewer: UIViewController, UIScrollViewDelegate {
     }()
 
     public lazy private(set) var activityIndicator: UIActivityIndicatorView = {
-        let activityIndicator = UIActivityIndicatorView(style: .white)
+        let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
         activityIndicator.startAnimating()
         return activityIndicator
     }()

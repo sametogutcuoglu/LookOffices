@@ -58,6 +58,7 @@
 		5B68F68F28B266DD00C38B29 /* UIView+SnapShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68F68528B266DD00C38B29 /* UIView+SnapShot.swift */; };
 		5B68F69028B266DD00C38B29 /* SingleImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68F68628B266DD00C38B29 /* SingleImageViewer.swift */; };
 		5B6DB24728A6C1CD0064CE86 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B6DB24628A6C1CD0064CE86 /* Filter.storyboard */; };
+		5B6FAD5728B4023C00029B36 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 5B6FAD5628B4023C00029B36 /* SkeletonView */; };
 		5B84D33B289AA3BA00505E94 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B84D334289AA3BA00505E94 /* Login.storyboard */; };
 		5B84D33C289AA3BA00505E94 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B84D335289AA3BA00505E94 /* LoginViewController.swift */; };
 		5B84D33D289AA3BA00505E94 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B84D336289AA3BA00505E94 /* LoginPresenter.swift */; };
@@ -238,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DE8C80428995B2100391DAC /* SDWebImage in Frameworks */,
+				5B6FAD5728B4023C00029B36 /* SkeletonView in Frameworks */,
 				5BCD68282897A6BC0086F416 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -620,6 +622,7 @@
 			packageProductDependencies = (
 				5BCD68272897A6BC0086F416 /* IQKeyboardManagerSwift */,
 				3DE8C80328995B2100391DAC /* SDWebImage */,
+				5B6FAD5628B4023C00029B36 /* SkeletonView */,
 			);
 			productName = LookOffices;
 			productReference = 5B9CE2F3287347A60085859A /* LookOfficesDev.app */;
@@ -696,6 +699,7 @@
 			packageReferences = (
 				5BCD68262897A6BC0086F416 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				3DE8C80228995B2100391DAC /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				5B6FAD5528B4023C00029B36 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = 5B9CE2F4287347A60085859A /* Products */;
 			projectDirPath = "";
@@ -1469,6 +1473,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		5B6FAD5528B4023C00029B36 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.9.0;
+			};
+		};
 		5BCD68262897A6BC0086F416 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
@@ -1484,6 +1496,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3DE8C80228995B2100391DAC /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		5B6FAD5628B4023C00029B36 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B6FAD5528B4023C00029B36 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
 		};
 		5BCD68272897A6BC0086F416 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;

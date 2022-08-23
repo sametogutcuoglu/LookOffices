@@ -83,7 +83,7 @@ extension OfficesMapViewViewController: OfficesMapViewDisplayLogic {
         officesMap = response.officesMapInfo
         for item in officesMap
         {
-            let annotation = OfficeAnnotation(coordinate: .init(latitude: item.latitude, longitude: item.longidute), title: item.name)
+            let annotation = OfficeAnnotation(coordinate: .init(latitude: item.latitude, longitude: item.longidute), title: item.name, id: item.id)
             mapView.addAnnotation(annotation)
         }
     }
@@ -97,9 +97,8 @@ extension OfficesMapViewViewController : MKMapViewDelegate {
         {
             return nil
         }
-        
-        let reuseId = "\(officesMap[mapindex].id)"
-        mapindex += 1
+
+         let reuseId = "CustomOfficesPinView"
         
         var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
         
@@ -114,7 +113,7 @@ extension OfficesMapViewViewController : MKMapViewDelegate {
             infoButton.tag = 1
             let detailButton = UIButton()
             detailButton.setImage(UIImage.navigasyonButtonImage, for: .normal)
-            detailButton.frame = CGRect(x: 0, y: 0, width: 26, height: 26)
+            detailButton.frame = infoButton.frame
             pinView?.rightCalloutAccessoryView = detailButton
             pinView?.leftCalloutAccessoryView = infoButton
         }
@@ -128,10 +127,9 @@ extension OfficesMapViewViewController : MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         // butonlardan hangisini tıklandığını anlıyıp ona göre navigasyona yada office detay sayfasına yönlendirme yapıyorum
+        guard  let selectedAnnotation = view.annotation else { return }
         if control.tag == 0
         {
-            guard  let selectedAnnotation = view.annotation else { return }
-            
             let requestLocation = CLLocation(latitude: selectedAnnotation.coordinate.latitude,
                                              longitude: selectedAnnotation.coordinate.longitude)
                 
@@ -152,12 +150,11 @@ extension OfficesMapViewViewController : MKMapViewDelegate {
                     }
             }
         }
+
         else
         {
-            if let routerOfficeId = Int(view.reuseIdentifier ?? "0")
-            {
-                router?.routerToDetailOffice(officeId: routerOfficeId)
-            }
+            guard let selectedAnnotationId  = view.annotation as? OfficeAnnotation else { return }
+            router?.routerToDetailOffice(officeId: selectedAnnotationId.id)
         }
     }
 }
@@ -168,9 +165,9 @@ extension OfficesMapViewViewController : CLLocationManagerDelegate {
         // Kullanıcının lokasyonuna  zoom yaparak açıyorum haritayı
         //let location = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
         // İstanbul beşiktaşa coordinatları
-        let locationDefatul = CLLocationCoordinate2D(latitude: 41.03959942370373, longitude: 28.99901055767461)
+        let locationDefault = CLLocationCoordinate2D(latitude: 41.03959942370373, longitude: 28.99901055767461)
         let span = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-        let region = MKCoordinateRegion(center: locationDefatul, span: span)
+        let region = MKCoordinateRegion(center: locationDefault, span: span)
         mapView.setRegion(region, animated: true)
     }
 }

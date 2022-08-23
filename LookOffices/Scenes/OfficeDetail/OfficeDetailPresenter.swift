@@ -23,6 +23,8 @@ final class OfficeDetailPresenter: OfficeDetailPresentationLogic {
                 address: item.address ?? "",
                 capacity: item.capacity ?? "",
                 officePosterImage: item.image ?? "",
+                latitude: item.location?.latitude ?? .zero,
+                longidute: item.location?.longitude ?? .zero,
                 officeDetailimages: item.images,
                 name: item.name ?? "",
                 rooms: item.rooms ?? .zero,

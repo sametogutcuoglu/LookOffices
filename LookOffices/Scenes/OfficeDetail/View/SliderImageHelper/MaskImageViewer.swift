@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol MaskImageViewable: class {
+public protocol MaskImageViewable: AnyObject {
     var imagesBrowser: FullScreenImageBrowser? { get set }
 
     func populateWithImage(_ image: MediaDownloadable)

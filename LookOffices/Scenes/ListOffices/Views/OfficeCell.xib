@@ -22,13 +22,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="341" height="118"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kollektif Haouse Bakirköy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYZ-jm-6No">
-                                <rect key="frame" x="115" y="10" width="175" height="50.5"/>
+                                <rect key="frame" x="120" y="10" width="170" height="50.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="skeletonLineSpacing">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="kfH-DK-g9h">
-                                <rect key="frame" x="115" y="83" width="216" height="25"/>
+                                <rect key="frame" x="120" y="83" width="211" height="25"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="capacity" translatesAutoresizingMaskIntoConstraints="NO" id="jpf-1Z-fWq">
                                         <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
@@ -38,33 +44,33 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10-50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJ1-YP-B9F">
-                                        <rect key="frame" x="32" y="0.0" width="41.5" height="25"/>
+                                        <rect key="frame" x="31" y="0.0" width="41.5" height="25"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="roomImage" translatesAutoresizingMaskIntoConstraints="NO" id="flR-h8-cXl">
-                                        <rect key="frame" x="80" y="0.0" width="25" height="25"/>
+                                        <rect key="frame" x="78" y="0.0" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="IwZ-JF-RPf"/>
                                             <constraint firstAttribute="width" constant="25" id="ali-sj-fqJ"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="55" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMG-x3-pa1">
-                                        <rect key="frame" x="112" y="0.0" width="18.5" height="25"/>
+                                        <rect key="frame" x="109" y="0.0" width="18.5" height="25"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="5qV-Pf-jBq">
-                                        <rect key="frame" x="137" y="0.0" width="25" height="25"/>
+                                        <rect key="frame" x="133" y="0.0" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="rXV-xd-0Sd"/>
                                             <constraint firstAttribute="width" constant="25" id="rmu-O4-orC"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="100m2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfj-6F-aWP">
-                                        <rect key="frame" x="169" y="0.0" width="47" height="25"/>
+                                        <rect key="frame" x="164" y="0.0" width="47" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="47" id="lVN-uj-20S"/>
                                         </constraints>
@@ -73,6 +79,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QgZ-Wh-XTM">
                                 <rect key="frame" x="295" y="10" width="36" height="32"/>
@@ -87,6 +96,9 @@
                                     <color key="titleColor" name="LoginTopBackground"/>
                                     <color key="titleShadowColor" name="LoginTopBackground"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="clickLikeButton:" destination="1Zh-Go-FVo" eventType="touchUpInside" id="s1E-5B-Pdp"/>
                                 </connections>
@@ -96,6 +108,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="gdb-Sp-uWh"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -106,9 +121,9 @@
                             <constraint firstItem="ebk-3U-u8Y" firstAttribute="leading" secondItem="2ST-yd-PBo" secondAttribute="leading" constant="10" id="Rz2-6R-8qE"/>
                             <constraint firstItem="fYZ-jm-6No" firstAttribute="top" secondItem="2ST-yd-PBo" secondAttribute="top" constant="10" id="VC7-uk-DmP"/>
                             <constraint firstItem="QgZ-Wh-XTM" firstAttribute="top" secondItem="2ST-yd-PBo" secondAttribute="top" constant="10" id="WlV-vK-cL3"/>
-                            <constraint firstItem="fYZ-jm-6No" firstAttribute="leading" secondItem="ebk-3U-u8Y" secondAttribute="trailing" constant="5" id="Wv3-fm-fQj"/>
+                            <constraint firstItem="fYZ-jm-6No" firstAttribute="leading" secondItem="ebk-3U-u8Y" secondAttribute="trailing" constant="10" id="Wv3-fm-fQj"/>
                             <constraint firstItem="ebk-3U-u8Y" firstAttribute="top" secondItem="2ST-yd-PBo" secondAttribute="top" constant="10" id="YyV-mg-rhM"/>
-                            <constraint firstItem="kfH-DK-g9h" firstAttribute="leading" secondItem="ebk-3U-u8Y" secondAttribute="trailing" constant="5" id="pO9-BQ-g0a"/>
+                            <constraint firstItem="kfH-DK-g9h" firstAttribute="leading" secondItem="ebk-3U-u8Y" secondAttribute="trailing" constant="10" id="pO9-BQ-g0a"/>
                             <constraint firstAttribute="bottom" secondItem="kfH-DK-g9h" secondAttribute="bottom" constant="10" id="rKa-g4-EUi"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -127,6 +142,7 @@
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                 <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
@@ -141,6 +157,7 @@
                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                         <real key="value" value="20"/>
                     </userDefinedRuntimeAttribute>
+                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                 </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="wxq-KO-7Gr"/>
@@ -152,6 +169,7 @@
                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                     <real key="value" value="0.0"/>
                 </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="likeButton" destination="QgZ-Wh-XTM" id="8wi-YP-xOw"/>

@@ -13,7 +13,7 @@ public extension UIView {
     /// Create snapshot view with layer transform information if available
     ///
     /// - Returns: A new view object based on a snapshot of the current view’s rendered contents
-    public func aj_snapshotView() -> UIView {
+    func aj_snapshotView() -> UIView {
         guard let contents = layer.contents else {
             return snapshotView(afterScreenUpdates: true) ?? UIView()
         }
@@ -40,7 +40,7 @@ public extension UIView {
     ///
     /// - Parameter containerView: container view for the point
     /// - Returns: A point specified in the container view coordinate space.
-    public func aj_translatedCenterPointToContainerView(_ containerView: UIView) -> CGPoint {
+    func aj_translatedCenterPointToContainerView(_ containerView: UIView) -> CGPoint {
         var centerPoint = center
 
         if let scrollView = self.superview as? UIScrollView , scrollView.zoomScale != 1.0 {

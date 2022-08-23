@@ -79,7 +79,7 @@ extension ListOfficesViewController: ListOfficesDisplayLogic {
     func getCoreData(responseOfficeId: [Int]) {
         coreDataOfficeId.removeAll()
         coreDataOfficeId = responseOfficeId
-        fetchData()
+        tableView.reloadData()
     }
     
     func filteredData(viewModel: ListOffices.FetchOffices.ViewModel,changeImage:Bool) {
@@ -154,9 +154,5 @@ extension ListOfficesViewController : ClickDisLikeDelegate,ClickLikeDelegate{
     func clickLike(officeId: Int, officeName: String, officeImage: UIImage, officeRoom: Int, officeCapacity: String, officeSpace: String) {
         interactor?.saveCoreDataModel(id:officeId,name:officeName,image:officeImage,capacity: officeCapacity,room: officeRoom,space: officeSpace)
         interactor?.getCoreData()
-    }
-    
-    func fetchData() {
-        tableView.reloadData()
     }
 }
