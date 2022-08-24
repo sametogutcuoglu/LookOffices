@@ -87,12 +87,15 @@
                             <constraint firstItem="uIM-dZ-UW5" firstAttribute="top" secondItem="GmI-NM-k86" secondAttribute="top" id="tVA-iO-z6x"/>
                             <constraint firstItem="uIM-dZ-UW5" firstAttribute="bottom" secondItem="GmI-NM-k86" secondAttribute="bottom" id="zdS-sP-IWG"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="tabbarListButton" selectedImage="tabbarSelectListButton" id="NK3-Uy-ESo">
                         <color key="badgeColor" name="LoginTopBackground"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="FilterButton" destination="9M4-oK-nMR" id="Ndp-AX-PNQ"/>
+                        <outlet property="filterButton" destination="9M4-oK-nMR" id="Ndp-AX-PNQ"/>
                         <outlet property="tableView" destination="uIM-dZ-UW5" id="POC-qe-8wd"/>
                     </connections>
                 </viewController>

@@ -44,12 +44,10 @@ final class FilterPresenter: FilterPresentationLogic {
     func getFetchWillFilterData(data: [Office],capacity:String,room:String,space:String) {
         var willFilterDatas: [ListOffices.FetchOffices.ViewModel.Office] = []
         for item in data {
-            let willFilterData = ListOffices.FetchOffices.ViewModel.Office(address: item.address ?? "",
+            let willFilterData = ListOffices.FetchOffices.ViewModel.Office(
                                                                         capacity: item.capacity ?? "",
                                                                         id: item.id ?? .zero,
                                                                         image: item.image ?? "",
-                                                                        images: item.images,
-                                                                        location: item.location ?? Location.init(latitude: .zero, longitude: .zero),
                                                                         name: item.name ?? "",
                                                                         rooms: item.rooms ?? .zero,
                                                                         space: item.space ?? "")
@@ -61,7 +59,7 @@ final class FilterPresenter: FilterPresentationLogic {
             }
             else {
                 chooseImage = true
-                willFilterDatas = willFilterDatas.filter({$0.capacity.contains(capacity)})
+                willFilterDatas = willFilterDatas.filter({$0.capacity.contains(capacity) })
             }
             if room == AppConstants.filterDefaultText {
                 

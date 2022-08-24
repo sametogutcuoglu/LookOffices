@@ -21,7 +21,6 @@ class OfficeDetailCell: UICollectionViewCell {
         super.awakeFromNib()
         officeImagesView.isUserInteractionEnabled = true
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(changePic))
-        
         officeImagesView.addGestureRecognizer(gestureRecognizer)
     }
     
@@ -29,7 +28,6 @@ class OfficeDetailCell: UICollectionViewCell {
         officeImagesView.layer.cornerRadius = 10
         guard let url = URL(string: image ?? AppConstants.notFoundImage) else  { return }
             officeImagesView.sd_setImage(with: url)
-        //Slidermedia.append(SingleMedia(imageURL: url))
     }
     
     @objc func changePic(sender : UITapGestureRecognizer) {

@@ -30,12 +30,9 @@ final class ListOfficesPresenter: ListOfficesPresentationLogic {
         var displayedOffices: [ListOffices.FetchOffices.ViewModel.Office] = []
         for office in response.offices {
             let displayOffice = ListOffices.FetchOffices.ViewModel.Office(
-                address: office.address ?? "",
                 capacity: office.capacity ?? "",
                 id: office.id ?? .zero,
                 image: office.image ?? "",
-                images: office.images,
-                location: office.location ?? Location.init(latitude: .zero, longitude: .zero),
                 name: office.name ?? "",
                 rooms: office.rooms ?? .zero,
                 space: office.space ?? ""
@@ -50,12 +47,9 @@ final class ListOfficesPresenter: ListOfficesPresentationLogic {
         var displayedOffices: [ListOffices.FetchOffices.ViewModel.Office] = []
         for office in response.Offices {
             let displayOffice = ListOffices.FetchOffices.ViewModel.Office(
-                address: office.address ,
                 capacity: office.capacity ,
                 id: office.id ,
                 image: office.image ,
-                images: office.images,
-                location: office.location ,
                 name: office.name ,
                 rooms: office.rooms ,
                 space: office.space

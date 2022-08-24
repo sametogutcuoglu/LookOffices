@@ -7,7 +7,6 @@
 
 import UIKit
 import SDWebImage
-import CoreData
 
 protocol ClickLikeDelegate: AnyObject {
     func clickLike(officeId : Int,officeName : String,officeImage : UIImage,officeRoom: Int,

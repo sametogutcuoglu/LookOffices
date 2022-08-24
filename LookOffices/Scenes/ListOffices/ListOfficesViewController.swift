@@ -23,8 +23,7 @@ final class ListOfficesViewController: UIViewController {
 
     var displayedOffices: [ListOffices.FetchOffices.ViewModel.Office] = []
     var coreDataOfficeId : [Int] = []
-    
-    @IBOutlet weak var FilterButton: UIButton!
+    @IBOutlet weak var filterButton: UIButton!
 
     // MARK: Object lifecycle
 
@@ -84,10 +83,10 @@ extension ListOfficesViewController: ListOfficesDisplayLogic {
     
     func filteredData(viewModel: ListOffices.FetchOffices.ViewModel,changeImage:Bool) {
         if changeImage {
-            FilterButton.setImage(UIImage.filter, for: .normal)
+            filterButton.setImage(UIImage.filter, for: .normal)
         }
         else {
-            FilterButton.setImage(UIImage.notFilter, for: .normal)
+            filterButton.setImage(UIImage.notFilter, for: .normal)
         }
         displayedOffices = viewModel.Offices
         tableView.reloadData()

@@ -541,13 +541,13 @@
 			isa = PBXGroup;
 			children = (
 				5BCE5D06289826C000563B19 /* Views */,
+				5B13C114289AB115001D4626 /* ListOffices.storyboard */,
 				5BCE5CF8289821E200563B19 /* ListOfficesViewController.swift */,
 				5BCE5CFA289821E200563B19 /* ListOfficesInteractor.swift */,
 				5BCE5CF9289821E200563B19 /* ListOfficesPresenter.swift */,
 				5BCE5CFB289821E200563B19 /* ListOfficesModels.swift */,
 				5B13C0FB289AA9DD001D4626 /* ListOfficesRouter.swift */,
 				5B13C0FD289AAA41001D4626 /* ListOfficesWorker.swift */,
-				5B13C114289AB115001D4626 /* ListOffices.storyboard */,
 			);
 			path = ListOffices;
 			sourceTree = "<group>";
