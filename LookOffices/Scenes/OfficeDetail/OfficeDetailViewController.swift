@@ -127,6 +127,7 @@ extension OfficeDetailViewController : UICollectionViewDelegate, UICollectionVie
                     as? OfficeDetailDataCell else { return UICollectionViewCell()}
             cell.clickWebSiteDelegate  = self  //Officesin web sitesine gitmek için butona basıldığını haber veriyoruz
             guard let model = detailOffice else { return UICollectionViewCell() }
+            cell.clickVideoPlayButtonDelegate = self
             cell.configureData(Model: model)
             return cell
         }
@@ -193,6 +194,12 @@ extension OfficeDetailViewController {
 extension OfficeDetailViewController : clickWebSiteOpenClickDelegate {
     func buttonClick() {
         router?.openOfficeWebSite()
+    }
+}
+
+extension OfficeDetailViewController : clickVideoPlayButtonDelegate {
+    func playButtonClick() {
+        router?.openVideoPlayerController()
     }
 }
 

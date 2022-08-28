@@ -59,6 +59,13 @@
 		5B68F69028B266DD00C38B29 /* SingleImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68F68628B266DD00C38B29 /* SingleImageViewer.swift */; };
 		5B6DB24728A6C1CD0064CE86 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B6DB24628A6C1CD0064CE86 /* Filter.storyboard */; };
 		5B6FAD5728B4023C00029B36 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 5B6FAD5628B4023C00029B36 /* SkeletonView */; };
+		5B6FAD6228B65E7800029B36 /* MoviePlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B6FAD5B28B65E7800029B36 /* MoviePlayer.storyboard */; };
+		5B6FAD6328B65E7800029B36 /* MoviePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FAD5C28B65E7800029B36 /* MoviePlayerViewController.swift */; };
+		5B6FAD6428B65E7800029B36 /* MoviePlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FAD5D28B65E7800029B36 /* MoviePlayerPresenter.swift */; };
+		5B6FAD6528B65E7800029B36 /* MoviePlayerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FAD5E28B65E7800029B36 /* MoviePlayerInteractor.swift */; };
+		5B6FAD6628B65E7800029B36 /* MoviePlayerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FAD5F28B65E7800029B36 /* MoviePlayerModels.swift */; };
+		5B6FAD6728B65E7800029B36 /* MoviePlayerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FAD6028B65E7800029B36 /* MoviePlayerWorker.swift */; };
+		5B6FAD6828B65E7800029B36 /* MoviePlayerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FAD6128B65E7800029B36 /* MoviePlayerRouter.swift */; };
 		5B84D33B289AA3BA00505E94 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B84D334289AA3BA00505E94 /* Login.storyboard */; };
 		5B84D33C289AA3BA00505E94 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B84D335289AA3BA00505E94 /* LoginViewController.swift */; };
 		5B84D33D289AA3BA00505E94 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B84D336289AA3BA00505E94 /* LoginPresenter.swift */; };
@@ -177,6 +184,13 @@
 		5B68F68528B266DD00C38B29 /* UIView+SnapShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+SnapShot.swift"; sourceTree = "<group>"; };
 		5B68F68628B266DD00C38B29 /* SingleImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleImageViewer.swift; sourceTree = "<group>"; };
 		5B6DB24628A6C1CD0064CE86 /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
+		5B6FAD5B28B65E7800029B36 /* MoviePlayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoviePlayer.storyboard; sourceTree = "<group>"; };
+		5B6FAD5C28B65E7800029B36 /* MoviePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePlayerViewController.swift; sourceTree = "<group>"; };
+		5B6FAD5D28B65E7800029B36 /* MoviePlayerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePlayerPresenter.swift; sourceTree = "<group>"; };
+		5B6FAD5E28B65E7800029B36 /* MoviePlayerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePlayerInteractor.swift; sourceTree = "<group>"; };
+		5B6FAD5F28B65E7800029B36 /* MoviePlayerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePlayerModels.swift; sourceTree = "<group>"; };
+		5B6FAD6028B65E7800029B36 /* MoviePlayerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePlayerWorker.swift; sourceTree = "<group>"; };
+		5B6FAD6128B65E7800029B36 /* MoviePlayerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePlayerRouter.swift; sourceTree = "<group>"; };
 		5B84D334289AA3BA00505E94 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		5B84D335289AA3BA00505E94 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5B84D336289AA3BA00505E94 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
@@ -336,6 +350,7 @@
 		5B3814E328A7EA85007066FD /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5B6FAD5A28B65E5200029B36 /* MoviePlayer */,
 				5B9139D528AFD32800274BE3 /* MapView */,
 				5B9139D028AFB59700274BE3 /* PageController */,
 				5B89D5F228AE52700068638A /* Welcome */,
@@ -389,6 +404,20 @@
 				5B68F68428B266DD00C38B29 /* ZoomableImageView.swift */,
 			);
 			path = SliderImageHelper;
+			sourceTree = "<group>";
+		};
+		5B6FAD5A28B65E5200029B36 /* MoviePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				5B6FAD5B28B65E7800029B36 /* MoviePlayer.storyboard */,
+				5B6FAD5C28B65E7800029B36 /* MoviePlayerViewController.swift */,
+				5B6FAD5D28B65E7800029B36 /* MoviePlayerPresenter.swift */,
+				5B6FAD5E28B65E7800029B36 /* MoviePlayerInteractor.swift */,
+				5B6FAD5F28B65E7800029B36 /* MoviePlayerModels.swift */,
+				5B6FAD6028B65E7800029B36 /* MoviePlayerWorker.swift */,
+				5B6FAD6128B65E7800029B36 /* MoviePlayerRouter.swift */,
+			);
+			path = MoviePlayer;
 			sourceTree = "<group>";
 		};
 		5B84D327289AA1C200505E94 /* System */ = {
@@ -718,6 +747,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B9139D428AFCBCB00274BE3 /* PageController.xib in Resources */,
+				5B6FAD6228B65E7800029B36 /* MoviePlayer.storyboard in Resources */,
 				5B84D33B289AA3BA00505E94 /* Login.storyboard in Resources */,
 				5B9CE303287347A70085859A /* LaunchScreen.storyboard in Resources */,
 				5B89D5E928AD78DA0068638A /* OfficeWebSite.storyboard in Resources */,
@@ -770,6 +800,7 @@
 				5B13C100289AAA87001D4626 /* AppConstants.swift in Sources */,
 				5B13C110289AADF1001D4626 /* RegisterRouter.swift in Sources */,
 				5B29F48828A9793D0078AE24 /* UIImage.swift in Sources */,
+				5B6FAD6428B65E7800029B36 /* MoviePlayerPresenter.swift in Sources */,
 				5B89D5EC28AD78DA0068638A /* OfficeWebSiteInteractor.swift in Sources */,
 				5B2B61F828AAF6BE00C5DECC /* FavoriteInteractor.swift in Sources */,
 				5B84D340289AA3BA00505E94 /* LoginWorker.swift in Sources */,
@@ -778,6 +809,7 @@
 				5B10CE55289D5D7700FEBB5B /* OfficeDetailDataCell.swift in Sources */,
 				5B10CE7428A026FF00FEBB5B /* Section.swift in Sources */,
 				5B9139CD28AE675100274BE3 /* TabbarController.swift in Sources */,
+				5B6FAD6528B65E7800029B36 /* MoviePlayerInteractor.swift in Sources */,
 				5B13C10C289AADF1001D4626 /* RegisterPresenter.swift in Sources */,
 				5B13C102289AAAE0001D4626 /* UIColor.swift in Sources */,
 				5B68F67B28B18EA500C38B29 /* OfficeAnnotation.swift in Sources */,
@@ -796,6 +828,7 @@
 				5B13C10E289AADF1001D4626 /* RegisterModels.swift in Sources */,
 				5B1A22CF289C3564003C10EA /* OfficeDetailCell.swift in Sources */,
 				5BD2E47028A0F33E004D6E1A /* NetworkManager.swift in Sources */,
+				5B6FAD6728B65E7800029B36 /* MoviePlayerWorker.swift in Sources */,
 				5BCE5D02289821E200563B19 /* ListOfficesModels.swift in Sources */,
 				5B9139E028AFD36100274BE3 /* OfficesMapViewInteractor.swift in Sources */,
 				5B84D33D289AA3BA00505E94 /* LoginPresenter.swift in Sources */,
@@ -805,11 +838,13 @@
 				5B68F68A28B266DD00C38B29 /* UIImage+Ex.swift in Sources */,
 				5B84D33F289AA3BA00505E94 /* LoginModels.swift in Sources */,
 				5B84D341289AA3BA00505E94 /* LoginRouter.swift in Sources */,
+				5B6FAD6628B65E7800029B36 /* MoviePlayerModels.swift in Sources */,
 				5B2B61EC28AAF48000C5DECC /* CoreDataManager.swift in Sources */,
 				5B9139DF28AFD36100274BE3 /* OfficesMapViewPresenter.swift in Sources */,
 				5B68F68828B266DD00C38B29 /* MediaDownloadable.swift in Sources */,
 				5B2B61F628AAF6BE00C5DECC /* FavoriteViewController.swift in Sources */,
 				3DD7D6E1289968E2004A9F6F /* UIButton.swift in Sources */,
+				5B6FAD6828B65E7800029B36 /* MoviePlayerRouter.swift in Sources */,
 				5B68F68E28B266DD00C38B29 /* ZoomableImageView.swift in Sources */,
 				5B9CD878289B0553006FCC4A /* OfficeDetailViewController.swift in Sources */,
 				5B9CD87B289B0553006FCC4A /* OfficeDetailModels.swift in Sources */,
@@ -827,6 +862,7 @@
 				5B68F68728B266DD00C38B29 /* FullScreenImageBrowserViewModel.swift in Sources */,
 				5B9CE2F9287347A60085859A /* SceneDelegate.swift in Sources */,
 				5B15CC3528AA4E7900EA55AB /* CoreDataModel.xcdatamodeld in Sources */,
+				5B6FAD6328B65E7800029B36 /* MoviePlayerViewController.swift in Sources */,
 				5B68F68F28B266DD00C38B29 /* UIView+SnapShot.swift in Sources */,
 				5B13C0FE289AAA41001D4626 /* ListOfficesWorker.swift in Sources */,
 				5B5748B028A6B0980084F5C1 /* FilterPresenter.swift in Sources */,
