@@ -188,6 +188,7 @@ final class MoviePlayerViewController: UIViewController {
     }
     
     @IBAction func clickShutDownButton( sender: Any) {
+        UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
         dismiss(animated: true)
     }
     

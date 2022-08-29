@@ -5890,8 +5890,8 @@
             filePath = "LookOffices/Scenes/MoviePlayer/MoviePlayerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "clickShutDownButton(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5986,8 +5986,8 @@
             filePath = "LookOffices/Scenes/MoviePlayer/MoviePlayerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
             landmarkName = "clickBackwordButton(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -6002,8 +6002,8 @@
             filePath = "LookOffices/Scenes/MoviePlayer/MoviePlayerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
             landmarkName = "clickBackwordButton(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -6130,8 +6130,8 @@
             filePath = "LookOffices/Scenes/MoviePlayer/MoviePlayerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
             landmarkName = "clickFullScreenButton(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -6146,8 +6146,8 @@
             filePath = "LookOffices/Scenes/MoviePlayer/MoviePlayerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "clickFullScreenButton(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -6162,8 +6162,8 @@
             filePath = "LookOffices/Scenes/MoviePlayer/MoviePlayerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "clickFullScreenButton(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -6178,8 +6178,8 @@
             filePath = "LookOffices/Scenes/MoviePlayer/MoviePlayerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "clickFullScreenButton(sender:)"
             landmarkType = "7">
          </BreakpointContent>
