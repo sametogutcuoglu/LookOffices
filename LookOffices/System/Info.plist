@@ -8,6 +8,11 @@
 	<string>$(SHOW_VERSION)</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Ofisleri listelemek için konumuzu kullanmak istiyoruz.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

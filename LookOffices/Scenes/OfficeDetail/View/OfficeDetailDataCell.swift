@@ -12,6 +12,10 @@ protocol clickWebSiteOpenClickDelegate : AnyObject {
     func buttonClick()
 }
 
+protocol clickVideoPlayButtonDelegate : AnyObject {
+    func playButtonClick()
+}
+
 class OfficeDetailDataCell: UICollectionViewCell {
     static let identifier = "OfficeDetailDataCell"
     @IBOutlet weak var mapView: MKMapView!
@@ -24,6 +28,7 @@ class OfficeDetailDataCell: UICollectionViewCell {
     var officeLongitude : Double?
     var locationManager = CLLocationManager()
     weak var clickWebSiteDelegate : clickWebSiteOpenClickDelegate?
+    weak var clickVideoPlayButtonDelegate: clickVideoPlayButtonDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,8 +48,13 @@ class OfficeDetailDataCell: UICollectionViewCell {
         let annotation = OfficeAnnotation(coordinate: .init(latitude: Model.latitude, longitude: Model.longidute), title: Model.name, id: Model.id)
         mapView.addAnnotation(annotation)
     }
+    
     @IBAction func clickWebSiteOpenButton( sender: Any) {
         clickWebSiteDelegate?.buttonClick()
+    }
+    
+    @IBAction func clickVidepPlayButton( sender: Any) {
+        clickVideoPlayButtonDelegate?.playButtonClick()
     }
 }
 

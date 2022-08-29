@@ -10,6 +10,7 @@ import UIKit
 
 protocol OfficeDetailRoutingLogic: AnyObject {
     func openOfficeWebSite()
+    func openVideoPlayerController()
 }
 
 protocol OfficeDetailDataPassing: AnyObject {
@@ -25,5 +26,13 @@ final class OfficeDetailRouter: OfficeDetailRoutingLogic, OfficeDetailDataPassin
         let stroyboard = UIStoryboard(name: "OfficeWebSite", bundle: nil)
         let OfficeWebSiteStoryboard : OfficeWebSiteViewController = stroyboard.instantiateViewController(identifier: "OfficeWebsite")
         self.viewController?.navigationController?.pushViewController(OfficeWebSiteStoryboard, animated: true)
+    }
+    
+    func openVideoPlayerController() {
+        let stroyboardMoviePlayer = UIStoryboard(name: "MoviePlayer", bundle: nil)
+        guard let moviePlayVC : MoviePlayerViewController = stroyboardMoviePlayer.instantiateViewController(withIdentifier: "MoviePlayer") as? MoviePlayerViewController else { return }
+        moviePlayVC.modalPresentationStyle = .fullScreen
+        moviePlayVC.isModalInPresentation = false
+        self.viewController?.present(moviePlayVC, animated: true)
     }
 }

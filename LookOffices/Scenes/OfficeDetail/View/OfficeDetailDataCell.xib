@@ -22,15 +22,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="617" height="492"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Adv-Ji-4vu">
-                                <rect key="frame" x="15" y="10" width="587" height="24"/>
+                                <rect key="frame" x="15" y="10" width="587" height="32"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="745" text="Kollektif House Bakirkoy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5C4-SD-wsV">
-                                        <rect key="frame" x="0.0" y="0.0" width="505" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" text="Kollektif House Bakirkoy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5C4-SD-wsV">
+                                        <rect key="frame" x="0.0" y="0.0" width="409" height="32"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLy-J3-Xix">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLy-J3-Xix">
                                         <rect key="frame" x="510" y="0.0" width="77" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="tintColor" systemColor="tintColor"/>
@@ -48,10 +48,26 @@
                                             <action selector="clickWebSiteOpenButtonWithSender:" destination="gTV-IL-0wX" eventType="touchUpInside" id="C3x-2L-tVM"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKv-0e-SbI">
+                                        <rect key="frame" x="412" y="0.0" width="96" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Play Video" image="play.circle.fill" catalog="system">
+                                            <color key="titleColor" systemColor="tintColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickVidepPlayButtonWithSender:" destination="gTV-IL-0wX" eventType="touchUpInside" id="gHq-LA-1hj"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="UKv-0e-SbI" firstAttribute="top" secondItem="iLy-J3-Xix" secondAttribute="top" id="6fI-vC-BCi"/>
+                                    <constraint firstItem="UKv-0e-SbI" firstAttribute="leading" secondItem="5C4-SD-wsV" secondAttribute="trailing" constant="3" id="C1w-aj-PAp"/>
                                     <constraint firstAttribute="height" secondItem="5C4-SD-wsV" secondAttribute="height" id="DOs-Fb-KWm"/>
-                                    <constraint firstItem="iLy-J3-Xix" firstAttribute="leading" secondItem="5C4-SD-wsV" secondAttribute="trailing" constant="5" id="W25-vE-K2g"/>
+                                    <constraint firstItem="UKv-0e-SbI" firstAttribute="bottom" secondItem="iLy-J3-Xix" secondAttribute="bottom" id="LnN-4g-uId"/>
+                                    <constraint firstItem="5C4-SD-wsV" firstAttribute="centerY" secondItem="UKv-0e-SbI" secondAttribute="centerY" id="TPH-Sc-uVr"/>
+                                    <constraint firstItem="iLy-J3-Xix" firstAttribute="leading" secondItem="UKv-0e-SbI" secondAttribute="trailing" constant="2" id="i5I-kl-zY0"/>
+                                    <constraint firstItem="iLy-J3-Xix" firstAttribute="centerY" secondItem="UKv-0e-SbI" secondAttribute="centerY" id="i6r-f5-0VL"/>
                                     <constraint firstAttribute="trailing" secondItem="iLy-J3-Xix" secondAttribute="trailing" id="iO0-xj-4Y6"/>
                                     <constraint firstItem="5C4-SD-wsV" firstAttribute="top" secondItem="Adv-Ji-4vu" secondAttribute="top" id="oZQ-nI-MDx"/>
                                     <constraint firstItem="5C4-SD-wsV" firstAttribute="leading" secondItem="Adv-Ji-4vu" secondAttribute="leading" id="sTk-53-ukd"/>
@@ -59,7 +75,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PEe-A2-CUk">
-                                <rect key="frame" x="15" y="44" width="587" height="90"/>
+                                <rect key="frame" x="15" y="52" width="587" height="90"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xnj-vd-yr2">
                                         <rect key="frame" x="0.0" y="0.0" width="185.5" height="90"/>
@@ -181,7 +197,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pfg-0U-8Gb">
-                                <rect key="frame" x="15" y="144" width="587" height="110"/>
+                                <rect key="frame" x="15" y="152" width="587" height="110"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KZ-xz-83E">
                                         <rect key="frame" x="15" y="40.5" width="37.5" height="59.5"/>
@@ -231,7 +247,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QJc-xO-TbR">
-                                <rect key="frame" x="15" y="264" width="587" height="223"/>
+                                <rect key="frame" x="15" y="272" width="587" height="215"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="15"/>
@@ -279,6 +295,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="play.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="LoginTopBackground">
             <color red="0.68199998140335083" green="0.82400000095367432" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
